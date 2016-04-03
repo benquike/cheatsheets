@@ -2,25 +2,24 @@
 
 ## string functions
 ### join
-    used to make a list(the elements of the list must be string objects) into a string. e.g.,
-```
-"-".join(['a', 'b', 'c']) will return 'a-b-c'.
-```
+Used to make a list(the elements of the list must be string objects) into a string. e.g.,
+    ```
+    "-".join(['a', 'b', 'c']) will return 'a-b-c'.
+    ```
 
 ### format
 1. Old formatting :
-```
-"%x %x"%(10, 44)
-"%s, %s"%('one', 'two')
-```
+   ```
+   "%x %x"%(10, 44)
+   "%s, %s"%('one', 'two')
+   ```
 2. New formatting
-```
-"{} {}".format('one', 'two') => "one two"
-"{1} {0}".format('one', 'two') => "two one"
-```
+   ```
+   "{} {}".format('one', 'two') => "one two"
+   "{1} {0}".format('one', 'two') => "two one"
+   ```
 3. TODO
-   Value conversion, padding, truncating, ...
-
+Value conversion, padding, truncating, ...
 Ref:Pyformat[^1]
 
 ### encode and decode
