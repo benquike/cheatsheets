@@ -44,6 +44,9 @@ add an element in the end of the list
     In place sort. we can specify the key
 
 
+## Accessing elements like an array
+[TODO]
+
 ## iteration
 
 ```
