@@ -2,7 +2,7 @@
 
 ## string functions
 ### join
-    used to make a list into a string. e.g.,
+    used to make a list(the elements of the list must be string objects) into a string. e.g.,
 ```
 "-".join(['a', 'b', 'c']) will return 'a-b-c'.
 ```
