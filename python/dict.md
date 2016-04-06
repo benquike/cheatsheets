@@ -13,7 +13,30 @@
     d3 = dict()
     ```
 
-## accessing elements
+## query
+
+### checking the existence of elements
+#### hasattr
+passing it an object `o`, it will return a boolean indicating whether there is some value
+associated with key `o`.
+
+```
+m = {'a': 1, 'b': 2}
+
+if hasattr(m, 'a')
+```
+
+It is also used in implementing the keyword `in` to check whether a global or local variable
+is defined or not.
+
+```
+# to check whether 'a' is defined as a local variable
+
+if 'myVar' in locals():
+    print "myVar is defined locally"
+if 'myVar' in globals():
+    print "myVar is defined globally"
+```
 
 ### Using array-like accessors
     ```
