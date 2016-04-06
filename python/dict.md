@@ -3,35 +3,35 @@
 ## initialization
 
 ### static initialization
-    ```
-    d1 = {}
-    d2 = {'a':1, 'b':3}
-    ```
+
+```
+d1 = {}
+d2 = {'a':1, 'b':3}
+```
 
 ### dynamic initialization
-    ```
-    d3 = dict()
-    ```
+
+```
+d3 = dict()
+```
 
 ## query
 
-### checking the existence of elements
-#### hasattr
+### checking the existence of elements: hasattr
 passing it an object `o`, it will return a boolean indicating whether there is some value
 associated with key `o`.
 
 ```
 m = {'a': 1, 'b': 2}
 
-if hasattr(m, 'a')
+if hasattr(m, 'a'):
+   print "m as attribute a"
 ```
 
 It is also used in implementing the keyword `in` to check whether a global or local variable
 is defined or not.
 
 ```
-# to check whether 'a' is defined as a local variable
-
 if 'myVar' in locals():
     print "myVar is defined locally"
 if 'myVar' in globals():
@@ -39,10 +39,11 @@ if 'myVar' in globals():
 ```
 
 ### Using array-like accessors
-    ```
-    print d2['a']
-    print d2['b']
-    ```
+
+```
+print d2['a']
+print d2['b']
+```
 
 ### get
 Passing it a key object, the associated value object will be returned
@@ -55,6 +56,7 @@ d2['b'] = 9
 ```
 
 ### remove an element
+
 ```
 del d2['b']
 ```
