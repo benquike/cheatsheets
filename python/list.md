@@ -45,7 +45,29 @@ add an element in the end of the list
 
 
 ## Accessing elements like an array
-[TODO]
+### Accessing one element
+
+```
+a = [1,2,3,4,5]
+a[0]
+a[-1] # the last one
+a[-2] # the second last one
+```
+
+### Accessing range
+
+```
+a = [1,2,3,4,5]
+a[0:3] # starting from 0 to 3 -1 
+a[4:] # 4 to end
+a[:4] # 0 ~ 4(exclusive)
+```
+
+### getting all elements
+
+```
+a = [1,2,3,4,5]
+```
 
 ## iteration
 
