@@ -50,6 +50,23 @@ If an object exports symbols, you  need to add it to `export-objs`
 export-objs := isdn_common.o
 ```
 
+## how to make a module customizable to be built as both built-in and module
+
+Suppose you have an object named `myobj.o`, you want to make it customizable
+to be built as built-in or module, you need to add the config items
+in KBuild file first, assume its config is named `MYOBJ`
+
+Then the Makefile should be written as follows:
+
+```
+obj-$(CONFIG_MYOBJ) += myobj.o
+```
+
+The build system will pass in the value of CONFIG_MYOBJ, which can
+be either empty, y or m. then it will be built accordingly. If its
+value is emtpy, it will be added to  obj-, in this case, it won't
+be built
+
 ## Linux Build System Source Code
 
 The impelementation of the build system is im the following makefiles
