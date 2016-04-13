@@ -145,6 +145,25 @@ Other:
     C-a x          kill the current pane
     C-a q          display pane numbers for a short while
 
+## copy mode
+
+Enter copy mode
+
+    C-b [         enter copy mode
+
+Scroll up/Down(Emacs mode)
+    C-b M-Down       Half page up
+    C-b M-Up         Half page down
+    C-b M-Pagedown   Half page up
+    C-b M-Pageup     Half page down
+
+Copy Paste
+    C-space         set starting cursor
+        Then you can move up and down to select the what you want
+    Alt-w           copy the selected content to the clipboard
+    C-b ]           paste the copied content to the cursor
+
+    q exit from copy mode
 
 ## Other config file settings
 
