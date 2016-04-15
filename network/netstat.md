@@ -68,6 +68,12 @@ Combined with -t -u, we can show only the programs using tcp or udp
 protocols.
 
 
+Another approach is using `lsof -i`
+
+```
+$ lsof -i :8080
+```
+
 ## show network interfaces
 
 ```
