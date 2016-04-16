@@ -15,3 +15,8 @@ This can be used to randomly set the MAC address of the computer
 ```
 $ openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//' | xargs sudo ifconfig eth0 ether
 ```
+
+## Reference
+1. Command Line Utilities[^1]
+
+[^1]: https://wiki.openssl.org/index.php/Command_Line_Utilities
