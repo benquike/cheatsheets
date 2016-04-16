@@ -2,10 +2,10 @@
 
 ## write hexpairs in strings
 
-Precede the hex pair with `\`, which is the same as `C`
+Precede the hex pair with `\x`, which is the same as `C`
 
 ```
-$str = "aaaa\50"
+$str = "aaaa\x50"
 ```
 
 ## repetition
