@@ -19,3 +19,16 @@ char *realpath(const char *path, char *resolved_path);
 
 Unix utility `realpath` is implemented using this API, similar tools include
 `dirname`, `basename`.
+
+
+## checking for existence, readable/writable
+
+   F_OK : exisitence
+   W_OK : writable
+   R_OK : readable
+   X_OK : executable
+
+Usage
+```
+int access(const char *pathname, int mode);
+```
