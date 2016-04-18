@@ -97,4 +97,9 @@ scripts/
 └── xz_wrap.sh
 ```
 
+## Misc
+
+### install man docs to the system
+Download the source tree of the kernel and execute `make mandocs` and `make installmandocs`
+
 [^1]: http://masahir0y.blogspot.com/2012/02/linuxmakefile-6.html
