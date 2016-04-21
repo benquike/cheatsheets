@@ -2,7 +2,7 @@
 
 ## dump the content of a register
 ```
-$d/x $rax
+$ p/x $rax
 ```
 
 or
