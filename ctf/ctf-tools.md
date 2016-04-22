@@ -57,3 +57,15 @@ For reference[^1][^2]
 
 [^1]: http://security.cs.rpi.edu/courses/binexp-spring2015/lectures/5/04_lecture.pdf
 [^2]: http://stackoverflow.com/questions/6121094/how-do-i-run-a-program-with-commandline-args-using-gdb-within-a-bash-script
+
+
+## ROP
+
+### ROPgadget
+[ROGgadget](http://shell-storm.org/project/ROPgadget/)
+
+### Ropper
+[Ropper](http://scoding.de/ropper/)
+
+### rp
+[rp++](https://github.com/0vercl0k/rp)
