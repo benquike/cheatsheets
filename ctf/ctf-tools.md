@@ -69,3 +69,9 @@ For reference[^1][^2]
 
 ### rp
 [rp++](https://github.com/0vercl0k/rp)
+
+
+
+## Good sites
+
+1. https://ghostbin.com/paste/6kho7
