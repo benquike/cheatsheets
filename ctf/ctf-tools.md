@@ -47,7 +47,7 @@ $ ./vulnerable < filename
 #### in gdb
 
 ```
-$ run $(your_command_here)      # 1
+~~ $ run $(your_command_here)      # 1 ~~
 $ run < <(your_command_here)    # 2
 $ your_command_here > filename  # 3
 $ run < filename
