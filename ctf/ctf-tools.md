@@ -59,6 +59,14 @@ For reference[^1][^2]
 [^2]: http://stackoverflow.com/questions/6121094/how-do-i-run-a-program-with-commandline-args-using-gdb-within-a-bash-script
 
 
+#### Passing 0 bytes to programs
+we can pass '\x00' as part of the input to `scanf`, `gets` in a program.
+But we can not pass '\x00' as argument to programs.
+
+we can use tools like `perl` or `python` to do so.
+
+What about '\x0a'(TBC)?
+
 ## ROP
 
 ### ROPgadget
