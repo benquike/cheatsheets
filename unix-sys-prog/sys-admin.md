@@ -19,6 +19,8 @@ This is the command to do this:
 $ kill $(ps -A -ostat,ppid | awk '/[zZ]/{print $2}')
 ```
 
+The difference between orphan process and zombie process(https://www.cs.princeton.edu/courses/archive/fall11/cos217/precepthandouts/22shell/orphanzombie.pdf)
+
 ## iptables
 iptables is a powerful firewall tool on linux[^1][^3][^4].
 
