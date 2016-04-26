@@ -43,5 +43,45 @@ $ tcpdump dst port 1234 # dst port only
 $ tcpdump portrange 21-25  # port range
 ```
 
+## viewing packet details
+
+- basic parts
+
+```
+$ tcpdump -nS
+```
+
+- basic (verbose)
+
+```
+$ tcpdump -nnvvS
+```
+
+- deeper look at the traffic
+
+```
+$ tcpdump -nnvvXS
+```
+
+- heavy packet looking
+
+```
+$ tcpdump -nnvvXSs
+```
+
+
+## reading from and writing to file
+
+### write the captured packets to a file
+
+```
+$ tcpdump -w file.pcap
+```
+
+### reading packets from a file
+
+```
+$ tcpdump -r file.pcap
+```
 
 [^1]: https://danielmiessler.com/study/tcpdump/
