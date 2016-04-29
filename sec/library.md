@@ -6,7 +6,7 @@
 
 ### dynamic library loading
   The libraries are search using the following mechanisms, in the
-  following order.
+  following order[^1][^2].
 
 1. the DT_RPATH dynamic section attribute of the library causing the lookup 
 2. the DT_RPATH dynamic section attribute of the executable 
@@ -29,3 +29,6 @@ Note:
     the objects in LIST are ignored.
 
 5). Before library searching takes place, the libraries in LD_PRELOAD are loaded
+
+[^1]: https://wiki.debian.org/RpathIssue
+[^2]: http://blog.tremily.us/posts/rpath/
