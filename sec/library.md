@@ -5,13 +5,27 @@
 ## dynamic library
 
 ### dynamic library loading
-  The libraries are search using the following mechanisms.
+  The libraries are search using the following mechanisms, in the
+  following order.
 
-#### ld.conf
+1. the DT_RPATH dynamic section attribute of the library causing the lookup 
+2. the DT_RPATH dynamic section attribute of the executable 
+3. the LD_LIBRARY_PATH environment variable, unless the executable is setuid/setgid.
+4. the DT_RUNPATH dynamic section attribute of the executable
+5. /etc/ld.so.cache
+6. base library directories (/lib and /usr/lib)
 
 
-#### LD_LIBRARY_PATH
-  This option can be used specify the customized library path. But it does not
-  work for setuid programs
+Note:
+1). Regarding steps 1 and 2: The DT_RPATH attribute is ignored if the
+    DT_RUNPATH attribute is found. Then, LD_LIBRARY_PATH is searched first!
+2). Regarding step 3: LD_LIBRARY_PATH can be overridden by calling the
+    dynamic linker with the option --library-path (e.g. /lib/ld-linux.so.2
+    --library-path $HOME/mylibs myprogram
+3). Regarding steps 5 and 6: If the executable was linked with -z nodeflib linker
+    option, /lib and /usr/lib are skipped at step 5 and 6. 
 
-#### rpath and runpath
+4). Regarding all steps: If the dynamic linker is called using --inhibit-rpath LIST,
+    the objects in LIST are ignored.
+
+5). Before library searching takes place, the libraries in LD_PRELOAD are loaded
