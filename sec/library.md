@@ -32,3 +32,6 @@ Note:
 
 [^1]: https://wiki.debian.org/RpathIssue
 [^2]: http://blog.tremily.us/posts/rpath/
+
+### security implication of rpath
+    it can be used as a defense against environmental overide attack
