@@ -33,5 +33,8 @@ Note:
 [^1]: https://wiki.debian.org/RpathIssue
 [^2]: http://blog.tremily.us/posts/rpath/
 
+### How to specify rpath
+In case of gnu ld, we can use option `-rpath=dir` to add a runtime library search path when building an `executable`.
+
 ### security implication of rpath
     it can be used as a defense against environmental overide attack
