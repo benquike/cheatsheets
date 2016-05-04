@@ -18,6 +18,18 @@
 ### How to create dynamic library
   "How to create dynamic libraries" can be found here[^3].
 
+#### SONAME and related stuff
+When creating a shared library using GNU ld[^4], you can use `-h=<SO_NAME>`
+or `-soname=<SO_NAME>` to specify the the value of SONAME field(or property)
+of the shared library.
+
+When a linker is trying to readin the shared library to solve some symbol, if
+this field is set, the linker will stop reading the current file, instead, it
+will readin the shared library specified by that field. And in dynamic section
+of the executable, it will also fill in the name specified in the `<SO_NAME>` field.
+
+For more details, read here[^5].
+
 Note:
 1). Regarding steps 1 and 2: The DT_RPATH attribute is ignored if the
     DT_RUNPATH attribute is found. Then, LD_LIBRARY_PATH is searched first!
@@ -35,6 +47,8 @@ Note:
 [^1]: https://wiki.debian.org/RpathIssue
 [^2]: http://blog.tremily.us/posts/rpath/
 [^3]: http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
+[^4]: https://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_node/ld_3.html
+[^5]: http://stackoverflow.com/questions/12637841/what-is-the-soname-option-for-building-shared-libraries-for
 
 ### How to specify rpath
 In case of gnu ld, we can use option `-rpath=dir` to add a runtime library search path when building an `executable`.
