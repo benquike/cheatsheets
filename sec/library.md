@@ -15,6 +15,8 @@
 5. /etc/ld.so.cache
 6. base library directories (/lib and /usr/lib)
 
+### How to create dynamic library
+  "How to create dynamic libraries" can be found here[^3].
 
 Note:
 1). Regarding steps 1 and 2: The DT_RPATH attribute is ignored if the
@@ -32,6 +34,7 @@ Note:
 
 [^1]: https://wiki.debian.org/RpathIssue
 [^2]: http://blog.tremily.us/posts/rpath/
+[^3]: http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
 
 ### How to specify rpath
 In case of gnu ld, we can use option `-rpath=dir` to add a runtime library search path when building an `executable`.
