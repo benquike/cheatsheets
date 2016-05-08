@@ -82,7 +82,7 @@ Internally, the C++ compiler uses runtime type information[^1] to do type checki
 nor `typeid`, we can tell the c++ compiler not to generate these information. In case of GCC, the option for this
 purpose is `-fno-rtti`[^2].
 
-#### static_class
+#### static_cast
 1. convert pointers among **related classes**
 2. invloves no runtime overhead
 3. unsafe
