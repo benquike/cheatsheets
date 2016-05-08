@@ -80,7 +80,7 @@ In case of references, it will throw an exception of bad_cast
 
 Internally, the C++ compiler uses runtime type information[^1] to do type checking. If we use neither `dynamic_cast`
 nor `typeid`, we can tell the c++ compiler not to generate these information. In case of GCC, the option for this
-purpose is `-fno-rtti`.
+purpose is `-fno-rtti`[^2].
 
 #### static_class
 1. convert pointers among **related classes**
@@ -97,3 +97,4 @@ purpose is `-fno-rtti`.
 make a pointer const
 
 [^1]: https://en.wikibooks.org/wiki/C%2B%2B_Programming/RTTI
+[^2]: https://gcc.gnu.org/onlinedocs/gcc-3.4.4/gcc/C_002b_002b-Dialect-Options.html
