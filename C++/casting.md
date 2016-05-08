@@ -78,6 +78,10 @@ runtime error. So for casting functions are imported in C++.
 3. If it can not cast the pointer to the destination type, it will return a NULL poiter to indicate failure.
 In case of references, it will throw an exception of bad_cast
 
+Internally, the C++ compiler uses runtime type information[^1] to do type checking. If we use neither `dynamic_cast`
+nor `typeid`, we can tell the c++ compiler not to generate these information. In case of GCC, the option for this
+purpose is `-fno-rtti`.
+
 #### static_class
 1. convert pointers among **related classes**
 2. invloves no runtime overhead
@@ -91,3 +95,5 @@ In case of references, it will throw an exception of bad_cast
 
 #### const_cast
 make a pointer const
+
+[^1]: https://en.wikibooks.org/wiki/C%2B%2B_Programming/RTTI
