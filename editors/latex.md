@@ -3,7 +3,7 @@
 ## bibtex
 - Collecting citation data and assembly them in a .bib file
 We can get the .bib data of papers from a lot of sites, like google scholar, or mendeley. An entry
-is usually like this
+is usually like this[^1]
 ```
     @inproceedings {caver,  # the id of this work, we will use this id to cite it
 	author = {Byoungyoung Lee and Chengyu Song and Taesoo Kim and Wenke Lee},
@@ -37,3 +37,5 @@ $ pdflatex HexType
 ```
 $ pdflatex HexType
 ```
+
+[^1]: http://www.bibtex.org/Using/

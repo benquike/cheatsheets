@@ -21,3 +21,16 @@ gg
 ```
 G
 ```
+
+### undo and redo[^1]
+
+- undo
+```
+u
+```
+- redo
+```
+Ctrl-R
+```
+
+[^1]: http://vim.wikia.com/wiki/Undo_and_Redo
