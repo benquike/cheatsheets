@@ -20,3 +20,14 @@ The solution is in ref[^1](replacing the 32-bit cygterm
 with the 64-bit one).
 
 [^1]: http://changineer.info/network/terminal_software/windows_terminal_teraterm.html
+
+
+## console 2
+
+Console2 can be used to connect to both cygwin and cmd.
+
+1. how to connect to cygwin:ref[^2]
+2. A better option is called consoleZ based on Console2[^3].
+
+[^2]: http://bryanlor.com/blog/cygwin-tutorial-integrating-cygwin-console2-windows
+[^3]: https://github.com/cbucher/console/wiki/Downloads
