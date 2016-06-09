@@ -31,3 +31,19 @@ Console2 can be used to connect to both cygwin and cmd.
 
 [^2]: http://bryanlor.com/blog/cygwin-tutorial-integrating-cygwin-console2-windows
 [^3]: https://github.com/cbucher/console/wiki/Downloads
+
+
+## zsh
+
+### oh my zsh
+
+	https://www.smashingmagazine.com/2015/07/become-command-line-power-user-oh-my-zsh-z/
+
+To show the special chars, we need to install this package
+
+	https://github.com/powerline/fonts
+
+
+On windows, we need to run this command to install the fonts:
+
+	Powershell.exe -executionpolicy remotesigned -File install.ps1
