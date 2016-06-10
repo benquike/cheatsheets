@@ -33,6 +33,13 @@ Console2 can be used to connect to both cygwin and cmd.
 [^3]: https://github.com/cbucher/console/wiki/Downloads
 
 
+## mobaxterm
+
+### solving the backspace
+
+	Setting --> terminal --> uncheck `Backspace sends ^H`
+
+
 ## zsh
 
 ### oh my zsh
