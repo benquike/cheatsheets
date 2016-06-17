@@ -30,6 +30,13 @@ $a = "A"."B"
 $c = ('A'x10)."B"
 ```
 
+## string constants
+
+We can use single quote, double quote and HERE doc to
+define string.
+
+You can interpolate variables in strings quoted by double
+quote.
 
 ## pitfalls
 
