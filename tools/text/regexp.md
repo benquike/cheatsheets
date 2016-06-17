@@ -52,3 +52,11 @@ Features added:
 * backtracking
 * capture group
 * recrusive patterns
+
+
+## Application
+
+### grep
+
+Grep supports all of the 3 flavors of regexps. they can be switched by `-E`, `-P`
+and `-P` options, by default, `-P` is used.
