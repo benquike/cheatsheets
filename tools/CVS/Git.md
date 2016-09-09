@@ -31,6 +31,11 @@ git submodule init
 git submodule update
 ```
 
+## handling authentication
+
+Sometimes the repo is deployed behind a server where authentication is reqired.
+http://www.ilker.de/git-goodie-https-basic-authentication.html
+
 ## Good referebce site
 
 - [pcottle’s Visual Git Branching ](http://pcottle.github.io/learnGitBranching/)
