@@ -24,3 +24,14 @@ $ jobs
 {% highlight shell %}
 $ fg %1
 {% endhighlight %}
+
+## Shell programming
+
+### get the path of a script
+
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+is a useful one-liner which will give you the full directory name
+of the script no matter where it is being called from.[^1]
+
+[^1]: http://stackoverflow.com/questions/59895/can-a-bash-script-tell-which-directory-it-is-stored-in
