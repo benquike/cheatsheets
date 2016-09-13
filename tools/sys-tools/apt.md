@@ -36,13 +36,32 @@ of cmake with the one you compiled, you can use the following command[^1].
 This command will download the source of the package[^2][^3] and put the tarball in the current
 directory, extract the source files in the source directory.
 
-2. goto the source directory, `dpkg-buildpackage`command will build the deb file for us and put it
+2. install the dependencies
+
+    apt-get build-dep <pkg_name>
+
+3. goto the source directory, `dpkg-buildpackage`command will build the deb file for us and put it
 in the parent directory.
 
 
 ## get the available packages
 
 `apt-cache` can be use to do the query[^4].
+
+1. Get all the available packages
+
+    apt-cache dumpavail
+
+2. get the dependency of a package[^5]
+
+    apt-cache showsrc <pkg_name>
+
+
+## customization
+
+1. When installing a package, always answer yes[^6]
+
+    apt-get --yes (-y) install <pkg_name>
 
 [^1]:
 
@@ -53,3 +72,7 @@ http://www.claudiokuenzler.com/blog/611/installing-cmake-3.4.1-ubuntu-14.04-trus
 [^3]: http://www.cyberciti.biz/ref/apt-dpkg-ref.html
 
 [^4]: http://askubuntu.com/questions/531403/how-to-download-all-repository-using-apt-get
+
+[^5]: http://askubuntu.com/questions/180504/how-can-i-remove-all-build-dependencies-for-a-particular-package
+
+[^6]: http://superuser.com/questions/164553/automatically-answer-yes-when-using-apt-get-install
