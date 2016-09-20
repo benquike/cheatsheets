@@ -38,4 +38,21 @@ $ pdflatex HexType
 $ pdflatex HexType
 ```
 
+## SageTex
+
+SageTex[^3] is the package which allows us to plot using
+results computed by SAGE[^2]
+
+A good tutorial on SageTex is [here](http://www.highschoolmathandchess.com/latex/plotting-with-sagetex/)
+
+
+## TikZ
+
+TikZ[^4] and PGF are TeX packages for creating graphics programmatically.
+TikZ is build on top of PGF and allows you to create sophisticated
+graphics in a rather intuitive and easy manner.
+
 [^1]: http://www.bibtex.org/Using/
+[^2]: http://www.sagemath.org/
+[^3]: https://www.ctan.org/tex-archive/macros/latex/contrib/sagetex/?lang=en
+[^4]: http://www.texample.net/tikz/
