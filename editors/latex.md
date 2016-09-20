@@ -43,7 +43,8 @@ $ pdflatex HexType
 SageTex[^3] is the package which allows us to plot using
 results computed by SAGE[^2]
 
-A good tutorial on SageTex is [here](http://www.highschoolmathandchess.com/latex/plotting-with-sagetex/)
+A good tutorial on SageTex is [here](http://www.highschoolmathandchess.com/latex/plotting-with-sagetex/) and [^5] [^6].
+
 
 
 ## TikZ
@@ -52,7 +53,19 @@ TikZ[^4] and PGF are TeX packages for creating graphics programmatically.
 TikZ is build on top of PGF and allows you to create sophisticated
 graphics in a rather intuitive and easy manner.
 
+
+
+## Algorithm
+
+Examples[^7][^6][^9].
+
+
 [^1]: http://www.bibtex.org/Using/
 [^2]: http://www.sagemath.org/
 [^3]: https://www.ctan.org/tex-archive/macros/latex/contrib/sagetex/?lang=en
 [^4]: http://www.texample.net/tikz/
+[^5]: http://tug.ctan.org/macros/latex/contrib/sagetex/example.pdf
+[^6]: http://faculty.essex.edu/~bannon/sp/sagetextexshop.pdf
+[^7]: http://tex.stackexchange.com/questions/207667/how-to-add-function-body-to-latex-algorithm-pseudocode
+[^8]: http://tex.stackexchange.com/questions/179320/parameter-section-similar-to-input-and-output
+[^9]: http://www.cs.toronto.edu/~frank/Useful/algorithm2e.pdf
