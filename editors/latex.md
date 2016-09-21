@@ -57,6 +57,25 @@ graphics in a rather intuitive and easy manner.
 
 ## Algorithm
 
+### algorithmic
+
+1. Procedure
+
+```
+\Processed
+...
+\EndProcedure
+```
+
+2. connectives
+
+`\And` for `&`; `land` for `/\`.
+
+3. function call
+
+`\Call{func_name}{args}`
+
+
 Examples[^7][^6][^9].
 
 
