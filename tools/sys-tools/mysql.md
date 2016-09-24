@@ -26,5 +26,14 @@ else if mysql server > 5.7
     update user set authentication_string=password('password') where user='root';
 
 
+## Adding new user
+
+    CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+
+## granting permission to a user
+
+    GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+
 ## Reference
 * [How to find out the MySQL root password](http://stackoverflow.com/questions/10895163/how-to-find-out-the-mysql-root-password)
+* [How To Create a New User and Grant Permissions in MySQL](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
