@@ -12,3 +12,7 @@ or
 ## witch to another user
 
     sudo -i <login_name>
+
+
+## Reference
+*[How To Edit the Sudoers File on Ubuntu and CentOS](https://www.digitalocean.com/community/tutorials/how-to-edit-the-sudoers-file-on-ubuntu-and-centos)
