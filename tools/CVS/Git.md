@@ -36,6 +36,13 @@ git submodule update
 Sometimes the repo is deployed behind a server where authentication is reqired.
 http://www.ilker.de/git-goodie-https-basic-authentication.html
 
+
+## change history
+
+```
+git filter-branch -f --env-filter "GIT_AUTHOR_NAME='user_name';GIT_AUTHOR_EMAIL='abc@example.com'" HEAD
+```
+
 ## Good referebce site
 
 - [pcottle’s Visual Git Branching ](http://pcottle.github.io/learnGitBranching/)
