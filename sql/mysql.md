@@ -17,7 +17,7 @@ describe table_name;
 ### add a column
 
 ```
-alter table <table_name> <column_name> <datatype>
+alter table <table_name> add <column_name> <datatype>
 ```
 
 ### change a column
