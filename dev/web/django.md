@@ -2,6 +2,10 @@
 
 ## Model
 
+### specifying database to use
+
+In the site setting file, find the data base setting
+
 ### specifing the table name of a model class
 
 In the meta class, define the db_table propertuy like the following:
@@ -36,6 +40,65 @@ In this case, run the following command:
 ```python
 python manage.py migrate --fake <appname>
 ```
+
+### fields
+
+#### DateTimeField
+
+http://stackoverflow.com/questions/2771676/django-datetime-issues-default-datetime-now
+
+```
+date = models.DateTimeField(auto_now_add=True, blank=True)
+```
+
+#### CharField
+
+## View
+
+### Simple view
+
+In its simplest case, a view is just a function that takes at least `HttpRequest`
+as argument. The following is an example:
+
+```python
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
+```
+
+### Capturing  arguments
+
+### Generic View
+
+### Template
+
+
+## URLConfig, the controller that connect user request to views
+
+In the project folder and each app folder, there is a file called
+`urls.py`, which is responsible for controlling dispatching user request
+to the views defined in the project. `urls.py` looks like this:
+
+```
+from django.conf.urls import include, url
+from django.contrib import admin
+
+urlpatterns = [
+    url(r'^polls/', include('polls.urls')),
+    url(r'^admin/', admin.site.urls),
+]
+
+```
+
+The elements defined in urlpatterns are the `routing rules`.
+When there is a request from the user,django framework will
+extract the url(the part excluding the host) and match it against
+each element in this list and dispatch the request to the view in the
+second part.
+
+You can also dispatch it to another urls definition. the first line
+uses `include` directive to do so.
+
+## Django RESTful framework
 
 ## references
 *[Django get started](https://docs.djangoproject.com/en/1.10/intro/)
