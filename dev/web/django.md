@@ -121,13 +121,18 @@ uses `include` directive to do so.
 
 ### uploading files
 
+
+## debug
+
+When debug is turned off in settings.py, by default admin is not allowed to be accessed,
+we need to setup allowed hosts in `ALLOWED_HOSTS`
+
 ## references
 * [Django get started](https://docs.djangoproject.com/en/1.10/intro/)
 * http://stackoverflow.com/questions/25924858/django-1-7-migrate-gets-error-table-already-exists
 * [How To Serve Django Applications with uWSGI and Nginx on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-14-04)
 * [https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-16-04](https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-16-04)
 * [Setting up Django and your web server with uWSGI and nginx](http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html)
-
 * [nginx not serving admin static files?](http://serverfault.com/questions/403264/nginx-not-serving-admin-static-files)
-
 * [Managing static files (e.g. images, JavaScript, CSS)](https://docs.djangoproject.com/en/dev/howto/static-files/#deploying-static-files-in-a-nutshell)
+* [ALLOWED HOSTS](https://docs.djangoproject.com/en/1.9/ref/settings/#allowed-hosts)
