@@ -56,6 +56,15 @@ in the parent directory.
 
     apt-cache showsrc <pkg_name>
 
+## show detailed info about a package
+
+`dpkg -s <pkg_name>`
+
+## meta package
+
+a meta package is a package that does not contain important stuff itself, but
+it depends on some other packages so that when you install that package, the dependent
+packages are all installed[^7].
 
 ## customization
 
@@ -76,3 +85,5 @@ http://www.claudiokuenzler.com/blog/611/installing-cmake-3.4.1-ubuntu-14.04-trus
 [^5]: http://askubuntu.com/questions/180504/how-can-i-remove-all-build-dependencies-for-a-particular-package
 
 [^6]: http://superuser.com/questions/164553/automatically-answer-yes-when-using-apt-get-install
+
+[^7]: https://help.ubuntu.com/community/MetaPackages
