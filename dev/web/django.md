@@ -53,6 +53,29 @@ date = models.DateTimeField(auto_now_add=True, blank=True)
 
 #### CharField
 
+#### ForeignField
+
+1. Define a foreign key to it self
+
+    parentId = models.ForeignKey("self")
+
+or
+    parentId = models.ForeignKey("CategoryModel")
+
+
+### querying using model objects
+
+we can use fields to do queries on the model class.
+But If we want to query using the fields of a related object
+by foreign key, we need to use `__` to as field separator.
+
+E.g
+
+    Entry.objects.filter(pub_date__year=2006)
+
+Is to filter on the entries where the the year of pub_date,
+which is a related object is 2006
+
 ## View
 
 ### Simple view
@@ -100,7 +123,6 @@ uses `include` directive to do so.
 
 ## Django RESTful framework
 
-
 ## run django with uwsgi and nginx
 
 ### Serving static files
@@ -121,6 +143,12 @@ uses `include` directive to do so.
 
 ### uploading files
 
+## admin app
+
+### Filtering by foreign key fields
+
+in the admin class of the model class, add an item in the filter_list the format
+`<relation_field_name>__<field_name_in_the_related_class>`
 
 ## debug
 
@@ -136,3 +164,4 @@ we need to setup allowed hosts in `ALLOWED_HOSTS`
 * [nginx not serving admin static files?](http://serverfault.com/questions/403264/nginx-not-serving-admin-static-files)
 * [Managing static files (e.g. images, JavaScript, CSS)](https://docs.djangoproject.com/en/dev/howto/static-files/#deploying-static-files-in-a-nutshell)
 * [ALLOWED HOSTS](https://docs.djangoproject.com/en/1.9/ref/settings/#allowed-hosts)
+* [Django self-referential foreign key](http://stackoverflow.com/questions/15285626/django-self-referential-foreign-key)
