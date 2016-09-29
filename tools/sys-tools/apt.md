@@ -66,6 +66,30 @@ a meta package is a package that does not contain important stuff itself, but
 it depends on some other packages so that when you install that package, the dependent
 packages are all installed[^7].
 
+## apt-cache
+
+apt-cache creates a repository of information about the
+packages that are avaiable from your sources list, so this
+way you can search packages and information about it.
+commands are as follows
+
+| command               | desc                                                   |
+|-----------------------|--------------------------------------------------------|
+| apt-cache add         | Adds a package file to the source cache.               |
+| apt-cache gencaches   | Builds both the package and source cache               |
+| apt-cache showpkg     | Show some general information for a single package     |
+| apt-cache stats       | Show some basic statistics                             |
+| apt-cache dump        | Show the entire file in a terse form                   |
+| apt-cache dumpavail   | Print an available file to stdout                      |
+| apt-cache unmet       | Show unmet dependencies                                |
+| apt-cache check       | Check the cache a bit                                  |
+| apt-cache search      | Search the package list for a regex pattern            |
+| apt-cache show        | Show a readable record for the package                 |
+| apt-cache depends     | Show raw dependency information for a package          |
+| apt-cache pkgnames    | List the names of all packages                         |
+| apt-cache dotty       | Generate package graphs for GraphVis                   |
+
+
 ## customization
 
 1. When installing a package, always answer yes[^6]
