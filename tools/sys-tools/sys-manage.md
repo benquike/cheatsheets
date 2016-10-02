@@ -33,6 +33,12 @@ sudo lsblk -f
 
 remove the password of sudo[^1].
 
+## LVM
+
+http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/
+
+
+
 ## Ref
 *[Install OpenLDAP In Ubuntu 15.10 And Debian 8](https://www.unixmen.com/install-openldap-in-ubuntu-15-10-and-debian-8/)
 *[OpenLDAP Server](https://help.ubuntu.com/lts/serverguide/openldap-server.html)
