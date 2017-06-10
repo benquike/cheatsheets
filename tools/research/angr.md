@@ -144,6 +144,61 @@ Important API:
 - store: used to save a **value** to an **address** of some **size**;
 - load: used to load a **value** from an **address** of some **size**;
 
+Some of the internal API implementations:
+1. `SimMemory.set\_state`: asssociate the SimState object with it by
+   calling `SimStatePlugin.set\_state` and initialize `_stack_region_map` and
+   and `_generic_region_map` passed from the constructor.
+2. `SimMemory.\_resolve\_location_name`: get the location of registers, not complete?
+3. `SimMemory.\_convert\_to\_ast`: convert `data_e` to an claripy ast expression, if it
+   is a string or integer, create a bitvector for it, if it is a SimIRExpr, call its `to_bv`
+   member function.
+4. `SimMemory.set\_stack\_address\_mapping`:
+5. `SimMemory.unset\_stack\_address\_mapping`:
+6. `SimMemory.stack\_id`: Return a memory region ID for a function. If the
+   default region ID exists in the region mapping, an integer will be appended
+   to the region name, this is to handle recursive function calls.
+7. `SimMemory.\_constrain_underconstrained\_index`: If the possible address
+   (represented by passed in argument) range is beyond the predefined limit,
+   add some constraints to the state.
+   ([here](https://hexdump.cs.purdue.edu/source/xref/simuvex/simuvex/storage/memory.py#799)).
+8. `SimMemory.store`: store a **value** to an **address** of some **size** and a **condition**,
+   **value**, **address**, and **size** can be symbolic:
+   - convert value, address, size and condition to symbolic expressions
+   - call inpect
+   - check the condition, if it does not hold under the state constraintsm, simply return
+   - call `\_constrain_underconstrained\_index` to restrict the address
+   - create a `MemoryStoreREquest` object and call `_store` method implementation in subclasses.
+   - call inspect
+   - handle actions
+
+9. `SimMemory.store\_cases`: save value to a memory location with condition. it accept
+   an address and a list of contents and a list of corresponding values to save to
+   that address. In case the condition does not hold, we can provide a fallback value
+   to write to that address, by default, the fallback value is the original value.
+   - convert address, contents, codnitions and fallback to claripy ast
+   - load the original value to be fallback if no fallback value is provided
+   - call `\_store\_cases` to do the job
+   - ....
+
+10. `SimMemory.\_store\_cases`:
+   - extend the size of each content to the max size
+   - merge the conditions of the same contents and make a new constraint for the
+     conditions by connecting all of them using `or` operator.
+   - If there is only one content, same as `store` dose, create MemoryStoreRequest
+     object and call `\_store`; if there are multiple contents, first simplify them;
+     create a ite operation, create a MemoryStoreRequest for it and call `\_store`.
+
+11. `SimMemory.load`: load contents from an address of size.
+    - convert address, size, condition and fallback to a claripy ast.
+    - call inspect
+    - call `\_constrain_underconstrained\_index` to restrict the address
+    - call `_load` and post handling
+    - call inspect
+
+12. `SimMemory.find`: returns the addresses of bytes equal to some value.
+13. `SimMemory.copy\_contents`:
+
+
 ![Class Diagram of SimMemory](./SimMemory.png)
 
 ##### SimSolver
