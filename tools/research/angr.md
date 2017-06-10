@@ -38,6 +38,23 @@ The class diagram is as follows:
 
 ![Class Diagram](./SimState.png)
 
+
+#### Execution Engine
+
+Execution engines are used to `execute`(interpret, simulate)
+the code(vex code) that is accociated with the current state(
+the `ip` of the current state can be retrieved from the `ip` field
+of SimState object, more information can be get from the `Scratch`
+state plugin object).
+
+The API that does the execution is `process` defined in SimEngine.
+It takes a SimState object(s1) as argument, returns the possible states
+after executing the basic block asscociated with s1. The possible states
+are wrapped in `SimSuccessors` class.
+
+![SimEngine](SimEngine.png)
+
+
 #### Plugins
 
 Plugins are used to access information from a program state.
@@ -49,3 +66,5 @@ All plugins are subclasses of `SimStatePlugin`.
 
 ![SimStatePlugin](./SimStatePlugin.png)
 
+The each plugin provide unique APIs to get information
+associated with the plugin.
