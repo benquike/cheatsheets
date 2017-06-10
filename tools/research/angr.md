@@ -81,9 +81,9 @@ superblock and invoke `_handle_statement` to handle each VEX statement.
 This part is used to execute code represented in VEX IR and track
 the constraints in symbolically execution.
 
-![Class Diagram of SimIRStmt](.//Pictures/SimIRStmt.png)
+![Class Diagram of SimIRStmt](./SimIRStmt.png)
 
-![Class Diagram of SimIRExpr]()
+![Class Diagram of SimIRExpr](./SimIRExpr.png)
 
 Some implementation details:
 
