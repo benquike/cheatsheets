@@ -87,13 +87,19 @@ the constraints in symbolically execution.
 
 Some implementation details:
 
-1. SimIRStmt defines some common functions:
+1. SimIRStmt defines some common functions for its subclasses to reuse them:
    - \_translate\_expr
    - \_translate\_exprs
    - \_record\_expr
    - \_record\_exprs
    - \_add\_constraints
    - \_write_tmp
+
+It exports `process` method to handle a VEX IR statement. The following is its
+sequence diagram. `process` calls the `_execute` function of its subclasses which
+takes an valina VEX IR expression and SimState as argument and construct a
+corresponding SimIRExpr object(it is fully processed before being returned).
+
 
 ![Sequence diagram of SimIRStment.process](./SimIRStmt_process.png)
 
@@ -108,5 +114,26 @@ All plugins are subclasses of `SimStatePlugin`.
 
 ![SimStatePlugin](./SimStatePlugin.png)
 
-The each plugin provide unique APIs to get information
+Each plugin provides unique APIs to get information
 associated with the plugin.
+
+A SimState object has a field for for handling different aspects
+of a program.
+
+| FieldName  | Plugin Class           | Desc                   |
+|------------|------------------------|------------------------|
+| memory     |SimSymbolicMemory       | Symbolic memory        |
+| mem        |SimMemView              | |
+| register   |SimSymbolicMemory       | |
+| regs       |SimRegNameView          | |
+| libc       |SimStateLibc            | |
+| posix      |SimStateSystem          | |
+| solver\_engine(se) | SimSolver       | |
+| cgc        | SimStateCGC            | |
+| scratch    | SimStateScratch        | |
+| log        | SimStateLog            | |
+| procedure\_data| SimProcedureData    | |
+| gdb        | GDB                    | |
+| inspector  | SimInspector           | |
+| unicorn    | Unicorn                | |
+|uc\_manager  | SimUCManager           | |
