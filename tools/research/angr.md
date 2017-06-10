@@ -137,3 +137,39 @@ of a program.
 | inspector  | SimInspector           | |
 | unicorn    | Unicorn                | |
 |uc\_manager  | SimUCManager           | |
+
+##### SimSymbolicMemory and related
+
+Important API:
+- store: used to save a **value** to an **address** of some **size**;
+- load: used to load a **value** from an **address** of some **size**;
+
+![Class Diagram of SimMemory](./SimMemory.png)
+
+##### SimSolver
+
+It is a wrapper for the functions provided by claripy.
+
+It includes a constraints solver whose implementation
+might vary depending on the configuration.
+
+It exports functions to:
+1. create variables(symbolic variables)
+   - BVS
+   - Unconstrained
+2. add constraints
+   - add
+3. check satisfiability
+4. extract solutions
+5. constraints simplification
+   - simplify
+
+![Class Diagram of SimSolver](./SimSolver.png)
+
+
+## claripy
+
+This is a library for:
+1. create symbolic variables
+2. build AST and constraints from symbolic variables
+3. solve the constraints and get solutions for expressions
