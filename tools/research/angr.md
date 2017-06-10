@@ -52,7 +52,28 @@ It takes a SimState object(s1) as argument, returns the possible states
 after executing the basic block asscociated with s1. The possible states
 are wrapped in `SimSuccessors` class.
 
+
+Some implementationd details:
+1. Some common code is written in the parent class `SimEngine.process`, the different
+implementations are in `_process` method, which takes a new state and a SimSuccessors
+as argument.
+2. In SimEngineVEX, `_process` first lift the binary code basic block to VEX IR
+Super block, and invoke `_handle_irsb` to handle the superblock. After doing some
+setup for the successors object, it iterates through all the statements in the
+superblock and invoke `_handle_statement` to handle each VEX statement.
+`_handle_statement` will further call `translate_stmt` which will call the
+`process` method of each class representing the simulated IR statement.
+
+
+
 ![SimEngine](SimEngine.png)
+
+Current implementations are:
+
+- SimEngineVEX: this engine interprets the VEX code one by one.
+- SimEngineUnicorn: this engine execute the code with Unicorn.
+- ...
+
 
 
 #### Plugins
