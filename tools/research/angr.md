@@ -75,6 +75,28 @@ superblock and invoke `_handle_statement` to handle each VEX statement.
 
 ![Sequence diagram of SimEngine.process](./SimEngine_process.png)
 
+
+#### SimVexIR
+
+This part is used to execute code represented in VEX IR and track
+the constraints in symbolically execution.
+
+![Class Diagram of SimIRStmt](.//Pictures/SimIRStmt.png)
+
+![Class Diagram of SimIRExpr]()
+
+Some implementation details:
+
+1. SimIRStmt defines some common functions:
+   - \_translate\_expr
+   - \_translate\_exprs
+   - \_record\_expr
+   - \_record\_exprs
+   - \_add\_constraints
+   - \_write_tmp
+
+![Sequence diagram of SimIRStment.process](./SimIRStmt_process.png)
+
 #### Plugins
 
 Plugins are used to access information from a program state.
