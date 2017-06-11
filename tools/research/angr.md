@@ -347,4 +347,38 @@ Loader represents the loader which is able to load any objects.
 Backend is used to represent an object.
 Clemory is used to represent the momory space.
 
+Loader:
+When we construct a Loader object, we pass in a path to a binary
+file or a python `file` object to it, or other options, important
+options include:
+- auto\_load\_libs: whether automatically load the dependent libraries
+- force\_load\_libs: a list of libraries to load regardless of if they're required by a loaded object.
+- skip_libs: a list of libraries to never load, even if they're required by a loaded object.
+- main\_opts: options to control the loading of main object.
+- lib\_opts: options to control the loading of dependent libraries
+
+Important fields:
+- main\_binary: the `Backend` object loaded from the file system.
+- memory: the `Clemory` object.
+- shared\_objects: a dictionary name -> backend object
+- all\_elf\_objects: a list of backend obejcts(only elf files)
+- all\_objects: a list of all backend files
+- tls\_object: the tls object
+
+Important method:
+- load\_object: load a file from the file system
+- add\_object: add the loaded object to the memory map(Clemory object).
+- relocate: relocate all the objects, calls `_perform_reloc`
+
+Backend:
+
+Backend is the abstraction of all object files.
+It provides various methods to access the information
+of the object file. It is loaded to the memory map using
+`add_object` method.
+
+Clemory:
+The memory map. we can map anything to the memory space
+and them access the contents using address.
+
 ![class diagram of cle](./cle.png)
