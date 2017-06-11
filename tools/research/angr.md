@@ -201,6 +201,34 @@ Some of the internal API implementations:
 
 ![Class Diagram of SimMemory](./SimMemory.png)
 
+
+Related classes
+----
+
+SimMemoryObject:this class is used to emulate an object in the memory.
+Object is internally represented using a claripy Expression object.
+This class also includes some other utility functions:
+- includes: taking an address as argument, returns true if it is within
+  the object, else return false
+- bytes_at: takes an address and length as argument, returns the object
+  within the range overlapping with the object.
+
+
+Page and SimPagedMemory:
+
+Classes for representing a page includes a base class named
+`BasePage` and 2 subclasses: `TreePage` and `ListPage`.
+
+A memory pages has its permission and can host multiple memory
+object. `TreePage` manages the objects in it using a binary tree
+while `ListPage` manages its objects using a list.
+
+SimPagedMemory is used to manage the paged memory system consisting of
+multiple pages and the objects in these pages. By default, it uses the
+`ListPage` implementation.
+
+![Class diagram of paged memory](./SimPagedMemory.png)
+
 ##### SimSolver
 
 It is a wrapper for the functions provided by claripy.
