@@ -307,6 +307,7 @@ Important methods:
 
 ![Class diagram of paged memory](./SimPagedMemory.png)
 
+
 ##### SimSolver
 
 It is a wrapper for the functions provided by claripy.
@@ -334,3 +335,16 @@ This is a library for:
 1. create symbolic variables
 2. build AST and constraints from symbolic variables
 3. solve the constraints and get solutions for expressions
+
+
+## cle
+
+cle is the loader which is able to load binaries into memory.
+
+There are mainly 3 classes:
+
+Loader represents the loader which is able to load any objects.
+Backend is used to represent an object.
+Clemory is used to represent the momory space.
+
+![class diagram of cle](./cle.png)
