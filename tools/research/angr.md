@@ -422,4 +422,12 @@ this class hosts some functions, in which:
 - path\_group:
 
 
-![AngrObectFactory](./AngrObectFactory.png)
+![AngrObectFactory](./AngrObjectFactory.png)
+
+
+SimOS: it is used to handle OS specific setting,
+including the system call table and loader related
+setting. It makes extensive usage of SimProcedure
+to hook the angr functions into the analysis process.
+
+![SimOS class diagram](./SimOS.png)
