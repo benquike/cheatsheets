@@ -409,3 +409,17 @@ the procedure to create a Project object:
 6. configure the SimOS object;
 7. the plugins are registered by themselves when the python module is loaded;
 
+AngrObjectFactory:
+
+this class hosts some functions, in which:
+
+- successors: is used to get the successor from some address
+- entry\_state: used to get a state with the entry of the program
+- full\_init\_state: used to create a state 
+- blank\_state:
+- call\_state:
+- path:
+- path\_group:
+
+
+![AngrObectFactory](./AngrObectFactory.png)
