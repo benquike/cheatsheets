@@ -392,6 +392,7 @@ and them access the contents using address.
 ## angr
 
 Project:
+--
 
 A project has all the functions of the angr project included in it.
 
@@ -415,6 +416,7 @@ the procedure to create a Project object:
 7. the plugins are registered by themselves when the python module is loaded;
 
 AngrObjectFactory:
+--
 
 this class hosts some functions, in which:
 
@@ -459,9 +461,19 @@ In `SimLinux.state_blank`:
 2. register `SimStateSystem` plugin as `posix`
 3. set the ABI in libc for PPC arch
 
-SimOS: it is used to handle OS specific setting,
+SimOS:
+--
+It is used to handle OS specific setting,
 including the system call table and loader related
 setting. It makes extensive usage of SimProcedure
 to hook the angr functions into the analysis process.
 
 ![SimOS class diagram](./SimOS.png)
+
+Path and PathGroup
+--
+
+Path represents an execution trace.
+PathGroup is used to represent multiple paths.
+
+![Class Diagram of Path and PathGroup](./Path_and_PathGroup.png)
