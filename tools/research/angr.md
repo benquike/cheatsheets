@@ -202,6 +202,23 @@ Some of the internal API implementations:
 ![Class Diagram of SimMemory](./SimMemory.png)
 
 
+SimSymbolicMemory
+----
+
+A subclass of SimMemory with symbolic support. It uses `SimPagedMemory` for symbolic
+tracking support.
+
+Make an address symbolic:
+1. loads the original expression from the memory.
+2. create unconstrained bytes for the value
+3. call `store` of `SimMemory` to save the unconstrained
+   value to the address, which in turn calls
+   [\_store](https://hexdump.cs.purdue.edu/source/xref/simuvex/simuvex/plugins/symbolic_memory.py#648)
+   of SimSymbolicMemory.
+4. Add a constraint to the state.
+
+![sequence diagram of make_symbolic](./SimSymbolicMemory_make_symbolic.png)
+
 Related classes
 ----
 
