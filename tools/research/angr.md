@@ -216,16 +216,77 @@ This class also includes some other utility functions:
 
 Page and SimPagedMemory:
 
+Page represents a page analogous to the page in OS. SimPagedMemory
+is used to manage the manage all the pages in an address space, including
+map/unmap, load/store memory objects, manage symbolic memory addresses etc.
+
 Classes for representing a page includes a base class named
 `BasePage` and 2 subclasses: `TreePage` and `ListPage`.
+
+- contains: first load an object and check whether index is included in the object.
+- store_mo: save an object in the page
+- copy: make a copy of the page
+- keys: returns the list of addresses that are used.
+- load_mo: loads a memory object from mthe page
+- replace_mo: replace an old object in the page with a new object
+- store_overwrite: if the object is bigger than the page, write with sinkhole
+  mechanism, else set all the `_storage` array element accordingly.
+- store_underwrite:if the object is bigger than the page, write with sinkhole
+  mechanism, else set only the `_storage` array elements that are None.
+- load_slice: return a list of tuples(addr, object) from start to end.
 
 A memory pages has its permission and can host multiple memory
 object. `TreePage` manages the objects in it using a binary tree
 while `ListPage` manages its objects using a list.
 
+`ListPage` maintains 2 internal fields `_storage` and `_sinkhole`.
+`_storage` is a list of PAGE_SIZE element.
+- `_storage` stores memory object like this: of object `A`
+  takes `k` bytes from address `a` in this page, all elements
+  from `a` to `a+k` point to `A`.
+
+- `_sinkhole` is used when the whole page belongs to an object, in
+  which case, we only need to track only one object.
+
 SimPagedMemory is used to manage the paged memory system consisting of
 multiple pages and the objects in these pages. By default, it uses the
 `ListPage` implementation.
+
+Important fields:
+- `_pages`: all the pages
+- `_memory_backer` and `_permission_backer`: places where we can get contents
+  and permission info from.
+- `_permission_map`: it saves the permission maps
+- `_cowed`: the pages set to be COW
+- `_initialized`: the initialized pages
+- `_page_size`: the size of one page in byte, default to be 4K
+
+
+Important methods:
+
+- `branch`: Create a SimPagedMemory object that is brached from the current info.
+- `load_objects`: given an address and the number of byte, return a list of all
+  mapped memory objects.
+- `_create_page`: create a new ListPage object from the address given as argument.
+- `_initialize_page`: fill in the page with appropriate values, possibly from backers
+- `_get_page`: return the page specified by the page number provided as argument
+- `contains_no_backer`: check whether there are backers for an address
+- `keys`: return all the addresses where there are objects saved
+- `changed_bytes`: return the set of different bytes between 2 `SimPagedMemory`
+- `_apply_object_to_page`: write a memory object to a page
+- `_containing_pages`: return the pages containing a start and end address
+- `_containing_pages_mo`: return the pages containing a memory object
+- `store_memory_object`:
+- `replace_memory_object`
+- `replace_all`:
+- `get_symbolic_addrs`: get all addresses marked as symbolic.
+- `addrs_for_name`: Returns addresses that contain expressions that contain some name
+- `addrs_for_hash`: Returns addresses that contain expressions that contain a variable with a hash value
+- `memory_objects_for_name`: return the memory objects with some name
+- `memory_objects_for_hash`: return the memory objects with some hash value
+- `permission`: return the permission of an address
+- `map_region`: create pages and map them to the address space
+- `unmap_region`: unmap pages specified in an region.
 
 ![Class diagram of paged memory](./SimPagedMemory.png)
 
