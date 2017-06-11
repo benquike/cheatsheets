@@ -382,3 +382,30 @@ The memory map. we can map anything to the memory space
 and them access the contents using address.
 
 ![class diagram of cle](./cle.png)
+
+
+## angr
+
+Project:
+
+A project has all the functions of the angr project included in it.
+
+![Angr project](./project.png)
+
+It has 5 categories of function:
+1. plugins: including all the mentioned above
+2. factory: used to provide some helper functions
+3. loader: used to get information about the binary program
+4. analyses: used to do analysis on the program
+5. surveyors: used to do information collecting
+
+the procedure to create a Project object:
+1. Load the program and its dependent libraries using cle.Loader;
+2. Determine the CPU architecture of the program to analysze;
+3. Setup the default values of some public and private properties, incluidng sim
+   procedures, engines, analysis, serveyors and knowledge base;
+4. determine the OS of the program to analyse and init SimOS project;
+5. register some sim procedures;
+6. configure the SimOS object;
+7. the plugins are registered by themselves when the python module is loaded;
+
