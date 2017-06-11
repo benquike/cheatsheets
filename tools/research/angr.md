@@ -422,8 +422,34 @@ this class hosts some functions, in which:
 - path\_group:
 
 
+
 ![AngrObectFactory](./AngrObjectFactory.png)
 
+
+Create a blank state:
+To create a blank state from the factory object, it uses the `SimOS`
+object's `state_blank` to achieve that. The general code is in the
+parent class `SimOS`, and the OS specific setup is implemented in
+subclass `SimLinx`.
+In `SimOS.state_blank`:
+1. Prepare the arguments for creating `SimState` object:
+   - figure oout the analysis mode(symbolic by default);
+   - collect the permission map;
+   - content backer from the loader object;
+   - get arch and os name from the project object
+2. Create the `SimState` object
+3. setup the stack(set the sp register and initialize the stack with 0 claripy
+   expression if necessary[by `o.ABSTRACT_MEMORY`])
+4. initialize the registers with 0 claripy expression if `o.INITIALIZE_ZERO_REGISTER`
+5. set up the address of instruction(`ins_addr`) and basic block(bbk_addr) and
+   scratch plugin.
+6. setup the `procedure_data.hook_addr` of the state object
+
+In `SimLinux.state_blank`:
+
+1. if there is a tls object setup the registers accordingly
+2. register `SimStateSystem` plugin as `posix`
+3. set the ABI in libc for PPC arch
 
 SimOS: it is used to handle OS specific setting,
 including the system call table and loader related
