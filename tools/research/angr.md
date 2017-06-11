@@ -73,6 +73,11 @@ superblock and invoke `_handle_statement` to handle each VEX statement.
 `_handle_statement` will further call `translate_stmt` which will call the
 `process` method of each class representing the simulated IR statement.
 
+> Important note: in the end of `_handle_statement`, it checks the type of the
+> statement, if it is an `pyvex.IRStmt.Exit` statement, it means that we need
+> to branch and track the constraints:
+> https://hexdump.cs.purdue.edu/source/xref/simuvex/simuvex/engines/vex/engine.py#315
+
 ![Sequence diagram of SimEngine.process](./SimEngine_process.png)
 
 
@@ -427,6 +432,9 @@ this class hosts some functions, in which:
 
 
 Create a blank state:
+
+![Sequence diagram of state_blank](./SimOs_state_blank.png)
+
 To create a blank state from the factory object, it uses the `SimOS`
 object's `state_blank` to achieve that. The general code is in the
 parent class `SimOS`, and the OS specific setup is implemented in
