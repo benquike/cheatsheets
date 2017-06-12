@@ -143,6 +143,7 @@ of a program.
 | unicorn    | Unicorn                | |
 |uc\_manager  | SimUCManager           | |
 
+
 ##### SimSymbolicMemory and related
 
 Important API:
@@ -333,6 +334,25 @@ It exports functions to:
 
 ![Class Diagram of SimSolver](./SimSolver.png)
 
+
+### SimProcedure
+
+Simply put, a SimProcedure is a class that implements a function `run`
+and will be called when some conditions hold, when `run` is executed,
+the state and successors arguments will be passed so that the procedure
+can update the state and returned successors.
+
+There are a lot of subclasses of SimProcedure for different purposes.
+It is wide used in the angr project, e.g., the linux loader is emulated
+using a `LinuxLoader` which is a subclass of SimProcedure. Hooks are implemented
+using SimProcedures and .....
+
+### SimAction
+
+It is used to reprensent some semantic information of the program, e.g., `SimActionData`
+represents a data read or write to or from memory, register, or file.
+`SimActionConstraint` represents a new constraint is added in the path exploration.
+...
 
 ## claripy
 
