@@ -21,7 +21,7 @@ Important Fields:
 | crash\_mode | |
 | crash\_addr | |
 | crash\_state| |
-
+| trace       | the list of addresses of code blocks that were executed |
 
 Important methods:
 
@@ -29,9 +29,16 @@ Important methods:
   AFL compiler with the input. Check if the input triggers crashes or not, if
   it does, collect the addresses where crash happened.
 
+- `next_branch`: move the current path to the next node along the path.
 
+- `run`: trace the program symbolically along the trace of the input until
+  it finds a deadend.
 
 ## Driller
 
 Driller is the tool that augment fuzzing of AFL by symbolic
 execution.
+
+Driller iteratively calls `next_branch` method of tracer, along the path,
+find the constraints of the missed nodes and solve those constraints to
+generate inputs that will trigger execution along the missed paths.
