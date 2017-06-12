@@ -473,7 +473,38 @@ to hook the angr functions into the analysis process.
 Path and PathGroup
 --
 
-Path represents an execution trace.
+Path represents a node in an execution trace.
 PathGroup is used to represent multiple paths.
 
 ![Class Diagram of Path and PathGroup](./Path_and_PathGroup.png)
+
+
+Path:
+
+Important fields:
+- `state`: the SimState asscociated with the current path node
+- `path`: the parent node
+- `history`: the PathHistory object
+- `callstack`: the CallStack object
+- `callstack_backtrace`: the list of call stack
+- `_run`: the Successors object returned by the engine executing the current code
+  block.
+- `previous_run`: the Successors object of its parent node.
+
+- `successors`: all the path nodes that follow the current node in the CFG.
+- `unconstrained_successors`: all the unconstraned path nodes that follow the
+  current node in the CFG.
+- `unsat_successors`: execute the current code block and return all unsat path
+   nodes following the CFG of the program
+
+Important methods:
+- `_make_successors`: call `factory.successors` and save the returned value in `self._run`
+- `_initialize_callstack`: create a `CallFrame` object and push it to the
+  `callstack` object and create a `CallStackAction` and append it to
+  `callstack_backtrace`.
+- `step`: execute the current code block and return all the path nodes following
+   the CFG of the program
+- `branch_causes`: Returns the variables that have caused this path to branch.
+- `divergence_addr`: compare current path with some other path, and return the
+  basic block at which the paths diverged.
+- `_manage_callstack`: Adds the information from the last run to the current path.
