@@ -359,7 +359,7 @@ struct {                                                                \
 
 ```
 
-### Tail queue 
+### Tail queue
 
 ```
 /*
@@ -523,8 +523,20 @@ APIs:
 定义和注册类型
 -
 
-1. 定义一个`TypeInfo`结构体对象
-2. 注册这个类型
+1. 定义一个`TypeInfo`结构体对象，并为这个类型起一个唯一的名字
+  - 把名字字段设成这个名字
+  - 把parent字段设成父类的类型名字
+2. 定义一个跟这个类型对应的对象的结构体，一定要注意，这个结构体的第一个字段一定要设成跟它对应的父类的
+  `class object`。并用这个结构体的size去设置好`TypeInfo`对象的`instance_size`字段。
+3. 定义一个class initializer。这个函数用于初始化一个对象。此外我们还可以定义其他的一些函数：
+  - `instance_init`
+  - `instance_post_init`
+  - `instance_finalize`
+  - `class_base_init`
+  - `class_finalize`
+  - 如何设置Interface?
+
+4. 注册这个类型
 
 `type_register_static`
 
@@ -562,6 +574,12 @@ Data Structures:
 - [AddressSpace](https://hexdump.cs.purdue.edu/source/xref/qemu/include/exec/memory.h#290)
 - [MemoryRegionSection](https://hexdump.cs.purdue.edu/source/xref/qemu/include/exec/memory.h#321)
 - [MemoryListener](https://hexdump.cs.purdue.edu/source/xref/qemu/include/exec/memory.h#259)
+
+重要的函数：
+- [memory_region_init](https://hexdump.cs.purdue.edu/source/xref/qemu/memory.c#978)
+- [memory_region_get_addr](https://hexdump.cs.purdue.edu/source/xref/qemu/memory.c#1007)
+- [memory_region_get_container](https://hexdump.cs.purdue.edu/source/xref/qemu/memory.c#1016)
+- ....
 
 ## 模拟Machine
 
@@ -686,12 +704,12 @@ name "amd-iommu", bus System
 .....
 ```
 
-## char dev backend 
+## char dev backend
 
 列出所有支持的char dev backend
 ```
 $ qemu-system-x86_64 -chardev help
-qemu-system-x86_64: -chardev help: Available chardev backend types: 
+qemu-system-x86_64: -chardev help: Available chardev backend types:
 msmouse
 parallel
 spicevmc
@@ -702,7 +720,17 @@ null
 
 ## 使用HIM(Human Monitor Interface)
 
-指定HIM的文件: `-monitor:DEV`
+指定HIM的文件: `-monitor　DEV`
+在不指定的情况下，默认是在Virtual Console。我们可以在VM里面用Ctrl-Alt 1-6来启动其中一个
+Virtual Console访问HMI.
+
+我们可以通过`-monitor stdio`让我们可以通过stdio来访问HMI。
+
+如果我们以`-nographic`模式启动系统，系统启动之后，stdio既充当serial console, 也充当
+HMI的接口。我们可以使用`Contrl-a c`来切换。
+
+使用HMI,我们可以查看机器的各种信息，包括bus, device, QOM, memory。
+同时我们也可以对机器进行热插拔。详细信息：http://nairobi-embedded.org/qemu_monitor_console.html
 
 ## 使用Debugger
 
