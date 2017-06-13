@@ -558,6 +558,9 @@ object_dynamic_cast()
 ```
 
 ### How QOM works
+
+![QOM components](./QOM.png)
+
 1. 注册所有类型: 使用`type_init`macro将一个函数注册成C runtime constructor, 这样这个
   　函数在程序的main函数之前被调用。一般情况下，在这个函数里面调用`type_register_static`
     向QOM注册这个类型。注册类型的时候使用`TypeInfo`，但是在内部，使用`TypeImpl`对象保存
