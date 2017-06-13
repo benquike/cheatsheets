@@ -50,4 +50,4 @@ gcc test.c `pkg-config --cflags --libs glib-2.0` -o test
 5. [Glib-C: C as an alternative Object Oriented Environment](http://lore.ua.ac.be/Publications/pdf/Hendrickx2004.pdf)
 6. [Object-Oriented Programming in C](https://www.cs.colorado.edu/~kena/classes/5448/f12/presentation-materials/gatchell.pdf)
 7. [Manage C data using the GLib collections](https://www6.software.ibm.com/developerworks/education/l-glib/l-glib-pdf.pdf)
-8. []()
+8. [Compiling GLib Applications](https://developer.gnome.org/glib/stable/glib-compiling.html)
