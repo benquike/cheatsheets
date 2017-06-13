@@ -521,7 +521,6 @@ APIs:
 - [object_initialize](https://hexdump.cs.purdue.edu/source/xref/qemu/qom/object.c#380)
 
 定义和注册类型
--
 
 1. 定义一个`TypeInfo`结构体对象，并为这个类型起一个唯一的名字
   - 把名字字段设成这个名字
@@ -557,6 +556,21 @@ cast
 ```
 object_dynamic_cast()
 ```
+
+### How QOM works
+1. 注册所有类型: 使用`type_init`macro将一个函数注册成C runtime constructor, 这样这个
+  　函数在程序的main函数之前被调用。一般情况下，在这个函数里面调用`type_register_static`
+    向QOM注册这个类型。注册类型的时候使用`TypeInfo`，但是在内部，使用`TypeImpl`对象保存
+    一个类的信息，在这个对象里面保存类一个ClassObject对象的指针。
+2. 分配和初始化ClassObject对象
+  　一个类型都有一个相对应的ClassObject对象。这个对象在注册的时候没有被分配和初始化。这个对象
+　　的分配和初始化由`type_initialize`函数完成。这个函数的调用在不同的时机完成。
+  ```
+    vl.c:select_machine() --> vl.c:find_default_machine() --> object_class_get_list() --> object_class_foreach() --> object_class_foreach_tramp() --> type_initialize()
+  ```
+  比方说，
+3. 分配和使用object
+
 ## qdev
 
 ## qapi
@@ -586,7 +600,7 @@ Data Structures:
 
 重要的数据结构:
 - Embedded Boards(`include/hw/boards.h`)
-    - [DEFINE_MACHINE](https://hexdump.cs.purdue.edu/source/xref/qemu/include/hw/boards.h#198)
+    - [DEFINE_MACHINE](https://hexdump.cs.purdue.edu/source/xref/qemu/include/hw/boards.h#198): 定义并注册一个`TypeInfo`.
     - [SET_MACHINE_COMPAT](https://hexdump.cs.purdue.edu/source/xref/qemu/include/hw/boards.h#215)
     - [MachineClass](https://hexdump.cs.purdue.edu/source/xref/qemu/include/hw/boards.h#106)
     - [MachineState](https://hexdump.cs.purdue.edu/source/xref/qemu/include/hw/boards.h#159)
