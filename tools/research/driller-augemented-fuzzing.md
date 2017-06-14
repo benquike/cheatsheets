@@ -42,3 +42,22 @@ important methods:
    influence the fuzzing process.
 - `bitmap`: used to extract the bitmap of a fuzzer
 - `crashes`: get all the crash inputs
+
+
+Implementation details:
+
+1. Fuzzer class uses a callback called `stuck_callback`, which is passed in from
+the constructor. Internally, it uses a timer to call the callback
+periodically[here](https://hexdump.cs.purdue.edu/source/xref/fuzzer/fuzzer/fuzzer.py#650).
+In the callback, it get the queue files from the outputn directory of the fuzzer,
+nremove the already drilled files from the queue, take one undrilled input and create a
+driller worker thead and start it. In the driller thread, it calls `_run_drill` function,
+
+In this function, it will create a new process using the following command:
+
+```
+timeout -k xxx+10 xxx python local_callback.py _binary_path, _fuzzer_out_dir, _bitmap_path, _path_to_input_to_drill
+```
+That is to say, the main function of [local_callback](https://hexdump.cs.purdue.edu/source/xref/driller/driller/local_callback.py)
+will be called and in it the Driller algorithm is used to generate the new fuzzing inputs.
+
