@@ -61,3 +61,5 @@ timeout -k xxx+10 xxx python local_callback.py _binary_path, _fuzzer_out_dir, _b
 That is to say, the main function of [local_callback](https://hexdump.cs.purdue.edu/source/xref/driller/driller/local_callback.py)
 will be called and in it the Driller algorithm is used to generate the new fuzzing inputs.
 
+In this main function, it creates a `Driller` object and then use the `drill_generator`
+to generate all the new inputs and then write them to `afl_output/driller/queue` directory.
