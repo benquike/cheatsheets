@@ -486,6 +486,9 @@ void module_call_init(module_init_type type);
 ```
 
 ## QemuOpts
+
+https://habkost.net/posts/2016/12/qemu-apis-qemuopts.html
+
 Source: `qemu/option.h`, `qemu/config-file.h`, `util/qemu-config.c`
 
 重要数据结构:
@@ -559,6 +562,8 @@ object_dynamic_cast()
 
 ### How QOM works
 
+这个设计的原则是什么？
+
 ![QOM components](./QOM.png)
 
 1. 注册所有类型: 使用`type_init`macro将一个函数注册成C runtime constructor, 这样这个
@@ -573,6 +578,67 @@ object_dynamic_cast()
   ```
   比方说，
 3. 分配和使用object
+- `object_new_with_type`: Create an object of a specified type(by name). This function will allocate memory for the new object and  
+initialize it.
+
+
+### Managing Object relationship
+
+#### composition
+
+In this relationship, one object is a part of another object. and the lifecycle
+of the child object will be managed by the parent object.
+
+QOM uses a naming scheme for identifying objects. If object A contains object
+B, then B can be represented using "A/B".
+
+APIs:
+
+
+This api adds one object as child of another object.
+```
+void object_property_add_child(Object *parent, const char *name,
+                               Object *child, Error **errp);
+```
+
+This api is used to get the type of a child object in parent.
+
+```
+object_property_get_type(Object parent, const char *name, Error **errp);
+```
+
+This API can be used to get the canonical name of a child object.
+
+```
+// the full canonical name
+gchar *object_get_canonical_path(Object *obj);
+// the component name
+gchar *object_get_canonical_path_component(Object *obj);
+```
+
+Others:
+
+```
+char *object_property_get_str(Object *obj, const char *name,
+                              Error **errp);
+
+char *object_property_print(Object *obj, const char *name, bool human,
+                            Error **errp);
+
+Object *object_property_get_link(Object *parent, const char *name,
+                                  Error **errp);
+```
+
+#### Asscociation
+
+```
+void object_property_add_link(Object *obj, const char *name,
+                              const char *type, Object **child,
+                              void (*check)(Object *obj, const char *name,
+                              Object *val, Error **errp),
+                              ObjectPropertyLinkFlags flags,
+                              Error **errp);
+```
 
 ## qdev
 
