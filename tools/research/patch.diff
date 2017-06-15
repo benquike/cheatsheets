@@ -1,0 +1,58 @@
+diff --git a/patches/afl-patch-libsound.diff b/patches/afl-patch-libsound.diff
+new file mode 100644
+index 0000000..dbe79e7
+--- /dev/null
++++ b/patches/afl-patch-libsound.diff
+@@ -0,0 +1,29 @@
++diff --git a/qemu_mode/build_qemu_support.sh b/qemu_mode/build_qemu_support.sh
++index d9d9ff2..234c5d9 100755
++--- a/qemu_mode/build_qemu_support.sh
+++++ b/qemu_mode/build_qemu_support.sh
++@@ -126,6 +126,7 @@ patch -p0 <patches/elfload.diff || exit 1
++ patch -p0 <patches/cpu-exec.diff || exit 1
++ patch -p0 <patches/translate-all.diff || exit 1
++ patch -p0 <patches/syscall.diff || exit 1
+++git apply patches/syscall1.diff || exit 1
++ 
++ echo "[+] Patching done."
++ 
++diff --git a/qemu_mode/patches/syscall1.diff b/qemu_mode/patches/syscall1.diff
++new file mode 100644
++index 0000000..f592069
++--- /dev/null
+++++ b/qemu_mode/patches/syscall1.diff
++@@ -0,0 +1,11 @@
+++--- qemu_mode/qemu-2.3.0.1/linux-user/syscall.c	2017-06-14 18:21:34.884866674 -0400
++++++ qemu_mode/qemu-2.3.0/linux-user/syscall.c	2017-06-14 18:44:48.221424755 -0400
+++@@ -96,7 +96,7 @@
+++ #include <linux/unistd.h>
+++ #include <linux/cdrom.h>
+++ #include <linux/hdreg.h>
+++-#include <linux/soundcard.h>
++++#include <linux/soundcard.h.oss3>
+++ #include <linux/kd.h>
+++ #include <linux/mtio.h>
+++ #include <linux/fs.h>
+diff --git a/setup.py b/setup.py
+index 111270e..2a3c546 100644
+--- a/setup.py
++++ b/setup.py
+@@ -8,6 +8,7 @@ from setuptools.command.develop import develop as _develop
+ 
+ AFL_UNIX_INSTALL_PATH = os.path.join("bin", "afl-unix")
+ AFL_UNIX_PATCH_FILE = os.path.join("patches", "afl-patch.diff")
++AFL_UNIX_PATCH_FILE1 = os.path.join("patches", "afl-patch-libsound.diff")
+ AFL_CGC_INSTALL_PATH = os.path.join("bin", "afl-cgc")
+ AFL_MULTI_CGC_INSTALL_PATH = os.path.join("bin", "afl-multi-cgc")
+ SUPPORTED_ARCHES = ["aarch64", "x86_64", "i386", "arm", "ppc", "ppc64", "mips", "mipsel", "mips64"]
+@@ -27,6 +28,10 @@ def _setup_other_arch():
+         with open(AFL_UNIX_PATCH_FILE, "rb") as f:
+             if subprocess.call(['patch', '-p0'], stdin=f, cwd=AFL_UNIX_INSTALL_PATH) != 0:
+                 raise LibError("Unable to apply AFL patch")
++        # new patch
++        if subprocess.call(['git', 'apply', os.path.join(os.path.dirname(os.path.abspath(__file__)), AFL_UNIX_PATCH_FILE1)],
++                           cwd=AFL_UNIX_INSTALL_PATH) != 0:
++            raise LibError("Unable to apply AFL patch")
+ 
+         if subprocess.call(['./build.sh'] + SUPPORTED_ARCHES, cwd=AFL_UNIX_INSTALL_PATH) != 0:
+             raise LibError("Unable to build afl-other-arch")
