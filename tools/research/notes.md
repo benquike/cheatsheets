@@ -24,8 +24,8 @@ pip install angr
 Install tracer, which is the concolic execution tool:
 
 ```
-apt-get build-dep qemu-system
-apt-get install libacl1-dev
+sudo apt-get build-dep qemu-system
+sudo apt-get install libacl1-dev
 pip install git+https://github.com/angr/tracer.git
 ```
 
@@ -43,4 +43,14 @@ Install fuzzer
 ```
 pip install git+https://github.com/shellphish/fuzzer
 
+```
+
+
+## running the fuzzer
+
+```
+cd /sys/devices/system/cpu; echo performance | sudo tee cpu*/cpufreq/scaling_governor; cd -
+echo 1 | sudo tee /proc/sys/kernel/sched_child_runs_first
+
+shellphuzz -c 4 -d 2 -i ./YAN01_00015
 ```
