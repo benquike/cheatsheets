@@ -63,3 +63,13 @@ will be called and in it the Driller algorithm is used to generate the new fuzzi
 
 In this main function, it creates a `Driller` object and then use the `drill_generator`
 to generate all the new inputs and then write them to `afl_output/driller/queue` directory.
+
+2. when fuzzer runs CGC binaries, it uses the following cmd:
+```
+virtualenvs/driller+/bin/afl-cgc/afl-fuzz -i - -o /dev/shm/work/CADET_00001/sync -m 8G -Q -S fuzzer-2 -x /dev/shm/work/CADET_00001/CADET_00001.dict -- bin/CADET_00001
+```
+
+And internally, it uses qemu to run the binary.
+`virtualenvs/driller+/bin/afl-cgc/tracers/i386/afl-qemu-trace` is the qemu used.
+And as `afl-qemu-trace` is not in the same directory as `afl-fuzz`, we need to
+setup `AFL_PATH` environmental variable [here](https://hexdump.cs.purdue.edu/source/xref/fuzzer/fuzzer/fuzzer.py#230).
