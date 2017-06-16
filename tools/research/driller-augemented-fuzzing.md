@@ -73,3 +73,8 @@ And internally, it uses qemu to run the binary.
 `virtualenvs/driller+/bin/afl-cgc/tracers/i386/afl-qemu-trace` is the qemu used.
 And as `afl-qemu-trace` is not in the same directory as `afl-fuzz`, we need to
 setup `AFL_PATH` environmental variable [here](https://hexdump.cs.purdue.edu/source/xref/fuzzer/fuzzer/fuzzer.py#230).
+
+
+3. In fuzzer, there is a tool for creating dictionary files. it works by creating a
+control flow of the binary and then, walk through the binary and check the memmory image
+looking for strings in the memmory. and all the strings are used as part of the dictionary.
