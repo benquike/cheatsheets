@@ -54,3 +54,14 @@ echo 1 | sudo tee /proc/sys/kernel/sched_child_runs_first
 
 shellphuzz -c 4 -d 2 -i ./YAN01_00015
 ```
+
+Then a ipython session will start up and by running
+
+```
+fuzzer.crashes()
+```
+
+we can get all the crashing inputs.
+
+
+Then we can cofnirm the crash 
