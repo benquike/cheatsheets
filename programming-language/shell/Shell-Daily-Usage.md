@@ -34,4 +34,13 @@ $ fg %1
 is a useful one-liner which will give you the full directory name
 of the script no matter where it is being called from.[^1]
 
+
+## wild card
+
+to match number range
+
+```
+mv some/dir/{1..10}.txt ..
+```
+
 [^1]: http://stackoverflow.com/questions/59895/can-a-bash-script-tell-which-directory-it-is-stored-in
