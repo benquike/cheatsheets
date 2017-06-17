@@ -18,7 +18,7 @@
 #include <vector>
 #include <memory>
 #include <fstream>
-
+#include <string>
 #include "llvm/ADT/Statistic.h"
 #include "llvm/IR/Constant.h"
 #include "llvm/IR/Constants.h"
@@ -361,8 +361,18 @@ namespace {
 
         for (set<Value *>::iterator its = it->second.begin(); its != it->second.end(); its ++) {
           if (Function *f = dyn_cast<Function>(*its)) {
+	    string fname = it->first->getName().str();
+	    string sname = it->first->getName().str();
+
+	    if (fname.find(".") == fname::npos) {
+	      fname = "\"" + fname + "\"";
+	    }
+	    if (sname.find(".") == sname::npos) {
+	      sname = "\"" + sname + "\"";
+	    }
+
              errs() << f->getName() << ",";
-             dotfile << "\t" << it->first->getName().str() << " -> " << f->getName().str() << ";" << endl;
+             dotfile << "\t" << fname << " -> " << sname << ";" << endl;
              continue;
           }
 
