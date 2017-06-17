@@ -591,3 +591,21 @@ in it. See the following code sample:
 from angrutils import *
 plot_cfg(cfg, "CROMU_00001_cfg", asminst=True, remove_imports=True, remove_path_terminator=True)
 ```
+
+Additional notes:
+
+Using radare2 to get CFG(but this is only the cfg inside a function).
+1. disable stripping of the binaries
+2. load the binary into r2
+3. use `agv` command(this needs `xdot`) or ag to generate a dot file and then
+use use dot to generate a png or other files.
+
+Inside r2:
+```
+ag <addr_of_func> > func_cfg.dot
+```
+
+outside of r2:
+```
+dot -Tpng func_cfg.dot main_cfg.png
+```
