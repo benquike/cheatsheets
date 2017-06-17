@@ -64,4 +64,17 @@ fuzzer.crashes()
 we can get all the crashing inputs.
 
 
-Then we can cofnirm the crash 
+Then we can cofnirm the crash.
+
+checking the stats file of fuzzers:
+
+```
+fuzzer.stats
+```
+
+It is a dictionary containimg the stats of each fuzzer
+using the names of the fuzzers we can extract the stats
+of each fuzzer.
+
+
+
