@@ -528,3 +528,46 @@ Important methods:
 - `divergence_addr`: compare current path with some other path, and return the
   basic block at which the paths diverged.
 - `_manage_callstack`: Adds the information from the last run to the current path.
+
+
+
+Analysis
+--
+
+1. Create and register analysis.
+
+To create a customized analysis class, all we need to do is just create a
+subclass of `angr.Analysis`. To register an analysis, using `angr.register_analysis`
+
+
+    >>> import angr
+
+    >>> class MockAnalysis(angr.Analysis):
+    ...     def __init__(self, option):
+    ...         self.option = option
+
+    >>> angr.register_analysis(MockAnalysis, 'MockAnalysis')
+
+
+2. Preincluded analysis:
+
+CFG: there are 2 kinds of CFGs provided by angr. CFGFast
+and CFGAccurate.
+
+To get the CFG of a program, first we need to start a `angr.Project`
+for that program.
+Then use `b.analyses.CFGAccurate` or `b.analyses.Fast` to construct
+the CFG.
+
+In genrating the CFGs we can pass some options,
+
+
+| Option                      | 	Description   |
+|-----------------------------|----------------|
+| context_sensitivity_level   |	This sets the context sensitivity level of the analysis. See the context sensitivity level section below for more information. This is 1 by default.|
+| starts	                  |A list of addresses, to use as entry points into the analysis.
+| keep_state	              | To save memory, the state at each basic block is discarded by default. If keep_state is True, the state is saved in the CFGNode.|
+| ..... | .....|
+
+
+
