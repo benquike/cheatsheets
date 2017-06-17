@@ -116,6 +116,29 @@ print t.trace
     ...]
 ```
 
+In the constructor it will also prepare the `path_group` variable,
+which contains a state at address at the first address in the trace.
+Preparing the first `path_group` varible is done in `_prepare_paths`
+method, which will call others different methods depending on the OS.
+There are a lot of detailed setup in those methods, among which the most
+important few of them are:
+1. create a project
+2. setup the project
+3. create a path group using `full_init_state`
+4. proceed the execution of the state to go to the entry address of the target program
+
+```
+import tracer
+samplefile  =  "/dev/shm/work/CADET_00003/sync/fuzzer-master/crashes/id:000000,sig:11,src:000000,op:havoc,rep:64"
+f = file(samplefile)
+input = f.read()
+t = tracer.Tracer('CADET_00003/bin/CADET_00003', input=input)
+
+first = t.path_group.active[0]
+assert first.addr == self._p.entry
+```
+
+
 ## Driller
 
 Driller is the tool that augment fuzzing of AFL by symbolic
