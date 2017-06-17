@@ -44,9 +44,40 @@ Important parts:
 `PATCHED_` macros: are used to facilitate the building of vulnerable and corresponding
 secure binaries.
 
+`Partial`: a binary that is only partially patched. If a binary has multiple vulerabilities and
+it is only patched to fix some (not all) of the vulerabilities, it is called partially patched.
+
+`Poll`: what are polls?
+
+`PoV`: what are proof of verification/vulerability?
 
 ## cgc toolchain
 
+`file`: detect the magic of files, able to detect cgc executable format.
+
+    file CROMU_00001/bin/CROMU_00001
+    CROMU_00001/bin/CROMU_00001: CGC 32-bit LSB executable, (CGC/Linux)
+
+
+`readcgcef`: read information from the cgc executable file, much like `readelf`.
+
+`cgc2elf`: convert a cgc executable to an elf file.
+
+
+Know-hows:
+
+Preventing the default building system from stripping the binaries
+of the CGC.
+
+In `/usr/share/cb-testing/cgc-cb.mk`, remove the `-s` option
+
+    $(RELEASE_PATH): $(RELEASE_OBJS)
+        $(LD) $(LDFLAGS) -s -o $(RELEASE_PATH) -I$(BUILD_DIR)/$(RELEASE_DIR)/lib $^ $(LIBS)
+
+==>
+
+    $(RELEASE_PATH): $(RELEASE_OBJS)
+        $(LD) $(LDFLAGS) -o $(RELEASE_PATH) -I$(BUILD_DIR)/$(RELEASE_DIR)/lib $^ $(LIBS)
 
 
 ## how to build the samples
