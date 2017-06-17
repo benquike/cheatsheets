@@ -570,4 +570,24 @@ In genrating the CFGs we can pass some options,
 | ..... | .....|
 
 
+Sample code is as following:
 
+```
+import angr
+b = angr.Project('bin/CROMU_00001', load_options={'auto_load_libs': False})
+# generate an accurate CFG
+cfg = b.analyses.CFGAccurate(keep_state=True)
+```
+
+Visualizing CFGs
+
+Angr does not support for visualization of CFGs.
+There is a repo called [angr-utils](https://github.com/axt/angr-utils)
+which is undergoing drastic change. There is a function called `plot_cfg`
+in it. See the following code sample:
+
+
+```python
+from angrutils import *
+plot_cfg(cfg, "CROMU_00001_cfg", asminst=True, remove_imports=True, remove_path_terminator=True)
+```
