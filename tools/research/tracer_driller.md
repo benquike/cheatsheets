@@ -34,6 +34,88 @@ Important methods:
 - `run`: trace the program symbolically along the trace of the input until
   it finds a deadend.
 
+
+Coding sample:
+
+To start a tracer,
+```python
+import tracer
+input = file('/dev/shm/work/KPRCA_00064/sync/fuzzer-master/queue/id:000007,src:000000,op:ext_UI,pos:0,+cov').read()
+t = tracer.Tracer('KPRCA_00064/bin/KPRCA_00064', input=input)
+```
+
+In this setting, the tracer will run the program `KPRCA_00064/bin/KPRCA_00064` and
+the program will read `stdin` from the input, it is like running the following cmd:
+
+```
+$ KPRCA_00064/bin/KPRCA_00064 < /dev/shm/work/KPRCA_00064/sync/fuzzer-master/queue/id:000007,src:000000,op:ext_UI,pos:0,+cov
+```
+
+If we want to add more options to the program, we can use
+the `add_options` named argument in the constructor.
+
+In the constructor, it will run `dynamic_trace` and colllect the list of basic blocks
+exercised during the execution of the target program with the input the addresses
+of the basic blocks are saved in the `traces` field. And if the input caused a
+crash, it will also save the crash address.
+
+```
+print t.trace
+
+[134530765,
+ 134531030,
+ 134531078,
+ 134531096,
+ ....
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ 134531096,
+ ...]
+```
+
+```python
+import tracer
+samplefile  =  "/dev/shm/work/CADET_00003/sync/fuzzer-master/crashes/id:000000,sig:11,src:000000,op:havoc,rep:64"
+f = file(samplefile)
+input = f.read()
+t = tracer.Tracer('CADET_00003/bin/CADET_00003', input=input)
+
+print t.crash_addr
+>>> 134513508
+
+print t.trace
+    [134514172,
+    134514437,
+    134514485,
+    134514503,
+    134514503,
+    134514503,
+    134514503,
+    ....
+    134514503,
+    134514503,
+    134514503,
+    134514503,
+    134514503,
+    134514503,
+    ...]
+```
+
 ## Driller
 
 Driller is the tool that augment fuzzing of AFL by symbolic
