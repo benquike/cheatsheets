@@ -95,8 +95,12 @@ The algorithm for trimming the testcase is in `write_with_gap`.
 
 ## pending_favored
 
-How does this work?
-
+The number of pending_favored is set in `cull_queue` function.
+1. Set the `favored` field of all testcases to 0;
+2. If a testcase is ranked as top at some edge, and that edge is
+   not taken by other favored testcases, it is marked as favored,
+   and if it was not fuzzed before, it is added in `pending_favored`
+3. Mark the testcase according to whehter it is redundant.
 
 
 ## implementation details
