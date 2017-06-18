@@ -6,6 +6,11 @@ The flowchart of afl-fuzz
 
 The core part is in `fuzz_one` function.
 
+The call graph of `fuzz_one` is like this:
+
+![call graph of fuzz_one](./afl-fuzz_cg_fuzz_one.png)
+
+
 ## bitmap
 
 There is a hidden option `-B` for loading the bitmap.
@@ -30,3 +35,11 @@ How does this work?
 ## pending_favored
 
 How does this work?
+
+
+
+## implementation details
+
+1. When AFL found no new inputs, it will try using testcase splicing
+   by setting `use_splicing` to 1 and and update the number of cycles
+   without new inputs.
