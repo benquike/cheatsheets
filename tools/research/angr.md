@@ -501,6 +501,10 @@ PathGroup is used to represent multiple paths.
 
 Path:
 
+The connection from one state to another is managed in the `history` field.
+
+![Path History](./Path_History.png)
+
 Important fields:
 - `state`: the SimState asscociated with the current path node
 - `path`: the parent node
@@ -528,7 +532,6 @@ Important methods:
 - `divergence_addr`: compare current path with some other path, and return the
   basic block at which the paths diverged.
 - `_manage_callstack`: Adds the information from the last run to the current path.
-
 
 
 Analysis
