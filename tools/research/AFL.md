@@ -15,7 +15,26 @@ The logic of `fuzz_one`:
    be skipped with some probability.
 2. open the file saved in `queue_curr` and map its content to memory;
 3. call `calibrate_case` to calibrate the input if previously calibrated in failure.
-4. 
+4. calculate the perf score
+5. perform **various** mutation and run the target with the mutated input.
+
+
+`common_fuzz_stuff`:
+1. if there is a post handler, run it. This can be use add some customization
+   to the mutation algorithm;
+2. save the testcase to the file and run the target;
+3. if the target ran out of time, handle this situation;
+4. If the user requested to skip the curent, handle it(`SIG_USR1`?);
+5. Check whether the mutated testcase is interesting or not, it is handled
+   by `save_if_interesting`;
+
+`save_if_interesting`:
+1. Check if there is new bits in the map, if not, it is not deemed interesting;
+2. Add the testcase to the queue
+3. If the testcase triggers new edges, mark the testcase as having new coverage;
+4. Calibrate the testcase(and update the score);
+5. Write the testcase to the output directory;
+
 
 ![call graph of fuzz_one](./afl-fuzz_cg_fuzz_one.png)
 
