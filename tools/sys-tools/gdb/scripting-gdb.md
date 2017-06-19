@@ -2,7 +2,7 @@
 
 ## command
 
-Starting GDB, run `python-interactive` pr `python` command
+Starting GDB, run `python-interactive` or `python` command
 
 ## scripting
 
@@ -15,6 +15,8 @@ Important APIs[^1]
   ```
       num = gdb.execute("x/s " + addr_str, to_string=True)
   ```
+
+More reference is [here](./gdb_python.pdf)
 
 
 [^1]: https://sourceware.org/gdb/onlinedocs/gdb/Python-API.html#Python-API
