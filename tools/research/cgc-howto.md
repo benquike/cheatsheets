@@ -173,7 +173,7 @@ sudo make install
 
 3. build the challenge with gcov support
    To build it with GCOV support, first we need an updated
-   [cgc-cb.mk][./cgc-cb.mk] and replace the old one `/usr/share/cb-testing/cgc-cb.mk`
+   [cgc-cb.mk](./cgc-cb.mk) and replace the old one `/usr/share/cb-testing/cgc-cb.mk`
 
     when building the challenge, the the following command:
 
