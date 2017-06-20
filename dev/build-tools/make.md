@@ -1,5 +1,15 @@
 # Makefile usage
 
+## variables
+
+we can define a variable from the command.
+
+If we run the following cmd, `VAR` will be defined
+in the Makefile.
+```
+make VAR=a
+```
+
 ## text functions
 
 ### verbose substitute
