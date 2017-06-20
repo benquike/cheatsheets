@@ -22,7 +22,7 @@ def read_memory(addr):
 
 class LLVMGCDAFileStartBp(gdb.Breakpoint):
     def __init__(self):
-        super(LLVMGCDAFileStartBp, self).__init__("lib/GCDAProfiling.c:201")
+        super(LLVMGCDAFileStartBp, self).__init__("GCDAProfiling.c:204")
 
     def stop(self):
         write_buffer = gdb.parse_and_eval("write_buffer")
