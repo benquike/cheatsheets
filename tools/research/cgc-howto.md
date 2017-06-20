@@ -123,6 +123,93 @@ or
 ## classifying the samples
 
 
+## how to run gcov on the challenges
+
+The cgc platform does not have support for files
+thus gcov support is not complete.
+
+But the compiler has the function for instrumenting
+the programs for collecting the coverage.
+
+We have done some patch for collecting gcov information
+on the challenges.
+
+1. install gcc of lower version because the instrumentation
+   in the compiler of the cgc os only supports old version of
+   gcov info.
+
+Add apt source with gcc-4.4
+```
+# add the following 2 lines to /etc/apt/sources.list
+deb http://dk.archive.ubuntu.com/ubuntu/ trusty main universe
+```
+
+Install gcc-4.4
+```
+sudo apt-get update
+sudo apt-get install gcc-4.4
+```
+
+Make `gcov-4.4` the default `gcov`
+```
+cd /usr/bin/
+sudo rm gcov
+sudo ln -s gcov-4.4 gcov
+```
+
+2. build and install a new version of libcgc
+   Get and install the patched libgcg
+
+    Run the building on the VM.
+
+```
+git clone https://github.com/benquike/libcgc.git
+cd libcgc
+
+# run those command on the vm
+make
+sudo make install
+```
+
+3. build the challenge with gcov support
+   To build it with GCOV support, first we need an updated
+   [cgc-cb.mk][./cgc-cb.mk] and replace the old one `/usr/share/cb-testing/cgc-cb.mk`
+
+    when building the challenge, the the following command:
+
+    ```
+    make build GCOV=1
+    ```
+
+
+4. run the challenge and collect coverage information
+
+    As there is no file system API support in cgc, we need to use
+    gdb to collect the coverage data.
+    there is a [script](./cmd_example.py) for doing this.
+
+```
+gdb <bin/challege_name>
+
+# in GDB
+source cmd_example.py
+run < input
+quit
+```
+
+After these, all the coverage data is written to the gcda files.
+
+5. visualize the coverage
+
+    Change directory (`cd`) to the root of the challange
+    run the following cmd:
+
+```
+lcov --capture --directory . --output-file coverage.info
+genhtml coverage.info --output-directory <html>
+```
+
+<html> is the place to put the gernated html file
 
 ## how to detect the checksum problems
 
