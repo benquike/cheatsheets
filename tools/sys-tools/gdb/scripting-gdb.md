@@ -16,7 +16,8 @@ Important APIs[^1]
       num = gdb.execute("x/s " + addr_str, to_string=True)
   ```
 
-More reference is [here](./gdb_python.pdf)
-
+More reference is [here](./gdb_python.pdf) and here[^2] and here[^3]
 
 [^1]: https://sourceware.org/gdb/onlinedocs/gdb/Python-API.html#Python-API
+[^2]: [Using Python to debug C and C++ programs](https://dmalcolm.fedorapeople.org/presentations/PyCon-US-2011/GdbPythonPresentation/GdbPython.html)
+[^3]: [PythonGdbTutorial](https://sourceware.org/gdb/wiki/PythonGdbTutorial)
