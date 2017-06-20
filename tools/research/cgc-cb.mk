@@ -44,6 +44,10 @@ CXX			= /usr/i386-linux-cgc/bin/clang++
 OBJCOPY			= /usr/i386-linux-cgc/bin/objcopy
 LD_ELF                  = /usr/bin/ld
 
+ifdef GCOV
+CFLAGS += --coverage
+endif
+
 SHELL		:= $(SHELL) -e
 BIN_DIR		= bin
 POV_DIR		= pov
@@ -223,7 +227,7 @@ endif
 release: prep $(RELEASE_PATH)
 
 $(RELEASE_PATH): $(RELEASE_OBJS)
-	$(LD) $(LDFLAGS) -s -o $(RELEASE_PATH) -I$(BUILD_DIR)/$(RELEASE_DIR)/lib $^ $(LIBS)
+	$(LD) $(LDFLAGS) -o $(RELEASE_PATH) -I$(BUILD_DIR)/$(RELEASE_DIR)/lib $^ $(LIBS)
 	$(LD) $(LDFLAGS) -o $(RELEASE_DEBUG_PATH) -I$(BUILD_DIR)/$(RELEASE_DIR)/lib $^ $(LIBS)
 
 $(BUILD_DIR)/$(RELEASE_DIR)/%.o: %.c
