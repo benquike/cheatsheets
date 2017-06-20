@@ -34,4 +34,19 @@ command to `gcc` or `clang`
 
 	gcc -Wl,--verbose
 or
-	clang -Wl,--verbose
+    clang -Wl,--verbose
+
+
+or using `ld --verbose`
+
+This will dump the default linker script in addition to the process
+for finding files.
+
+
+## define symbols in the linker script
+
+Important variables in linker script:
+
+`.` represents the current value in VM space.
+
+Using `PROVIDE` to define symbol so we can use it in the code.
