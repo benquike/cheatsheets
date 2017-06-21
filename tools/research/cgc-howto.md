@@ -232,6 +232,15 @@ export GDB_BIN_FILE="bin/KPRCA_00064"
 export GDB_INPUT_FILE="/vagrant/KPRCA_00064_queue/id:000079,src:000015,op:havoc,rep:8,+cov"
 ```
 
+Other notes:
+
+> removing all gcda files:
+> find dir -name '*.gcda' | xargs rm
+
+[This script](./run_gcov_batch.py) can be used to run a challenge with batches
+of inputs.
+
+
 ## how to detect the checksum problems
 
 Which challenges have checksum issue?
