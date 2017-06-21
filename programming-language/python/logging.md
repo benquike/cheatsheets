@@ -54,3 +54,21 @@ format=F1 %(asctime)s %(levelname)s %(message)s
 datefmt=
 class=logging.Formatter
 ```
+
+
+## logging formatters
+
+
+%(pathname)s Full pathname of the source file where the logging call was issued(if available).
+
+%(filename)s Filename portion of pathname.
+
+%(module)s Module (name portion of filename).
+
+%(funcName)s Name of function containing the logging call.
+
+%(lineno)d Source line number where the logging call was issued (if available).
+
+```
+formatter = logging.Formatter('[%(asctime)s] p%(process)s {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s','%m-%d %H:%M:%S')
+```
