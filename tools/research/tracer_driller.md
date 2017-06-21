@@ -31,6 +31,13 @@ Important methods:
 
 - `next_branch`: move the current path to the next node along the path.
 
+    1. It follows the execution with only one `active` until we reach a group
+    with more than 1 active paths or 0 active path.
+    2. The paths whose address is not the same as trace[self.bb_cnt] in the
+    `active` group is moved to the `missed` group(see [here](https://hexdump.cs.purdue.edu/source/xref/tracer/tracer/tracer.py?a=true&h=_set_cgc_simprocedures#385)).
+    3. Save the current path group the the return variable and remove the `missed`
+    group.
+
 - `run`: trace the program symbolically along the trace of the input until
   it finds a deadend.
 
