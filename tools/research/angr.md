@@ -533,6 +533,15 @@ Important methods:
   basic block at which the paths diverged.
 - `_manage_callstack`: Adds the information from the last run to the current path.
 
+PathHierarchy:
+
+It maintains the graph of the CFG.
+
+
+PathGroup:
+- `move`: move all the paths saved in one group to another group.
+- `drop`: remove move all the paths in a group.
+- `stash`: move all the paths in a group to a group called `stash`.
 
 Analysis
 --
