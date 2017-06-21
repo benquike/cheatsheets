@@ -1,6 +1,9 @@
 import os
 import gdb
+import sys
 
+if not ('GDB_AUTO_EXEC' in os.environ and 'GDB_BIN_FILE' in os.environ and 'GDB_INPUT_FILE' in os.environ):
+    sys.exit(0)
 
 def write_memory(addr, val):
     '''
@@ -71,5 +74,12 @@ class LLVMGCDAFileEndBp(gdb.Breakpoint):
 
         return False
 
+if 'GDB_BIN_FILE' in os.environ:
+    gdb.execute('file ' + os.environ['GDB_BIN_FILE'])
+
 LLVMGCDAFileStartBp()
 LLVMGCDAFileEndBp()
+
+if 'GDB_AUTO_EXEC' in os.environ and 'GDB_INPUT_FILE' in os.environ:
+    gdb.execute("run < " + os.environ['GDB_INPUT_FILE'])
+    gdb.execute("quit")

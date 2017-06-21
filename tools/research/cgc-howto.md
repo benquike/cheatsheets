@@ -211,6 +211,27 @@ genhtml coverage.info --output-directory <html>
 
 <html> is the place to put the gernated html file
 
+
+6. Run [cmd_example.py](./cmd_example.py) automatically
+
+Put `cmd_example.py` somewhere in the file system.
+
+Put the following line in `~/.gdbinit`
+
+```
+source <PATH_TO_cmd_example.py>
+```
+
+And to run cmd_example.py automatically via gdb to collect
+the coverage information, SET the following environmental
+variables:
+
+```
+export GDB_AUTO_EXEC="1"
+export GDB_BIN_FILE="bin/KPRCA_00064"
+export GDB_INPUT_FILE="/vagrant/KPRCA_00064_queue/id:000079,src:000015,op:havoc,rep:8,+cov"
+```
+
 ## how to detect the checksum problems
 
 Which challenges have checksum issue?
