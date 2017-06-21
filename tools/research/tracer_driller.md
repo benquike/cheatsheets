@@ -57,36 +57,7 @@ the `add_options` named argument in the constructor.
 In the constructor, it will run `dynamic_trace` and colllect the list of basic blocks
 exercised during the execution of the target program with the input the addresses
 of the basic blocks are saved in the `traces` field. And if the input caused a
-crash, it will also save the crash address.
-
-```
-print t.trace
-
-[134530765,
- 134531030,
- 134531078,
- 134531096,
- ....
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- 134531096,
- ...]
-```
+crash, it will also save the crash address, crash type and crash state.
 
 ```python
 import tracer
@@ -136,6 +107,82 @@ t = tracer.Tracer('CADET_00003/bin/CADET_00003', input=input)
 
 first = t.path_group.active[0]
 assert first.addr == self._p.entry
+```
+
+
+The qemu-based tracer this module is based on:
+
+[qemu-cgc](https://github.com/mechaphish/qemu-cgc/) has some
+modificcations to run cgc binaries.
+
+1. [this](https://github.com/mechaphish/qemu-cgc/commit/2238b85421fd29f4d5937f7e6251fb89da6346ef)
+   is used to execute binaries with cgc magic values.
+2. [this](https://github.com/mechaphish/qemu-cgc/commit/de38bff8ce271c477f7b6eee94a29f306aac6352)
+modifies the syscall numbers
+3. it has some functions for dumping magic contents page
+
+In the initial stage, it uses qemu's trace function to get the
+addresses of basic blocks triggered by the input.
+
+For example
+```
+/home/hexfuzz/.virtualenvs/driller+/local/lib/python2.7/site-packages/shellphish_qemu/bin/shellphish-qemu-cgc-tracer -d exec CADET_00003/bin/CADET_00003 < /dev/shm/work/CADET_00003/sync/fuzzer-master/crashes/id:000000,sig:11,src:000000,op:havoc,rep:64
+Reserved 0xf7000000 bytes of guest address space
+host mmap_min_addr=0x10000
+guest_base  0x7f58e0ded000
+start    end      size     prot
+08048000-08049000 00001000 r-x
+08049000-0805e000 00015000 rw-
+4347c000-4347d000 00001000 r--
+baa8a000-baaab000 00021000 rwx
+IGNORED start_brk   0x00000000
+end_code    0x080487e5
+start_code  0x08048000
+start_data  0x080497e8
+end_data    0x0805d9ff
+start_stack 0xbaaaaffc
+brk         0x0805d9ff
+entry       0x080485fc
+Trace 0x56348c378350 [080485fc] _start
+Trace 0x56348c3783a0 [08048705] _crcx
+Trace 0x56348c378420 [08048735] _crcx_docrc
+.....
+Trace 0x56348c378720 [08048601] _start
+Trace 0x56348c378770 [080480a0] main
+Trace 0x56348c378860 [08048400] transmit_all
+Trace 0x56348c378970 [08048440] transmit_all
+Trace 0x56348c3789f0 [08048459] transmit_all
+Trace 0x56348c378a30 [0804845e] transmit_all
+Trace 0x56348c378ac0 [0804846a] transmit_all
+Trace 0x56348c378ba0 [0804861a] transmit
+
+Welcome to Palindrome Finder
+
+Trace 0x56348c378c50 [08048635] transmit
+Trace 0x56348c378cd0 [08048490] transmit_all
+Trace 0x56348c378d60 [080484ac] transmit_all
+Trace 0x56348c378de0 [080484c5] transmit_all
+Trace 0x56348c378a30 [0804845e] transmit_all
+Trace 0x56348c378e50 [080484d5] transmit_all
+Trace 0x56348c378ee0 [080480db] main
+Trace 0x56348c378f60 [080480fa] main
+Trace 0x56348c378fa0 [080480ff] main
+Trace 0x56348c378860 [08048400] transmit_all
+Trace 0x56348c378970 [08048440] transmit_all
+Trace 0x56348c3789f0 [08048459] transmit_all
+Trace 0x56348c378a30 [0804845e] transmit_all
+Trace 0x56348c378ac0 [0804846a] transmit_all
+Trace 0x56348c378ba0 [0804861a] transmit
+	Please enter a possible palindrome: Trace 0x56348c378c50 [08048635] transmit
+Trace 0x56348c378cd0 [08048490] transmit_all
+Trace 0x56348c378d60 [080484ac] transmit_all
+Trace 0x56348c378de0 [080484c5] transmit_all
+
+....
+
+Trace 0x56348c379e30 [08048320] check
+Trace 0x56348c379f30 [08048350] check
+qemu: uncaught target signal 11 (Segmentation fault) - core dumped [08048364]
 ```
 
 
