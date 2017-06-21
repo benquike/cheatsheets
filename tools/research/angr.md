@@ -455,7 +455,7 @@ this class hosts some functions, in which:
 
 Create a blank state:
 
-![Sequence diagram of state_blank](./SimOs_state_blank.png)
+![Sequence diagram of state_blank](./SimOS_state_blank.png)
 
 To create a blank state from the factory object, it uses the `SimOS`
 object's `state_blank` to achieve that. The general code is in the
