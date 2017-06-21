@@ -527,7 +527,9 @@ Important methods:
   `callstack` object and create a `CallStackAction` and append it to
   `callstack_backtrace`.
 - `step`: execute the current code block and return all the path nodes following
-   the CFG of the program
+  the CFG of the program. The execution is done in `_make_successors` which calls
+  the `successors` function of the `factory` object and set the possible paths
+  in `_run` field.
 - `branch_causes`: Returns the variables that have caused this path to branch.
 - `divergence_addr`: compare current path with some other path, and return the
   basic block at which the paths diverged.
@@ -542,6 +544,8 @@ PathGroup:
 - `move`: move all the paths saved in one group to another group.
 - `drop`: remove move all the paths in a group.
 - `stash`: move all the paths in a group to a group called `stash`.
+
+![step method of PathGroup](./pathgroup_step.png)
 
 Analysis
 --
