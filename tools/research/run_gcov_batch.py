@@ -27,7 +27,7 @@ def main():
         os.makedirs(cov_dir)
 
     for i in os.listdir(input_dir):
-        if i == '.' or i == '..':
+        if not i.startswith("id:"):
             continue
 
         print "running " + bin_path + " < " + os.path.join(input_dir, i)
