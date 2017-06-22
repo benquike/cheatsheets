@@ -76,6 +76,16 @@ E.g
 Is to filter on the entries where the the year of pub_date,
 which is a related object is 2006
 
+### relation ship
+
+#### many to many
+
+#### one to many
+
+How to access the set of related objects from the `many side`?
+Django adds a special property in the many side, `<relation_name>_set`
+all in lower case[^1].
+
 ## View
 
 ### Simple view
@@ -123,6 +133,11 @@ uses `include` directive to do so.
 
 ## Django RESTful framework
 
+## Filter
+
+https://django-filter.readthedocs.io/en/latest/usage.html
+http://www.django-rest-framework.org/api-guide/filtering/
+
 ## run django with uwsgi and nginx
 
 ### Serving static files
@@ -150,10 +165,19 @@ uses `include` directive to do so.
 in the admin class of the model class, add an item in the filter_list the format
 `<relation_field_name>__<field_name_in_the_related_class>`
 
+## celery
+
+https://realpython.com/blog/python/asynchronous-tasks-with-django-and-celery/
+
 ## debug
 
 When debug is turned off in settings.py, by default admin is not allowed to be accessed,
 we need to setup allowed hosts in `ALLOWED_HOSTS`
+
+
+## other tips
+
+
 
 ## references
 * [Django get started](https://docs.djangoproject.com/en/1.10/intro/)
@@ -165,3 +189,5 @@ we need to setup allowed hosts in `ALLOWED_HOSTS`
 * [Managing static files (e.g. images, JavaScript, CSS)](https://docs.djangoproject.com/en/dev/howto/static-files/#deploying-static-files-in-a-nutshell)
 * [ALLOWED HOSTS](https://docs.djangoproject.com/en/1.9/ref/settings/#allowed-hosts)
 * [Django self-referential foreign key](http://stackoverflow.com/questions/15285626/django-self-referential-foreign-key)
+
+[^1]: http://stackoverflow.com/questions/19799955/django-get-the-set-of-objects-from-many-to-one-relationship
