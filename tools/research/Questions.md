@@ -25,3 +25,24 @@ Code is [here](https://hexdump.cs.purdue.edu/source/xref/simuvex/simuvex/engines
 
 
 ## how path group manipulates each of the group of paths
+
+1. What is put in the `active` group in the execution
+   - In `Successors` class, what is successors? what is unconstrained successors?
+     what is flattened successors?
+
+
+## how unicorn engine works
+
+
+## how various OS emulation works
+
+Notably syscall management
+
+
+## how solver engine works
+
+## how scratch plugin works
+
+## how libc plugin works
+
+## how posix plugin works
