@@ -547,6 +547,14 @@ PathGroup:
 
 ![step method of PathGroup](./pathgroup_step.png)
 
+Important internal methods:
+- `_one_path_step`: make one step forward along one path
+  1. if there is hook functions in `_hooks_step_path`, invoke them and if the return
+     value is not None, return the returned value.
+  2. if there is check function, invoke it.
+  3. if `successor_func` is passed in, call it to do the step; otherwise invoke
+     the `step` method of the path class to do it.
+
 Analysis
 --
 
