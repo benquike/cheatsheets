@@ -198,6 +198,24 @@ qemu: uncaught target signal 11 (Segmentation fault) - core dumped [08048364]
 Driller is the tool that augment fuzzing of AFL by symbolic
 execution.
 
+Given an input, Driller will generate inputs that will trigger
+different paths from the one triggered by the original input.
+
 Driller iteratively calls `next_branch` method of tracer, along the path,
 find the constraints of the missed nodes and solve those constraints to
 generate inputs that will trigger execution along the missed paths.
+
+`_drill_input` is the method that does the work:
+
+1. it creates a `Tracer` object.
+2. it sets concretatization and simproc limits
+3. it updates the edges that have been encountered
+4. It goes into a loop by running `next_branch` method of tracer object:
+   - calculate the index in the AFL bitmap
+   - check whether that edge has been covered, if yes, skip the current edge, else
+     mark the edge in the bitmap and continue
+   - If the edge has been in the encountered set, skip, else, first remove the
+     constraints, then if the path condition is satisfiable, solve the constraits
+     and extract the input using `_writeout` method.
+   - Continue exploring more inputs using symbolic execution along that path
+     in `_symbolic_explorer_stub`. It limits the symbolic exploration by `step * number_of_paths < 1024`
