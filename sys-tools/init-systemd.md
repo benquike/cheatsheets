@@ -24,6 +24,13 @@ for android system.
 
 ### enabling and disabling services
 
+
+
+## adding a service
+
+Create a service file and put it in /etc/systemd/system
+
+example:[celery.service](./celery.service) and [celery.cfg](./celery.cfg)
 ...
 
 ## references
