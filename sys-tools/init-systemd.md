@@ -39,9 +39,19 @@ After a new service is added, run the following cmd:
  sudo systemctl daemon-reload
 ```
 
+
+## enable a service
+
+
+```
+sudo systemctl enable celery.service
+```
+
+
 ## references
 
 1. http://blu.org/meetings/2016/03/BLU-20160315-systemd.pdf
 2. https://en.wikipedia.org/wiki/Systemd
 3. https://linoxide.com/linux-how-to/systemd-boot-process/
 4. https://www.suse.com/docrep/documents/huz0a6bf9a/systemd_in_suse_linux_enterprise_12_white_paper.pdf
+5. [How To Use Systemctl to Manage Systemd Services and Units](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
