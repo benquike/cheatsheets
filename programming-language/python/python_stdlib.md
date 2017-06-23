@@ -75,6 +75,14 @@ There are a lot of builtins supported by python. they are useful.[^1]
 |memoryview()||
 |help()||
 
+
+## inspect
+
+Inspect can be used to check the runtime information on types,
+attributes, call stacks, function arguments and so on[^2].
+
 ##  reference
 
 [^1]: https://docs.python.org/3/library/functions.html
+
+[^2]: https://docs.python.org/2/library/inspect.html
