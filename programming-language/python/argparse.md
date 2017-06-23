@@ -2,6 +2,10 @@
 
 This module is used for parsing argumnets[^1][^2].
 
+```
+add_argument(name or flags...[, action][, nargs][, const][, default][, type][, choices][, required][, help][, metavar][, dest])
+```
+
 ## Usage example
 
 
@@ -20,6 +24,12 @@ args = parser.parse_args()
 
 args.bin_path...
 
+```
+
+## bool switches
+
+```
+parser.add_argument('-b', action='store_true', default=False)
 ```
 
 ## Reference
