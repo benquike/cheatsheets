@@ -71,3 +71,7 @@ outputs the following message:
 [2017-06-22 12:04:45,740: INFO/MainProcess] Received task: tasks.add[8a6450a7-ac68-466c-b2f3-12c8036e5e61]  
 [2017-06-22 12:04:47,165: INFO/PoolWorker-1] Task tasks.add[8a6450a7-ac68-466c-b2f3-12c8036e5e61] succeeded in 0.000310328323394s: 8
 ```
+
+## celery configuration
+
+http://docs.celeryproject.org/en/latest/userguide/configuration.html#configuration
