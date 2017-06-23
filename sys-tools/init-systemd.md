@@ -33,6 +33,12 @@ Create a service file and put it in /etc/systemd/system
 example:[celery.service](./celery.service) and [celery.cfg](./celery.cfg)
 ...
 
+After a new service is added, run the following cmd:
+
+```
+ sudo systemctl daemon-reload
+```
+
 ## references
 
 1. http://blu.org/meetings/2016/03/BLU-20160315-systemd.pdf
