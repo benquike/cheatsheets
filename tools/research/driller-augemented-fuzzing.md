@@ -78,3 +78,14 @@ setup `AFL_PATH` environmental variable [here](https://hexdump.cs.purdue.edu/sou
 3. In fuzzer, there is a tool for creating dictionary files. it works by creating a
 control flow of the binary and then, walk through the binary and check the memmory image
 looking for strings in the memmory. and all the strings are used as part of the dictionary.
+
+
+## using shellphuzz
+
+Before using shellphuzz, run the following command:
+
+```
+echo core | sudo tee /proc/sys/kernel/core_pattern
+cd /sys/devices/system/cpu; echo performance | sudo tee cpu*/cpufreq/scaling_governor; cd -
+echo 1 | sudo tee /proc/sys/kernel/sched_child_runs_first
+```
