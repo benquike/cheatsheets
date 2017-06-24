@@ -86,6 +86,22 @@ How to access the set of related objects from the `many side`?
 Django adds a special property in the many side, `<relation_name>_set`
 all in lower case[^1].
 
+
+### delete object
+
+Using `delete` method on the object to remove the object from
+the database.
+
+```
+Entry.objects.get(pk=1).delete()
+```
+
+We can also use this method on the result set object.
+
+```
+Entry.objects.all().delete()
+```
+
 ### Qeuery
 
 ResultSet object are setup in the `objects` field of model class.
@@ -105,7 +121,7 @@ m = Model.objects.get(pk=1)
 ```
 objects = Model.objects.get(name='xxx')
 ```
-This returns an result set on which we can also use list indexing
+This returns an result set on which we can xalso use list indexing
 operations `[]` to get individual object.
 
 ## View
