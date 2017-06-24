@@ -165,6 +165,22 @@ http://www.django-rest-framework.org/api-guide/filtering/
 in the admin class of the model class, add an item in the filter_list the format
 `<relation_field_name>__<field_name_in_the_related_class>`
 
+Add model to the admin site
+
+In admin.py
+
+```
+# Register your models here.
+admin.site.register(ChallengeBinary)
+```
+
+Create an admin user:
+
+```
+python manage.py createsuperuser
+.....
+```
+
 ## celery
 
 https://realpython.com/blog/python/asynchronous-tasks-with-django-and-celery/
