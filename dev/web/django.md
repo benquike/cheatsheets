@@ -199,11 +199,37 @@ Register it:
 admin.site.register(Book, BookAdmin)
 ```
 
-Ref:https://stackoverflow.com/questions/10543032/how-to-show-all-fields-of-model-in-admin-page
+Ref: https://stackoverflow.com/questions/10543032/how-to-show-all-fields-of-model-in-admin-page
 
 ## celery
 
 https://realpython.com/blog/python/asynchronous-tasks-with-django-and-celery/
+
+
+### Integrating with django
+
+Integrating celery into django
+
+Ref: http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html
+
+#### Config result backend and message broker
+
+In setttings.py
+
+```
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_BROKER_URL = 'pyamqp://'
+```
+
+### Using the code outside of django
+
+```
+import django
+
+# setup django
+os.environ['DJANGO_SETTINGS_MODULE'] = 'driller_mng.settings'
+django.setup()
+```
 
 ## debug
 
