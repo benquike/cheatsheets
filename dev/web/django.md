@@ -181,6 +181,8 @@ python manage.py createsuperuser
 .....
 ```
 
+Ref: https://tutorial.djangogirls.org/en/django_admin/
+
 ## celery
 
 https://realpython.com/blog/python/asynchronous-tasks-with-django-and-celery/
