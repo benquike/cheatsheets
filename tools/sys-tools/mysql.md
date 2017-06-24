@@ -30,10 +30,23 @@ else if mysql server > 5.7
 
     CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 
+    CREATE USER 'newuser'@'%' IDENTIFIED BY 'password';
+
 ## granting permission to a user
 
-    GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+    GRANT ALL PRIVILEGES ON *.* TO 'newuser'@'localhost';
+
+The following solves the problem of accessing issues from remote clients:
+
+    GRANT ALL PRIVILEGES ON *.* TO 'newuser'@'%';
+
+
+## remove user
+
+    drop user;
+
 
 ## Reference
 * [How to find out the MySQL root password](http://stackoverflow.com/questions/10895163/how-to-find-out-the-mysql-root-password)
 * [How To Create a New User and Grant Permissions in MySQL](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
+* https://stackoverflow.com/questions/1559955/host-xxx-xx-xxx-xxx-is-not-allowed-to-connect-to-this-mysql-server
