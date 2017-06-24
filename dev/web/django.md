@@ -86,6 +86,28 @@ How to access the set of related objects from the `many side`?
 Django adds a special property in the many side, `<relation_name>_set`
 all in lower case[^1].
 
+### Qeuery
+
+ResultSet object are setup in the `objects` field of model class.
+Queries are made against this object.
+
+
+1. Get an object by primary key
+
+```
+from models import Model
+
+m = Model.objects.get(pk=1)
+```
+
+2. getting multiple object using `filter`
+
+```
+objects = Model.objects.get(name='xxx')
+```
+This returns an result set on which we can also use list indexing
+operations `[]` to get individual object.
+
 ## View
 
 ### Simple view
