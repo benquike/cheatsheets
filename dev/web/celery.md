@@ -83,7 +83,47 @@ http://docs.celeryproject.org/en/latest/userguide/configuration.html#configurati
 
 http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html
 
+
+
+
 ## workers
 
 
 ## flower plugin
+
+## monitoring and admin by cmd
+
+### list workers
+
+```
+celery -A proj status
+```
+
+Ref: http://docs.celeryproject.org/en/latest/userguide/monitoring.html
+
+
+### inspecting a live app
+
+
+```
+celery -A driller_mng shell
+```
+
+will start an ipython shell in which we can
+inspect the app
+
+```
+import driller_mng
+# get the app instance
+app = driller_mng.celery_app
+
+# gen an inspect object
+i = app.control.inspect()
+
+# from this object, we can get a lot of information
+# about the app
+
+## this method returns all the active tasks
+print(i.active())
+
+```
