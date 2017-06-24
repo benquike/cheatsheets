@@ -36,7 +36,7 @@ remove the password of sudo[^1].
 ## LVM
 
 http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/
-
+https://linuxconfig.org/linux-lvm-logical-volume-manager
 
 
 ## Ref
