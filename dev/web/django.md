@@ -165,7 +165,7 @@ http://www.django-rest-framework.org/api-guide/filtering/
 in the admin class of the model class, add an item in the filter_list the format
 `<relation_field_name>__<field_name_in_the_related_class>`
 
-Add model to the admin site
+### Add model to the admin site
 
 In admin.py
 
@@ -174,7 +174,7 @@ In admin.py
 admin.site.register(ChallengeBinary)
 ```
 
-Create an admin user:
+### Create an admin user:
 
 ```
 python manage.py createsuperuser
@@ -182,6 +182,24 @@ python manage.py createsuperuser
 ```
 
 Ref: https://tutorial.djangogirls.org/en/django_admin/
+
+
+### change which columns to show
+
+Add an admin class subclassing `admin.ModelAdmin`:
+```
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('Title', 'Author', 'Price')
+
+```
+
+Register it:
+
+```
+admin.site.register(Book, BookAdmin)
+```
+
+Ref:https://stackoverflow.com/questions/10543032/how-to-show-all-fields-of-model-in-admin-page
 
 ## celery
 
