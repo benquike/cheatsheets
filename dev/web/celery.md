@@ -75,3 +75,15 @@ outputs the following message:
 ## celery configuration
 
 http://docs.celeryproject.org/en/latest/userguide/configuration.html#configuration
+
+
+## tasks
+
+### periodic tasks
+
+http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html
+
+## workers
+
+
+## flower plugin
