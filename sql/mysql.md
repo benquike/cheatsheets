@@ -1,5 +1,9 @@
 # mysql usage
 
+## create databases
+
+http://www.wikihow.com/Create-a-Database-in-MySQL
+
 ## get all the tables
 
 ```
