@@ -14,4 +14,7 @@ sudo apt-get install libffi-dev
 sudo apt-get install libtool-bin
 sudo apt-get install build-essential gcc-multilib libtool automake autoconf bison debootstrap debian-archive-keyring
 sudo apt-get build-dep qemu
+pip install driller
+pip install git+https://github.com/angr/tracer.git
+
 ```
