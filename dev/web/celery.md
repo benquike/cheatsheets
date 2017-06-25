@@ -101,6 +101,12 @@ celery -A proj status
 
 Ref: http://docs.celeryproject.org/en/latest/userguide/monitoring.html
 
+### inspecting all active tasks
+
+```
+celery -A driller_mng inspect active
+```
+
 
 ### inspecting a live app
 
