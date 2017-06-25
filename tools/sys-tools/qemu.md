@@ -581,6 +581,9 @@ object_dynamic_cast()
 - `object_new_with_type`: Create an object of a specified type(by name). This function will allocate memory for the new object and  
 initialize it.
 
+### property management
+
+
 
 ### Managing Object relationship
 
@@ -814,6 +817,40 @@ HMI的接口。我们可以使用`Contrl-a c`来切换。
 
 使用HMI,我们可以查看机器的各种信息，包括bus, device, QOM, memory。
 同时我们也可以对机器进行热插拔。详细信息：http://nairobi-embedded.org/qemu_monitor_console.html
+
+Get Qemu bus tree
+
+```
+$info qtree
+```
+
+Get Qemu device tree
+
+```
+$ info qom-tree
+```
+
+Get block device information
+
+```
+info block
+```
+
+Hot plug device
+
+Add device
+
+```
+$ device_add
+```
+
+Delete device
+
+```
+device_del
+```
+
+
 
 ## 使用Debugger
 
