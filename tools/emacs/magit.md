@@ -25,3 +25,7 @@ Pull: `F u`
 
 
 Get help: `h`
+
+
+[Cheatsheets](https://github.com/magit/magit/wiki/Cheatsheet)
+[Refcard](./magit-refcard.pdf)
