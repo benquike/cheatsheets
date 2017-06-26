@@ -133,3 +133,12 @@ i = app.control.inspect()
 print(i.active())
 
 ```
+
+Terminating some tasks
+
+
+```
+from celery.task.control import revoke
+
+revoke(id, terminate=True)
+```
