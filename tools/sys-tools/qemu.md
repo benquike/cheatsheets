@@ -552,13 +552,38 @@ register_module_init --> type_init(module_init)
 
 分配新对象
 ```
-object_new()
+Object *object_new(const char *typename);
+
+Object *object_new_with_props(const char *typename,
+    Object *parent,
+    const char *id,
+    Error **errp,
+    ...)
+
+Object *object_new_with_propv(const char *typename,
+    Object *parent,
+    const char *id,
+    Error **errp,
+    va_list vargs)
 ```
 
 cast
 ```
 object_dynamic_cast()
 ```
+
+Using properties
+-
+
+Using methods
+-
+
+Instance method
+
+class method
+
+Methods of super classes
+
 
 ### How QOM works
 
@@ -578,7 +603,7 @@ object_dynamic_cast()
   ```
   比方说，
 3. 分配和使用object
-- `object_new_with_type`: Create an object of a specified type(by name). This function will allocate memory for the new object and  
+- `object_new_with_type`: Create an object of a specified type(by name). This function will allocate memory for the new object and
 initialize it.
 
 ### property management
@@ -835,6 +860,9 @@ Get block device information
 ```
 info block
 ```
+
+
+Char device backends
 
 Hot plug device
 
