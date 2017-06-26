@@ -139,3 +139,14 @@ the search
 ```
 /c address
 ```
+
+
+## show something
+
+`p` command
+
+Show disassembly.
+
+```
+pd
+```
