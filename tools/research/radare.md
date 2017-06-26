@@ -113,6 +113,36 @@ Get symbols
 is
 ```
 
+Get strings in the data section
+
+```
+iz
+```
+
+Get strings in the whole program
+
+```
+izz
+```
+
+Get all the import and export info
+
+all import
+
+```
+ii
+```
+
+all export
+```
+iE
+```
+
+all import and export info
+```
+ia
+```
+
 
 ## find xrefs
 
@@ -150,3 +180,9 @@ Show disassembly.
 ```
 pd
 ```
+
+`ps` print string
+
+## search
+
+`/` command
