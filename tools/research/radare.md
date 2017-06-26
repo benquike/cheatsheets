@@ -1,5 +1,15 @@
 # radare2 usage
 
+## command format
+
+```
+[.][times][cmd][~grep][@[@iter]addr!size][|>pipe] ;
+```
+
+
+https://radare.gitbooks.io/radare2book/content/introduction/command_format.html
+
+
 ## General usage
 
 Each kind of command starts with a letter,
@@ -186,3 +196,22 @@ pd
 ## search
 
 `/` command
+
+
+## grep the result of a command
+
+```
+cmd ~<search string>
+```
+
+Get the first row of a search result
+
+```
+cmd ~<search string>:0
+```
+
+Get the first column of a search result
+
+```
+cmd ~<search string>[0]
+```
