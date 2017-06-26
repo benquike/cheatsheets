@@ -850,6 +850,33 @@ Delete device
 device_del
 ```
 
+Memory dump(from and to)
+
+Dump memory from the VM:
+
+- `memsave memsave ADDR SIZE FILENAME`: command obtains a dump of the guest's
+    virtual memory starting at `ADDR` of size `SIZE` to the file `FILENAME`.
+- ` pmemsave ADDR SIZE FILENAME`: command obtains a physical memory dump of the
+  VM starting at `ADDR` of size `SIZE` to the file `FILENAME`.
+
+
+Write memory to the VM
+
+- X /CountFormatSize addr: Output virtual memory dump starting at addr
+- xp /CountFormatSize addr: Output physical memory dump starting at addr
+
+Where Count/Format/Size is the same as that in GDB.
+
+Screen dump
+
+`screendump` can be used to get the screen dump.
+
+
+Keyboard control
+
+`sendkey` command can be used to send a key to the machine.
+
+This can be used to do GUI testing.
 
 
 ## 使用Debugger
