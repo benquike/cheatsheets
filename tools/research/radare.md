@@ -112,3 +112,30 @@ Get symbols
 ```
 is
 ```
+
+
+## find xrefs
+
+ax shows all cross reference
+Then we can use grep to narrow down
+the results.
+
+```
+ax
+```
+
+
+How to find the reference of a string
+in the program
+
+First find the address of a string
+
+```
+iz
+```
+
+the search
+
+```
+/c address
+```
