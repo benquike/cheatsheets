@@ -44,6 +44,10 @@ To overload add, subtraction and multiplication,
 we can overload `__add__`, `__sub__`, `__mul__`
 functions
 
+To overide `[]` operator, we need to overload the
+following functions: `__getitem__` and `__setitem__`:
+
+
 https://stackoverflow.com/questions/20507745/overloading-addition-subtraction-and-multiplication-operators
 
 ## Full reference
