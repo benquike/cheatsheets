@@ -7,6 +7,33 @@
 logging.basicConfig()
 ```
 
+## APIs
+
+### writting log
+
+```
+logging.debug(msg[, *args[, **kwargs]])
+
+logging.info(msg[, *args[, **kwargs]])
+
+logging.warning(msg[, *args[, **kwargs]])
+
+logging.error(msg[, *args[, **kwargs]])
+
+logging.critical(msg[, *args[, **kwargs]])
+
+logging.exception(msg[, *args[, **kwargs]])
+
+```
+
+## Formatter
+
+configurable fields: https://docs.python.org/2/library/logging.html#logrecord-attributes
+
+## Filter
+
+## LoggerAdapter
+
 ## Using config file to configure the logging behavior.
 
 See the [example](https://github.com/benquike/fuzzer/commit/955d5c29ebbd54e0290d775962f7f369d413261f)
