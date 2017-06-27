@@ -99,3 +99,19 @@ class=logging.Formatter
 ```
 formatter = logging.Formatter('[%(asctime)s] p%(process)s {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s','%m-%d %H:%M:%S')
 ```
+
+
+## Issues
+
+How to prevent a message from being printed twice?
+
+add `propagate=0` to non-root loggers in the configure file.
+https://stackoverflow.com/questions/4566327/python-logger-logging-things-twice-to-console
+
+
+Or we can disable root logger by the following:
+
+```
+[logger_root]
+handlers=
+```
