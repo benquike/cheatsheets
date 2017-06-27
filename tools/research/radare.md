@@ -215,3 +215,9 @@ Get the first column of a search result
 ```
 cmd ~<search string>[0]
 ```
+
+
+## ESIL
+
+
+This language is used to trace CPU states in R2.
