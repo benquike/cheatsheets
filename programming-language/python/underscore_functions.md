@@ -38,5 +38,14 @@ __new__ is the first step of instance creation. It's called first, and is respon
 In general, you shouldn't need to override __new__ unless you're subclassing an immutable type like str, int, unicode or tuple.
 ```
 
+## operator overloading
+
+To overload add, subtraction and multiplication,
+we can overload `__add__`, `__sub__`, `__mul__`
+functions
+
+https://stackoverflow.com/questions/20507745/overloading-addition-subtraction-and-multiplication-operators
+
 ## Full reference
 1. [Python __Underscore__ Methods](http://www.siafoo.net/article/57)
+2. [Magic Methods and Operator Overloading](http://www.python-course.eu/python3_magic_methods.php)
