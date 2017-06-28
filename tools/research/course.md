@@ -44,6 +44,7 @@ p = angr.Project('step0.bin')
 
 ### Get and prepare a program state
 
+
 #### Get a program state
 
 The address of main function is `0x4004a6`.
@@ -58,6 +59,19 @@ init_state = p.factory.blank_state(addr=0x4004a6)
 ```
 `entry_state`,  `full_init_state` and `call_state` can
 also be used to create states.
+
+#### how to get the symbolic value of the program state
+
+The following  states contains the symbolic contraints
+and we can ask the constraints solver to give us solutions
+to those constraints and those are exactly something that
+we are expecting to find out.
+
+1. Memory
+
+2. Registers
+
+3. Files
 
 #### Mutate the state
 
