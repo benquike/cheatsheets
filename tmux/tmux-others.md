@@ -156,3 +156,9 @@ Force a reload of the config file on C-a r:
 Some other settings that I use:
 
     setw -g xterm-keys on
+
+
+
+## Ref
+
+1. https://pityonline.gitbooks.io/tmux-productive-mouse-free-development_zh/content/book-content/Chapter1.html
