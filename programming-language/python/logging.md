@@ -26,10 +26,6 @@ logging.exception(msg[, *args[, **kwargs]])
 
 ```
 
-## Formatter
-
-configurable fields: https://docs.python.org/2/library/logging.html#logrecord-attributes
-
 ## Filter
 
 ## LoggerAdapter
@@ -99,6 +95,8 @@ class=logging.Formatter
 ```
 formatter = logging.Formatter('[%(asctime)s] p%(process)s {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s','%m-%d %H:%M:%S')
 ```
+
+[configurable fields](https://docs.python.org/2/library/logging.html#logrecord-attributes)
 
 
 ## Issues
