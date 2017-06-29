@@ -221,3 +221,22 @@ cmd ~<search string>[0]
 
 
 This language is used to trace CPU states in R2.
+
+
+## python interface
+
+### r2pipe
+
+[r2pipe](https://github.com/radare/radare2-r2pipe)
+
+```
+import r2pipe
+
+r2 = r2pipe.open("/bin/ls")
+r2.cmd('aa')
+print(r2.cmd("afl"))
+print(r2.cmdj("aflj"))  # evaluates JSONs and returns an object
+r2.quit()
+```
+
+[Others](https://github.com/radare/radare2-bindings)
