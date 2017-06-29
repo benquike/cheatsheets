@@ -240,6 +240,9 @@ Other notes:
 [This script](./run_gcov_batch.py) can be used to run a challenge with batches
 of inputs.
 
+[lcov_merge](./lcov-merge.py) can be used to merge multiple
+info files into one.
+
 
 ## how to detect the checksum problems
 
