@@ -14,8 +14,34 @@ of complex networks.
 https://networkx.github.io/
 
 
+### Create a complete graph
+
+
+```
+import networkx as nx
+G = nx.complete_graph(5)
+```
+
 ## creating animation
 
+### drawing with networkx
+
+To show the graph, we need to add the last line, as shown
+in the following code snippet.
+
+```
+import networkx as nx
+import matplotlib.pyplot as plt
+g1 = nx.petersen_graph()
+nx.draw(g1)
+plt.show()
+```
+
+Where is `graphviz_layout`:
+
+```
+from networkx.drawing.nx_agraph import graphviz_layout
+```
 
 https://stackoverflow.com/questions/18229563/using-networkx-with-matplotlib-artistanimation
 https://github.com/ankurankan/nx_animation
