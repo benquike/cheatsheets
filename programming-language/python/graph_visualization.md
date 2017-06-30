@@ -19,6 +19,13 @@ https://networkx.github.io/
 
 https://www.wxpython.org/
 
+
+Installation:
+
+```
+sudo apt-get install python-wxgtk3 python-wxtools wx3-doc wx3-examples wx3-headers wx3-i18n
+```
+
 ## NodeBox
 
 https://www.nodebox.net/code/index.php/Graph
