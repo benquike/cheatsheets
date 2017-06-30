@@ -13,6 +13,16 @@ of complex networks.
 
 https://networkx.github.io/
 
+## matplotlib
+
+## wxPython
+
+https://www.wxpython.org/
+
+## NodeBox
+
+https://www.nodebox.net/code/index.php/Graph
+
 
 ### Create a complete graph
 
@@ -73,7 +83,29 @@ Where is `graphviz_layout`:
 from networkx.drawing.nx_agraph import graphviz_layout
 ```
 
+Directional graph:
+
+```
+import networkx as nx
+import matplotlib.pyplot as plt
+
+
+G = nx.DiGraph()
+G.add_nodes_from(['A', 'B', 'C', 'D'])
+G.add_edges_from([('A', 'B'), ('B', 'C'), ('C', 'D')])
+
+nx.draw_networkx(G)
+plt.show()
+```
+
+Other examples:
+
+[Bayes updates](https://matplotlib.org/examples/animation/bayes_update.html)
+[dynamic_image](https://matplotlib.org/examples/animation/dynamic_image.html)
+[strip_chart_demo](https://matplotlib.org/examples/animation/strip_chart_demo.html)
+
 https://stackoverflow.com/questions/18229563/using-networkx-with-matplotlib-artistanimation
 https://github.com/ankurankan/nx_animation
 http://ankurankan.github.io/blog/2013/10/11/plotting-and-animating-networkx-graphs/
 http://jakevdp.github.io/blog/2012/08/18/matplotlib-animation-tutorial/
+https://jakevdp.github.io/blog/2012/08/18/matplotlib-animation-tutorial/
