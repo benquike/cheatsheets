@@ -153,6 +153,29 @@ all import and export info
 ia
 ```
 
+## write
+
+First of all, to write to the file, we
+need to use `-w` option to open the file.
+
+```
+r2 -w KPRCA_00064
+```
+
+Seek to the place where we want to write
+
+```
+s <addr>
+```
+
+Then `wx` command can be used to write.
+When we use `wx`, we need to use 2 hex
+digits to represent one byte.
+
+```
+wx <hexpairs>
+```
+
 
 ## find xrefs
 
@@ -240,3 +263,4 @@ r2.quit()
 ```
 
 [Others](https://github.com/radare/radare2-bindings)
+
