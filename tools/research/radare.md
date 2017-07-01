@@ -214,6 +214,87 @@ Show disassembly.
 pd
 ```
 
+Print in the format of C or python byte arrays:
+
+C array
+
+```
+pc 16
+#define _BUFFER_SIZE 16
+const uint8_t buffer[16] = {
+  0x53, 0x57, 0x56, 0x83, 0xec, 0x20, 0x8b, 0x35, 0x20, 0xcc,
+  0x04, 0x08, 0x89, 0x34, 0x24, 0xc7
+};
+
+```
+
+Python format
+```
+pcp 16
+
+pcp 16
+import struct
+buf = struct.pack ("16B", *[
+0x53,0x57,0x56,0x83,0xec,0x20,0x8b,0x35,0x20,0xcc,0x04,
+0x08,0x89,0x34,0x24,0xc7])
+```
+
+JSON format
+
+```
+pcj  16
+[83,87,86,131,236,32,139,53,32,204,4,8,137,52,36,199]
+```
+
+Assembly code
+
+```
+ pcA 16
+sub_0x08048560:
+ .byte 0x53  // push ebx
+ .byte 0x57  // push edi
+ .byte 0x56  // push esi
+ .byte 0x83, 0xec, 0x20  // sub esp, 0x20
+ .byte 0x8b, 0x35, 0x20, 0xcc, 0x04, 0x08  // mov esi, dword [0x804cc20]
+ .byte 0x89, 0x34, 0x24  // mov dword [esp], esi
+ .byte 0xc7  // invalid
+.equ shellcode_len, 16
+
+```
+
+In halfwords, words, double words
+
+```
+// halfwords
+> pch 16
+#define _BUFFER_SIZE 8
+const uint16_t buffer[8] = {
+  0x5753, 0x8356, 0x20ec, 0x358b, 0xcc20, 0x0804, 0x3489, 0xc724
+};
+
+
+// words
+> pcw 16
+#define _BUFFER_SIZE 4
+const uint32_t buffer[4] = {
+  0x83565753U, 0x358b20ecU, 0x0804cc20U, 0xc7243489U
+};
+
+//double words
+> pcd 16
+#define _BUFFER_SIZE 2
+const uint64_t buffer[2] = {
+  0x358b20ec83565753ULL, 0xc72434890804cc20ULL
+};
+
+```
+
+String
+```
+pcs 16
+"\x53\x57\x56\x83\xec\x20\x8b\x35\x20\xcc\x04\x08\x89\x34\x24\xc7"
+```
+
 `ps` print string
 
 ## search
