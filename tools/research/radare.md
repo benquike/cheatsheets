@@ -176,6 +176,17 @@ digits to represent one byte.
 wx <hexpairs>
 ```
 
+Writing assembly code
+
+```
+wa <assembly code>
+```
+For example:
+```
+s 0x0804866c
+wa jmp 0x8048600
+```
+
 
 ## find xrefs
 
@@ -296,6 +307,8 @@ pcs 16
 ```
 
 `ps` print string
+
+> Note: There is some difference between ps and pc.
 
 ## search
 
