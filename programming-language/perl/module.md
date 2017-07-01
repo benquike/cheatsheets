@@ -1,4 +1,4 @@
-# perl modules
+# perl modules and pragma
 
 ## definition
 
@@ -6,6 +6,12 @@ A Perl module is a self-contained piece of Perl code that can be used by a Perl
 program or by other Perl modules. It is conceptually similar to a C link library,
 or a C++ class[^1].
 
+A `pragma` is a module that change the perl compiler's behavior.
+A famous pragma is perl is `strict`.
+
+```
+use strict;
+```
 
 ## defining module
 
