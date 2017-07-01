@@ -58,5 +58,39 @@ Getting the length of an array:
 Slicing an array.
 
 ```
-my @words = @array[0, 2]
+my @words = @array[0, 2];
 ```
+
+List assignment, We can assign the elements
+of an array to scalar varibales.
+
+```
+my ($var1, $var2, @other) = @arrary;
+```
+
+Shifting arrays.
+Each time we shift an array, the first element
+in the array will be removed and it returns the first
+
+```
+my $first_elem = shift @array;
+my $second_elem = shift @array;
+```
+
+## File handles
+
+To operate a file, we need to open a file and get a file handler.
+
+```
+open fh, "path";
+```
+
+Accessing data from a file
+
+Reading one line from a file
+
+```
+my $line = <fh>
+```
+In scalar context, the angle operator reads one line
+from the variable.
