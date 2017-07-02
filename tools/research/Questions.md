@@ -12,6 +12,9 @@ A:
 
 ## how simprocedure works
 
+## how to control which part of program state to be symbolic?
+
+## how to do selective symbolic execution?
 
 ## how unicorn engine works
 
