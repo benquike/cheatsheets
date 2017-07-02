@@ -373,6 +373,38 @@ This is a library for:
 
 ![Class Diagram of Claripy AST](./claripy_ast.png)
 
+Types of variables:
+
+|    Type     |        desc                          |
+|-------------|--------------------------------------|
+|claripy.BVV  |  Creates a bit-vector concrete value |
+|claripy.BVS  |  Creates a bit-vector symbolic value |
+|claripy.BoolV|  Creates a bool concrete value       |
+|claripy.BoolS|  Creates a bool symbolic value       |
+|claripy.FPV  |  Creates a concrete concrete value   |
+|claripy.FPS  |  Creates a symbolic floating point value |
+
+Example:
+
+```
+import claripy
+
+sovler = claripy.Solver()
+
+# declare a variable x
+x = claripy.FPS('x', claripy.FSORT_DOUBLE)
+
+equation = (x * x - x - 6 == 0)
+solver.add(equation)
+
+# get the solution
+# this takes a while.
+solver.eval(x, 2)
+
+-->  (3.0, -2.0)
+
+```
+
 ## cle
 
 cle is the loader which is able to load binaries into memory.
