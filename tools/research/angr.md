@@ -361,6 +361,17 @@ This is a library for:
 2. build AST and constraints from symbolic variables
 3. solve the constraints and get solutions for expressions
 
+### Frontend
+
+![Class Diagram of Claripy Frontend](./claripy_frontend.png)
+
+### Backend
+
+![Class Diagram of Claripy Backend](./claripy_backend.png)
+
+### AST
+
+![Class Diagram of Claripy AST](./claripy_ast.png)
 
 ## cle
 
