@@ -28,3 +28,46 @@ myfunc("passing a")
 p("passing a")
 >>> ('  called myfunc with:', ('passing a', 4))
 ```
+
+## total_ordering
+
+This decorator works on classes.
+Given a class having:
+- `__lt__`
+- `__le__`
+- `__gt__`
+- `__gt__`
+- `__eq__`
+
+This decorator will supply other methods
+to make it a total-ordering class.
+
+
+## wrappers
+
+```
+from functools import wraps
+
+def my_decorator(f):
+    @wraps(f)
+    def wrapper(*args, **kwds):
+        print 'Calling decorated function'
+        return f(*args, **kwds)
+    return wrapper
+
+@my_decorator
+def example():
+    """Docstring"""
+    print 'Called example function'
+
+example()
+
+>> Calling decorated function
+>> Called example function
+
+example.__name__
+>> 'example'
+
+example.__doc__
+'Docstring'
+```
