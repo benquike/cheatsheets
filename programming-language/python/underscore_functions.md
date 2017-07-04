@@ -50,6 +50,11 @@ following functions: `__getitem__` and `__setitem__`:
 
 https://stackoverflow.com/questions/20507745/overloading-addition-subtraction-and-multiplication-operators
 
+
+## pickling
+
+`__getstate__` and `__setstate__` decide how the objects are serialized and deserialized.
+
 ## Full reference
 1. [Python __Underscore__ Methods](http://www.siafoo.net/article/57)
 2. [Magic Methods and Operator Overloading](http://www.python-course.eu/python3_magic_methods.php)
