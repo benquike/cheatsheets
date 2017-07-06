@@ -355,6 +355,9 @@ It is wide used in the angr project, e.g., the linux loader is emulated
 using a `LinuxLoader` which is a subclass of SimProcedure. Hooks are implemented
 using SimProcedures and .....
 
+All system calls are emulated using SimProcecures and they are managed in
+a global variable `SimProcecures`.
+
 ### SimAction
 
 It is used to reprensent some semantic information of the program, e.g., `SimActionData`
@@ -540,6 +543,7 @@ setting. It makes extensive usage of SimProcedure
 to hook the angr functions into the analysis process.
 
 ![SimOS class diagram](./SimOS.png)
+
 
 Path and PathGroup
 --
