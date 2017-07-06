@@ -342,6 +342,12 @@ It exports functions to:
 
 ![Class Diagram of SimSolver](./SimSolver.png)
 
+##### SimStateScratch
+
+![SimStateScratch](./plugin_scratch.png)
+
+It includes APIs for manupulating tmps in VEX IR and
+various other info shown above.
 
 ### SimProcedure
 
