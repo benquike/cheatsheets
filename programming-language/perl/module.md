@@ -13,6 +13,9 @@ A famous pragma is perl is `strict`.
 use strict;
 ```
 
+It is a good idea to use `strict` and `warnings` to
+help you catch errors.
+
 ## defining module
 
 ### defining module written by script
