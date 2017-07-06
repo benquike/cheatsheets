@@ -84,10 +84,43 @@ superblock and invoke `_handle_statement` to handle each VEX statement.
 There a multiple engines defined in angr, different engines are for
 different purposes. When angr handles a basic block, it tries
 different engines in the predefined order until the basic block
-is handled by one.
+is handled by one(see [here](https://hexdump.cs.purdue.edu/source/xref/angr/angr/factory.py#41)).
 
 There is a default engine, which always comes in the last of the
 list.
+
+##### Using unicorn
+
+
+Using `Path`:
+
+```
+import angr
+import simuvex
+
+p = angr.Project('./cgc-challenge-corpus/CADET_00001/bin/CADET_00001')
+
+init_state = p.factory.entry_state()
+init_state.options.add(simuvex.options.UNICORN)
+
+init_path = p.factory.path(init_state)
+
+init_path.step()
+
+```
+
+Or
+
+```
+import angr
+import simuvex
+
+p = angr.Project('./cgc-challenge-corpus/CADET_00001/bin/CADET_00001')
+init_path = p.factory.path(add_options=set([simuvex.options.UNICORN]))
+init_path.step()
+```
+
+
 
 #### SimVexIR
 
