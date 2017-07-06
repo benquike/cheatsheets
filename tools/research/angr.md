@@ -81,6 +81,14 @@ superblock and invoke `_handle_statement` to handle each VEX statement.
 ![Sequence diagram of SimEngine.process](./SimEngine_process.png)
 
 
+There a multiple engines defined in angr, different engines are for
+different purposes. When angr handles a basic block, it tries
+different engines in the predefined order until the basic block
+is handled by one.
+
+There is a default engine, which always comes in the last of the
+list.
+
 #### SimVexIR
 
 This part is used to execute code represented in VEX IR and track
