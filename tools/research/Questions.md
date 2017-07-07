@@ -36,6 +36,7 @@ Code is [here](https://hexdump.cs.purdue.edu/source/xref/simuvex/simuvex/engines
 
 ## how unicorn engine works
 
+## how SimFile works
 
 ## how various OS emulation works
 
