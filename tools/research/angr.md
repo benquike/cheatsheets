@@ -86,6 +86,12 @@ different purposes. When angr handles a basic block, it tries
 different engines in the predefined order until the basic block
 is handled by one(see [here](https://hexdump.cs.purdue.edu/source/xref/angr/angr/factory.py#41)).
 
+- `failure_engine`
+- `syscall_engine`
+- `procedure_engine`
+- `unicorn_engine`
+- `SimEngineVEX`
+
 There is a default engine, which always comes in the last of the
 list.
 
