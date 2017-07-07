@@ -77,6 +77,26 @@ my $first_elem = shift @array;
 my $second_elem = shift @array;
 ```
 
+Accessing arrays by index
+
+When accessing individual element of an array, we need to use `$`.
+```
+$rocks[0] = 'a';
+
+# $rocks[1] and $rocks[2] become undef
+$rocks[3] = 'b';
+```
+
+Minus index is also supported.
+
+list literals
+
+```
+(1, 2, 3)
+
+(1..3); # (1,2,3)
+```
+
 ## File handles
 
 To operate a file, we need to open a file and get a file handler.
