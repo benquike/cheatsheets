@@ -1,8 +1,8 @@
-# blob usage
+# glob usage
 
 ```
-import blob
+import glob
 
-x = blob.blob("./*.c")
+x = glob.glob("./*.c")
 # x is a list containing all matching files
 ```
