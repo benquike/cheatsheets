@@ -733,3 +733,9 @@ outside of r2:
 ```
 dot -Tpng func_cfg.dot main_cfg.png
 ```
+
+
+
+## reference
+1.[Binary Analysis with angr
+](https://fosdem.org/2017/schedule/event/valgrind_angr/attachments/slides/1797/export/events/attachments/valgrind_angr/slides/1797/slides.pdf)
