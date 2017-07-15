@@ -358,3 +358,7 @@ r2.quit()
 
 [Others](https://github.com/radare/radare2-bindings)
 
+
+## radare2 and capstone
+
+http://radare.today/posts/Radare2-capstone/
