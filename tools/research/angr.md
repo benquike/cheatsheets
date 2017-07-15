@@ -716,6 +716,27 @@ from angrutils import *
 plot_cfg(cfg, "CROMU_00001_cfg", asminst=True, remove_imports=True, remove_path_terminator=True)
 ```
 
+3. Identities
+
+It is included in the latest code of angr.
+
+```
+import angr
+
+p = angr.Project('cgc-vm_fuzz/cgc-challenge-corpus/CADET_00001/bin/CADET_00001')
+
+id_ana = p.analyses.Identifier()
+
+# callsites
+id_ana.callsites
+
+# block to function mapping
+id_ana.block_to_func
+
+# all function information
+id_ana.func_info
+```
+
 Additional notes:
 
 Using radare2 to get CFG(but this is only the cfg inside a function).
