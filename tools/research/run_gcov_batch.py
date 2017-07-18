@@ -11,6 +11,7 @@ def main():
     parser = argparse.ArgumentParser(usage="A tool for running gcov in batch")
     parser.add_argument("--bin_path", required=True, help="The path to the binary to run")
     parser.add_argument("--input_dir", required=True, help="The directory containing all the inputs")
+    parser.add_argument("--timeout",  type=int, default=5, help="The directory containing all the inputs")
     parser.add_argument("--cov_dir", help="The directory to put the coverage info files")
 
     args = parser.parse_args()
@@ -37,7 +38,7 @@ def main():
         env["GDB_INPUT_FILE"] = os.path.join(input_dir, i)
         null_fd = open("/dev/null", "wb")
         # collect the coverage info
-        subprocess.call(["gdb"], env=env, stdout=null_fd, stderr=null_fd)
+        subprocess.call(["gdb"], env=env, stdout=null_fd, stderr=null_fd, timeout=args.timeout)
         # generate lcov info
         subprocess.call(['lcov', '-c', '--directory', bin_root_dir,
                          '--output-file', os.path.join(cov_dir, i + '.info')],
