@@ -19,3 +19,15 @@ os.path.exists(path)
 	def touch(fname, times=None):
 		with open(fname, 'a'):
 			os.utime(fname, times)
+
+### change permission bits
+
+```
+import os
+import stat
+
+st = os.stat('somefile')
+os.chmod('somefile', st.st_mode | stat.S_IEXEC)
+```
+
+https://stackoverflow.com/questions/12791997/how-do-you-do-a-simple-chmod-x-from-within-python
