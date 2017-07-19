@@ -31,3 +31,14 @@ os.chmod('somefile', st.st_mode | stat.S_IEXEC)
 ```
 
 https://stackoverflow.com/questions/12791997/how-do-you-do-a-simple-chmod-x-from-within-python
+
+
+### copy files
+
+```
+from shutil import copyfile
+
+copyfile(src, dst)
+```
+
+https://stackoverflow.com/questions/123198/how-do-i-copy-a-file-in-python
