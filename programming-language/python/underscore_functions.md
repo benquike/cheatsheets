@@ -38,6 +38,13 @@ __new__ is the first step of instance creation. It's called first, and is respon
 In general, you shouldn't need to override __new__ unless you're subclassing an immutable type like str, int, unicode or tuple.
 ```
 
+
+## destructors
+
+`__del__`
+
+http://eli.thegreenplace.net/2009/06/12/safely-using-destructors-in-python
+
 ## operator overloading
 
 To overload add, subtraction and multiplication,
