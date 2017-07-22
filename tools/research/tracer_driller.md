@@ -219,3 +219,13 @@ generate inputs that will trigger execution along the missed paths.
      and extract the input using `_writeout` method.
    - Continue exploring more inputs using symbolic execution along that path
      in `_symbolic_explorer_stub`. It limits the symbolic exploration by `step * number_of_paths < 1024`
+
+
+
+## notes for installing driller and tracer
+
+### install tracer
+
+```
+
+```
