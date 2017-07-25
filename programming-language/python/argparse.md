@@ -32,6 +32,12 @@ args.bin_path...
 parser.add_argument('-b', action='store_true', default=False)
 ```
 
+## parsing lists of values
+
+`nargs`: '+' for one or more values, '*' for 0 or more values[^3].
+
+
 ## Reference
 [^1]: https://docs.python.org/3/library/argparse.html
 [^2]: http://songpengfei.iteye.com/blog/1320877
+[^3]: https://stackoverflow.com/questions/15753701/argparse-option-for-passing-a-list-as-option
