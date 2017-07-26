@@ -32,3 +32,16 @@ i=1; while [ $i -le $limit ]; do
   i=$(($i + 1))
 done
 ```
+
+## arrays
+
+```
+  ${arr[*]}         # All of the items in the array
+  ${!arr[*]}        # All of the indexes in the array
+  ${#arr[*]}        # Number of items in the array
+  ${#arr[0]}        # Length of item zero
+```
+
+## reference
+
+1. http://www.linuxjournal.com/content/bash-arrays
