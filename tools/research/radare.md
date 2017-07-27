@@ -333,6 +333,12 @@ Get the first column of a search result
 cmd ~<search string>[0]
 ```
 
+## ASCII CFG
+
+```
+$ VV
+
+```
 
 ## ESIL
 
