@@ -1,5 +1,7 @@
 # latex usage
 
+## defining new command
+
 To define a new command, use the following format:
 
 ```
@@ -17,5 +19,13 @@ The following is an example:
         supported by #1}
 ```
 
+
+## cross referencing
+
+First define a lable using `\label{mark}`, then refer
+it using `\ref{}`.
+
+
 ## reference
 1. https://en.wikibooks.org/wiki/LaTeX/Macros
+2. https://www.sharelatex.com/learn/Referencing_Figures
