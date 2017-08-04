@@ -39,6 +39,17 @@ Use `enumitem` package.
 \end{enumerate}
 ```
 
+## trouble shooting
+
+### enumitem conflicts with IEEEtran
+
+Fix:
+
+```
+\let\labelindent\relax
+```
+
+https://tex.stackexchange.com/questions/170772/command-labelindent-already-defined
 
 ## reference
 1. https://en.wikibooks.org/wiki/LaTeX/Macros
