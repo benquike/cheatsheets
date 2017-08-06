@@ -378,6 +378,9 @@ $ r2pm -i unicorn-lib
 $ r2pm -i unicorn
 ```
 
+https://github.com/leberus/r2k
+https://github.com/radare/radare2-extras
+
 ## rasm2
 
 List all supported architectures
