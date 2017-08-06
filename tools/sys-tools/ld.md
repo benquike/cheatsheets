@@ -50,3 +50,11 @@ Important variables in linker script:
 `.` represents the current value in VM space.
 
 Using `PROVIDE` to define symbol so we can use it in the code.
+
+## merge multiple object files
+
+```
+ld -r a.o b.o -o c.o
+```
+
+https://stackoverflow.com/questions/2980102/combine-two-gcc-compiled-o-object-files-into-a-third-o-file
