@@ -716,6 +716,32 @@ from angrutils import *
 plot_cfg(cfg, "CROMU_00001_cfg", asminst=True, remove_imports=True, remove_path_terminator=True)
 ```
 
+Get the successors and predecessors of a node:
+
+```
+import angr
+
+p = angr.Project('cgc-vm_fuzz/cgc-challenge-corpus/CADET_00001/bin/CADET_00001')
+cfg = p.analyses.CFG()
+
+nodes = cfg.get_all_nodes(0x8048161)
+n = nodes[0]
+
+cfg.get_all_predecessors(n)
+
+{<CFGNode _terminate 0x804860c[12]>: <CFGNode _start+0xa 0x8048606[6]>,
+ <CFGNode _terminate 0xa000008[0]>: <CFGNode _terminate 0x804860c[12]>,
+ <CFGNode main+0x181 0x8048221[10]>: <CFGNode main+0xc1 0x8048161[5]>,
+ <CFGNode _start+0xa 0x8048606[6]>: <CFGNode main+0x181 0x8048221[10]>}
+
+cfg.get_all_successors(n)
+{<CFGNode main+0xc1 0x8048161[5]>: [<CFGNode main+0x181 0x8048221[10]>],
+ <CFGNode _terminate 0x804860c[12]>: [<CFGNode _terminate 0xa000008[0]>],
+ <CFGNode main+0x181 0x8048221[10]>: [<CFGNode _start+0xa 0x8048606[6]>],
+ <CFGNode _start+0xa 0x8048606[6]>: [<CFGNode _terminate 0x804860c[12]>]}
+
+```
+
 3. Identities
 
 It is included in the latest code of angr.
