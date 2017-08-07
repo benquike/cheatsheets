@@ -22,4 +22,8 @@ for i in range(10):
 cprint("Attention!", 'red', attrs=['bold'], file=sys.stderr)
 ```
 
+## other related
+
+https://pypi.python.org/pypi/colorama
+
 [^1]: https://pypi.python.org/pypi/termcolor
