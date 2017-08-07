@@ -25,6 +25,11 @@ The following is an example:
 First define a lable using `\label{mark}`, then refer
 it using `\ref{}`.
 
+Use `autoref` will help adding label type to the
+reference location.
+
+https://tex.stackexchange.com/questions/137432/whats-the-difference-between-ref-and-autoref
+
 
 ## change the label of a list
 
