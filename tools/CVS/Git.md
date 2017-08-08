@@ -49,3 +49,10 @@ git filter-branch -f --env-filter "GIT_AUTHOR_NAME='user_name';GIT_AUTHOR_EMAIL=
 - [Git immersion](http://gitimmersion.com/index.html)
 
 [^1]: http://stackoverflow.com/questions/750172/change-the-author-of-a-commit-in-git
+
+
+## use wildcards in git
+
+quot the wildcars with `'`
+
+https://stackoverflow.com/questions/15160978/is-there-a-way-to-use-wildcards-with-git-checkout/
