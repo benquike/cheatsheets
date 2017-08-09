@@ -40,3 +40,4 @@ https://raw.githubusercontent.com/amygdalama/python-internals/master/README.md
 ### More resources
 
 * http://pgbovine.net/cpython-internals.htm
+* [Python初心者によるPythonのいいところ、はまりどころのまとめ](http://webtech-walker.com/archive/2010/10/13191417.html)
