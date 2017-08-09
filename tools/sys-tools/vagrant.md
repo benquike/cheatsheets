@@ -39,3 +39,21 @@ After this, modfify `Vagrantfile` replacing `config.vm.box = "hashicorp/precise6
 ## build a vagrant box
 
 
+## share a host directory with the guest system
+
+```
+Vagrant.configure("2") do |config|
+  # other config here
+
+  config.vm.synced_folder "src/", "/srv/website"
+  end
+  ```
+
+The first parameter is a path to a directory on the host machine.
+If the path is relative, it is relative to the project root. The
+second parameter must be an absolute path of where to share the
+folder within the guest machine. This folder will be created
+(recursively, if it must) if it does not exist.
+
+
+https://www.vagrantup.com/docs/synced-folders/basic_usage.html
