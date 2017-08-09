@@ -33,5 +33,25 @@ can be accessed by a **dict**[^1]
 	>>> greet_me(name="yasoob")
 	name == yasoob
 
+passing `**kwargs` to another function
+
+```
+# python likes
+def save(filename, data, **kwargs):
+    fo = openX(filename, "w", **kwargs) # <- #1
+    fo.write(data)
+    fo.close()
+# python doesnt like
+def save2(filename, data, **kwargs):
+    fo = openX(filename, "w", kwargs) # <- #2
+    fo.write(data)
+    fo.close()
+
+def openX(filename, mode, **kwargs):
+    #doing something fancy and returning a file object
+```
+
+https://stackoverflow.com/questions/9867562/pass-kwargs-argument-to-another-function-with-kwargs
+
 ## 
 [^1]: https://pythontips.com/2013/08/04/args-and-kwargs-in-python-explained/
