@@ -247,3 +247,10 @@ info files into one.
 ## how to detect the checksum problems
 
 Which challenges have checksum issue?
+
+
+## how to use POVs
+
+`Type1` and `Type2`
+
+https://github.com/CyberGrandChallenge/cgc-release-documentation/blob/master/walk-throughs/testing-a-cb.md
