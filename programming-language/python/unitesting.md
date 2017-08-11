@@ -18,6 +18,12 @@ working directory. by specifying `-w` we can tell `nosetests` where to find test
 
 passing in python files or directory are also accepted.
 
+to disable logging capturation:
+
+```
+$ nosetests --nologcapture
+```
+
 Configuration for `nosetests`: in `~/.noserc`
 
 ```
