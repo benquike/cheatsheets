@@ -32,6 +32,21 @@ verbosity=3
 with-doctest=1
 ```
 
+#### generate coverage
+
+first install `coverage` module
+
+```
+$ nosetests --nologcapture --with-coverage
+```
+
+Generating html coverate report file
+
+```
+$ nosetests --nologcapture --with-coverage --cover-html
+```
+http://nose.readthedocs.io/en/latest/plugins/cover.html
+
 ## py.test
 
 ## mock
