@@ -11,10 +11,10 @@ class Solution(object):
             return "Neither"
 
         v4dec = '([0-9]{1,3})'
-        v4regx = v4dec + '\.' + v4dec + '\.' + v4dec + '\.' + v4dec
+        v4regx = "^" + v4dec + '\.' + v4dec + '\.' + v4dec + '\.' + v4dec + "$"
 
         v6dec = '([0-9A-Fa-f]{0,4})'
-        v6regx = v6dec + ':' + v6dec + ':' + v6dec + ':' + v6dec + ':' + v6dec + ':' + v6dec + ':' + v6dec + ':' + v6dec
+        v6regx = "^" + v6dec + ':' + v6dec + ':' + v6dec + ':' + v6dec + ':' + v6dec + ':' + v6dec + ':' + v6dec + ':' + v6dec + "$"
 
         m = re.match(v4regx, IP)
         if m != None:
@@ -35,6 +35,15 @@ class Solution(object):
 
         m = re.match(v6regx, IP)
         if m != None:
+            a1 = m.group(1)
+            a2 = m.group(2)
+            a3 = m.group(3)
+            a4 = m.group(4)
+            a5 = m.group(5)
+            a6 = m.group(6)
+            a7 = m.group(7)
+            a8 = m.group(8)
+
             return 'IPv6'
 
         return 'Neither'
@@ -93,5 +102,6 @@ def test_addresses():
     ip = "2001:0db8:85a3:0:0:8A2E:0370:7334"
     assert s.validIPAddress(ip) == 'IPv6'
 
+    ip = "2001:0db8:85a3:0:0:8A2E:0370:7334:"
     ip = "2001:0db8:85a3::8A2E:0370:7334"
     assert s.validIPAddress(ip) == 'Neither'
