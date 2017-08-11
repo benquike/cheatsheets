@@ -254,3 +254,25 @@ Which challenges have checksum issue?
 `Type1` and `Type2`
 
 https://github.com/CyberGrandChallenge/cgc-release-documentation/blob/master/walk-throughs/testing-a-cb.md
+
+
+## how to run a test
+
+### cb-test
+
+[cb-test](https://github.com/CyberGrandChallenge/cb-testing/blob/master/cb-test)
+can be used to automatically run a test or pov
+
+```
+sudo cb-test --port 10000 --cb LUNGE_00001 --xml poller/for-release/service-1.xml --directory bin
+```
+
+It runs a `cb-server` then runs `cb-replay`(for xml povs) or `cb-replay-pov`(for built c povs)
+to send the inputs to the target program.
+
+Both `cb-replay` and `cb-replay-pov` are contained in [cb-testing](https://github.com/CyberGrandChallenge/cb-testing)
+
+
+### cb-server
+
+The source code is available [here](https://github.com/CyberGrandChallenge/service-launcher)
