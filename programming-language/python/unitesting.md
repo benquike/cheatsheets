@@ -24,6 +24,9 @@ to disable logging capturation:
 $ nosetests --nologcapture
 ```
 
+By default, it also captures output if print,
+to disable it, use `--nocapture` option.
+
 Configuration for `nosetests`: in `~/.noserc`
 
 ```
@@ -58,3 +61,4 @@ http://nose.readthedocs.io/en/latest/plugins/cover.html
 * [testing with nose](http://nose.readthedocs.io/en/latest/testing.html)
 * [nose introduction](http://pythontesting.net/framework/nose/nose-introduction/#no_boilerplate)
 * [Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/)
+* https://stackoverflow.com/questions/5975194/nosetests-is-capturing-the-output-of-my-print-statements-how-to-circumvent-this
