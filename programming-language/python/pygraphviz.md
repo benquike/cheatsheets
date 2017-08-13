@@ -20,6 +20,13 @@ dot_files = pydot.graph_from_dot_file('TEST_00003.dot')
 
 dot0 = dot_files[0]
 
+## get all nodes
+all_nodes = d.get_node_list()
+
+
+## get all edges
+all_edges = d.get_edge_list()
+
 ## write to dot file
 
 dot0.write_dot('xxxx.dot')
