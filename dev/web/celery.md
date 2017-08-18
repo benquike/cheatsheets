@@ -142,3 +142,21 @@ from celery.task.control import revoke
 
 revoke(id, terminate=True)
 ```
+
+
+## serialization of task data(arguments)
+
+Error:
+
+```
+kombu.exceptions.EncodeError: set() is not JSON serializable
+```
+
+in setting.py
+
+```
+CELERY_RESULT_SERIALIZER = 'pickle' #json pickle msgpack
+CELERY_TASK_SERIALIZER = 'pickle'
+```
+
+https://stackoverflow.com/questions/34912918/kombu-exceptions-encodeerror-vkwallpost-vkwallpost-object-is-not-json-sg
