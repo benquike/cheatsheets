@@ -160,3 +160,10 @@ CELERY_TASK_SERIALIZER = 'pickle'
 ```
 
 https://stackoverflow.com/questions/34912918/kombu-exceptions-encodeerror-vkwallpost-vkwallpost-object-is-not-json-sg
+
+
+## handling nodedown problem
+
+```
+sudo service rabbitmq-server restart 
+```
