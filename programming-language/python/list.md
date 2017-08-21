@@ -1,4 +1,4 @@
-# List
+# list, set and tuples
 
 ## initialization
 
@@ -110,3 +110,15 @@ for elem in listA:
 ## Other Misc
 ### clear
     removes all the elements in the list
+
+
+## set
+
+### union
+
+`union` takes another set as argument and returns a set containing
+the union of 2 sets, the original sets are intact(not updated)
+
+### update
+
+`a.update(b)`: `a` will be updated with elements in `b` added to it.
