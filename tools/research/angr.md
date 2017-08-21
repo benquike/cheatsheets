@@ -718,6 +718,9 @@ plot_cfg(cfg, "CROMU_00001_cfg", asminst=True, remove_imports=True, remove_path_
 
 Get the successors and predecessors of a node:
 
+The following methods are wrong. These are
+successors and predecessors of DFS tranversal.
+
 ```
 import angr
 
