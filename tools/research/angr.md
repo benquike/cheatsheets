@@ -745,6 +745,10 @@ cfg.get_all_successors(n)
 
 ```
 
+We should use `CFG.graph.predecessors` and `CFG.graph.successors`.
+
+https://github.com/angr/angr/issues/587
+
 3. Identities
 
 It is included in the latest code of angr.
