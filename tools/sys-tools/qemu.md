@@ -917,6 +917,10 @@ Related concept: HMP(human monitor protocol)
 $ qemu .... -qmp tcp:localhost:4444,server,nowait
 ```
 
+## running linux kernel in qemu
+
+
+
 # Reference
 1. http://www.linux-kvm.org/images/9/90/Kvmforum14-qom.pdf
 2. https://fosdem.org/2017/schedule/event/iaas_qemintapi/attachments/slides/1496/export/events/attachments/iaas_qemintapi/slides/1496/ehabkost_fosdem_2017.pdf
@@ -924,3 +928,4 @@ $ qemu .... -qmp tcp:localhost:4444,server,nowait
 4. https://elmarco.fedorapeople.org/qemu-qapi.pdf
 5. https://www.linux-kvm.org/images/1/17/2010-forum-qmp-status-talk.pp.pdf
 6. [QOM Concepts for User Creatable Devices](http://nairobi-embedded.org/030_qom_types_objectclasses_objects.html)
+7. [How to Build A Custom Linux Kernel For Qemu](http://mgalgs.github.io/2015/05/16/how-to-build-a-custom-linux-kernel-for-qemu-2015-edition.html)
