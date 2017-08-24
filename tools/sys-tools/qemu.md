@@ -920,6 +920,9 @@ $ qemu .... -qmp tcp:localhost:4444,server,nowait
 ## running linux kernel in qemu
 
 
+## qemu images
+
+https://cloud-images.ubuntu.com/releases/16.04/release/
 
 # Reference
 1. http://www.linux-kvm.org/images/9/90/Kvmforum14-qom.pdf
