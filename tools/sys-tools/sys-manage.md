@@ -39,6 +39,10 @@ http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-ma
 https://linuxconfig.org/linux-lvm-logical-volume-manager
 
 
+## firewall manangemment
+
+`uwf`: https://www.cyberciti.biz/faq/how-to-open-firewall-port-on-ubuntu-linux-12-04-14-04-lts/
+
 ## Ref
 *[Install OpenLDAP In Ubuntu 15.10 And Debian 8](https://www.unixmen.com/install-openldap-in-ubuntu-15-10-and-debian-8/)
 *[OpenLDAP Server](https://help.ubuntu.com/lts/serverguide/openldap-server.html)
