@@ -829,6 +829,10 @@ pty
 null
 ```
 
+## user mode qemu
+
+the main function of user mode qemu is located in `linux-user/main.c`.
+
 ## 使用HIM(Human Monitor Interface)
 
 指定HIM的文件: `-monitor　DEV`
