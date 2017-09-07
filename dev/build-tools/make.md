@@ -32,3 +32,7 @@ It is the same as $(var:pattern=replacement)
 ### strip function
 
 remove the starting and tailing space.
+
+## generating depenedency graph
+
+https://github.com/lindenb/makefile2graph
