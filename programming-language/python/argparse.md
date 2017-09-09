@@ -36,6 +36,18 @@ parser.add_argument('-b', action='store_true', default=False)
 
 `nargs`: '+' for one or more values, '*' for 0 or more values[^3].
 
+## allowing specific values
+
+https://stackoverflow.com/questions/15836713/allowing-a-specific-value-for-an-argparse-argument
+
+```
+...
+parser.add_argument('--val', dest='val', action='store',
+                      choices=['a','b','c'],
+                                            help='Special testing value')
+
+args = parser.parse_args(sys.argv[1:])
+```
 
 ## Reference
 [^1]: https://docs.python.org/3/library/argparse.html
