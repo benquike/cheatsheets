@@ -21,3 +21,4 @@ $ cmake ... -DCMAKE_C_FLAGS='flags'  -DCMAKE_CXX_FLAGS='flags' ...
 ```
 
 [^1]: http://stackoverflow.com/questions/2670121/using-cmake-with-gnu-make-how-can-i-see-the-exact-commands
+* https://stackoverflow.com/questions/25207619/make-cmake-pass-command-line-variable-to-compiler
