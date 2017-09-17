@@ -7,3 +7,4 @@ http://www.wikihow.com/Drive-a-Car
 ## Parking
 
 http://www.wikihow.com/Park-in-a-Parking-Lot
+http://www.wikihow.com/Parallel-Park
