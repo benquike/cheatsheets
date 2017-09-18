@@ -30,6 +30,8 @@ http://www.cs.technion.ac.il/~biham/Reports/differential-cryptanalysis-of-the-da
 
 https://piazza-resources.s3.amazonaws.com/ixlc30gojpe5fs/iyduia2bc9e7ac/BihamShamir.pdf?AWSAccessKeyId=AKIAIEDNRLJ4AZKBW6HA&Expires=1504813972&Signature=vC5uBDeXqWkKXngI4WyekyW%2FQ7Y%3D
 
+http://www.cs.haifa.ac.il/~orrd/BlockCipherSeminar/Lecture2-Differential.pdf
+
 ### difference distribution tables
 
 Difference Distribution Tables of DES
