@@ -32,6 +32,8 @@ https://piazza-resources.s3.amazonaws.com/ixlc30gojpe5fs/iyduia2bc9e7ac/BihamSha
 
 http://www.cs.haifa.ac.il/~orrd/BlockCipherSeminar/Lecture2-Differential.pdf
 
+http://www.cs.odu.edu/~cs772/spring17/lectures/des-s-boxes.pdf
+
 ### difference distribution tables
 
 Difference Distribution Tables of DES
