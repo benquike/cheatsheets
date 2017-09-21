@@ -54,3 +54,8 @@ To show the special chars, we need to install this package
 On windows, we need to run this command to install the fonts:
 
 	Powershell.exe -executionpolicy remotesigned -File install.ps1
+
+
+## ternimator
+
+(cheatsheet)[svschannak_terminator-ubuntu.pdf]
