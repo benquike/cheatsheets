@@ -44,6 +44,12 @@ Use `enumitem` package.
 \end{enumerate}
 ```
 
+
+## table
+
+table fontsize: https://tex.stackexchange.com/questions/56008/different-sizes-of-font-available-in-table
+
+
 ## trouble shooting
 
 ### enumitem conflicts with IEEEtran
