@@ -1,5 +1,7 @@
 ## libtool
 
+http://freesoftwaremagazine.com/articles/building_shared_libraries_once_using_autotools/
+
 ##  TODO
 
 
