@@ -17,3 +17,16 @@ https://docs.docker.com/machine/overview/
 ## docker file reference
 
 https://docs.docker.com/engine/reference/builder/#add
+
+
+## starting containers
+
+```
+$ docker run 
+```
+
+mapping file system:
+
+```
+$ -v
+```
