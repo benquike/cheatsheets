@@ -1,0 +1,1 @@
+https://www.slideshare.net/chimerawang/gcc-generic
