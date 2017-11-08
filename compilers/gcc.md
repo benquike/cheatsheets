@@ -15,3 +15,11 @@ https://stackoverflow.com/questions/2224334/gcc-dump-preprocessor-defines
 # implementing a frontend
 
 http://thinkingeek.com/gcc-tiny/
+
+
+
+# dumping the tree related structure
+
+```
+gcc -fdump-tree-all test4.c
+```
