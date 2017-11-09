@@ -6,6 +6,11 @@
 http://matthiaseisen.com/articles/graphviz/
 https://blog.laisky.com/p/pygraphviz/
 
+
+## lolviz
+
+https://github.com/parrt/lolviz
+
 ## networkx
 
 NetworkX is a Python language software package for the creation,
