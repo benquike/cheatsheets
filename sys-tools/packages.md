@@ -12,9 +12,12 @@ echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.zshrc
 
 
 sudo apt-get install nfs-common
-sudo apt-get install cmake ninja-build
+sudo apt-get install cmake ninja-build pkg-config
+sudo apt-get install terminator tmux
 sudo apt-get install cscope global
 sudo apt-get install lv tree
+sudo apt-get install graphviz libboost-all-dev
+sudo apt-get install libglib2.0-dev
 sudo apt-get install -y emacs vim
 sudo apt-get install libffi-dev
 sudo apt-get install libtool-bin
