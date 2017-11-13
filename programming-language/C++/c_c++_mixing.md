@@ -1,0 +1,1 @@
+http://www.oracle.com/technetwork/articles/servers-storage-dev/mixingcandcpluspluscode-305840.html
