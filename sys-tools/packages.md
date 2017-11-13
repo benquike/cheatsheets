@@ -8,7 +8,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 sudo pip install virtualenvwrapper
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.zshrc
 
+
+
+
 sudo apt-get install nfs-common
+sudo apt-get install cmake ninja-build
+sudo apt-get install cscope global
+sudo apt-get install lv tree
 sudo apt-get install -y emacs vim
 sudo apt-get install libffi-dev
 sudo apt-get install libtool-bin
