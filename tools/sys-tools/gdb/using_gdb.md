@@ -36,3 +36,14 @@ set {int}0x83040 = 4
 ```
 # disable xxxx
 ```
+
+## symbols
+
+```
+$symbol-file foo.symbol
+```
+
+https://stackoverflow.com/questions/20380204/how-to-load-multiple-symbol-files-in-gdb
+
+kernel debugging
+http://sysprogs.com/VisualKernel/documentation/kernelsymbols
