@@ -25,3 +25,9 @@ libfuzzer in chrome
 
 https://chromium.googlesource.com/chromium/src/testing/libfuzzer/
 https://chromium.googlesource.com/chromium/src/testing/libfuzzer/+/HEAD/getting_started.md
+
+
+## afl-unicorn
+
+https://hackernoon.com/afl-unicorn-fuzzing-arbitrary-binary-code-563ca28936bf
+https://hackernoon.com/afl-unicorn-part-2-fuzzing-the-unfuzzable-bea8de3540a5
