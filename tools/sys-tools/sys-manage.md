@@ -43,6 +43,13 @@ https://linuxconfig.org/linux-lvm-logical-volume-manager
 
 `uwf`: https://www.cyberciti.biz/faq/how-to-open-firewall-port-on-ubuntu-linux-12-04-14-04-lts/
 
+
+## java
+
+### installation
+
+http://tipsonubuntu.com/2016/07/31/install-oracle-java-8-9-ubuntu-16-04-linux-mint-18/
+
 ## Ref
 *[Install OpenLDAP In Ubuntu 15.10 And Debian 8](https://www.unixmen.com/install-openldap-in-ubuntu-15-10-and-debian-8/)
 *[OpenLDAP Server](https://help.ubuntu.com/lts/serverguide/openldap-server.html)
