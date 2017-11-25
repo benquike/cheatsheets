@@ -715,6 +715,9 @@ Data Structure
 
 ### Tiny code translation and execution
 
+
+[Call a Custom Function from TCG](https://fulcronz27.wordpress.com/2014/06/09/qemu-call-a-custom-function-from-tcg/)
+
 ### KVM
 
 # Qemu使用
