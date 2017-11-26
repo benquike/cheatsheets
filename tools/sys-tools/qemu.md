@@ -720,6 +720,12 @@ Data Structure
 
 ### KVM
 
+
+## qemu build system
+
+https://fulcronz27.wordpress.com/2014/06/06/qemu-enabling-a-new-build-targetoption
+
+
 # Qemu使用
 
 ## 概述
