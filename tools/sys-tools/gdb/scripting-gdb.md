@@ -48,5 +48,5 @@ More reference is [here](./gdb_python.pdf) and here[^2] and here[^3].
 ## cool tools
 
 GEF: https://github.com/hugsy/gef
-PwnGDB:https://github.com/pwndbg/pwndbg
+PwnGDB:https://github.com/pwndbg/pwndbg && https://blahcat.github.io/tutorials/
 PEDA: https://github.com/longld/peda
