@@ -469,9 +469,23 @@ MODULE_INIT_TRACE,
 ### API和宏
 
 1. 注册一个module初始化函数
+
 ```
 void register_module_init(void (*fn)(void), module_init_type type);
 ```
+
+The system maintains 4 tail queue, each for storing all the registered init functions
+registered by calling `block_init/opts_init/type_init/trace_init`.
+
+Call graph:
+
+```
+block_init/opts_init/type_init/trace_init --> module_init --> do_qemu_init_XXXX(constructors) --> register_module_init
+```
+
+Calling `block_init/opts_init/type_init/trace_init` will cause the functions passed in
+as argument to these macros be registered in the tail queues maintained.
+
 
 2. 定义一个函数为module初始化函数
 
