@@ -56,3 +56,9 @@ git filter-branch -f --env-filter "GIT_AUTHOR_NAME='user_name';GIT_AUTHOR_EMAIL=
 quot the wildcars with `'`
 
 https://stackoverflow.com/questions/15160978/is-there-a-way-to-use-wildcards-with-git-checkout/
+
+
+
+## Ref
+
+1. http://gitready.com/
