@@ -740,6 +740,9 @@ http://royluo.org/2016/06/24/qemu-coroutine/
 
 http://qemu.11.n7.nabble.com/PATCH-v3-0-4-Coroutines-for-better-asynchronous-programming-td9809.html
 
+https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html
+
+
 ## Code Execution
 
 ### Tiny code translation and execution
