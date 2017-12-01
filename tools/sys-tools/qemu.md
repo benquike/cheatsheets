@@ -734,6 +734,11 @@ Data Structure
 - [RasPiState](https://hexdump.cs.purdue.edu/source/xref/qemu/hw/arm/raspi.c#30)
 
 
+### Qemu STM32
+
+https://beckus.github.io/qemu_stm32/
+
+
 ## coroutines
 
 http://royluo.org/2016/06/24/qemu-coroutine/
