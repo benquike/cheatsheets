@@ -450,6 +450,7 @@ struct {                                                                \
                 (var) = (*(((struct headname *)((var)->field.tqe_prev))->tqh_last)))
 ```
 
+
 ##  module的概念
 
 用`tail queue`实现的。
@@ -485,6 +486,13 @@ block_init/opts_init/type_init/trace_init --> module_init --> do_qemu_init_XXXX(
 
 Calling `block_init/opts_init/type_init/trace_init` will cause the functions passed in
 as argument to these macros be registered in the tail queues maintained.
+
+Tail Queue:
+
+```
+typedef QTAILQ_HEAD(, ModuleEntry) ModuleTypeList;
+```
+
 
 
 2. 定义一个函数为module初始化函数
@@ -725,6 +733,13 @@ Source: `hw/arm/raspi.c`
 Data Structure
 - [RasPiState](https://hexdump.cs.purdue.edu/source/xref/qemu/hw/arm/raspi.c#30)
 
+
+## coroutines
+
+http://royluo.org/2016/06/24/qemu-coroutine/
+
+http://qemu.11.n7.nabble.com/PATCH-v3-0-4-Coroutines-for-better-asynchronous-programming-td9809.html
+
 ## Code Execution
 
 ### Tiny code translation and execution
@@ -734,6 +749,8 @@ Data Structure
 [Call a Custom Function from TCG](https://fulcronz27.wordpress.com/2014/06/09/qemu-call-a-custom-function-from-tcg/)
 
 ### KVM
+
+
 
 
 ## qemu build system
