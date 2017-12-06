@@ -43,4 +43,13 @@ to match number range
 mv some/dir/{1..10}.txt ..
 ```
 
+
+## get the directory of the current script
+
+```
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+```
+
+https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
+
 [^1]: http://stackoverflow.com/questions/59895/can-a-bash-script-tell-which-directory-it-is-stored-in
