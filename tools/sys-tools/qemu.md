@@ -614,6 +614,7 @@ structure:
 * https://www.slideshare.net/jserv/qemu-jit-code-generator-and-system-emulation
 * http://blog.vmsplice.net/2011/03/qemu-internals-overall-architecture-and.html
 * https://www.slideshare.net/RampantJeff/qemu-binary-translation?next_slideshow=1
+* https://www.slideshare.net/GlobalLogicUkraine/qemu-and-rpi
 * https://vmsplice.net/
 
 
