@@ -47,3 +47,10 @@ https://stackoverflow.com/questions/20380204/how-to-load-multiple-symbol-files-i
 
 kernel debugging
 http://sysprogs.com/VisualKernel/documentation/kernelsymbols
+
+
+## ui
+
+Using `Ctrl-x` `Ctrl-a` to enable TUI.
+
+WebGUI: https://github.com/cs01/gdbgui
