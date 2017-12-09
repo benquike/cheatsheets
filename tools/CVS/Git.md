@@ -8,6 +8,12 @@
 $ git reset --soft HEAD
 ```
 
+### remove untracked files
+
+```
+git clean -f
+```
+
 ### Change the committer
 
 Ref[^1]
