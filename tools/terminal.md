@@ -59,3 +59,19 @@ On windows, we need to run this command to install the fonts:
 ## ternimator
 
 (cheatsheet)[svschannak_terminator-ubuntu.pdf]
+
+
+## pac manager
+
+PAC manager.
+
+Fix for ubuntu 17.10.
+
+```
+sudo apt install libglib2.0-dev libpango1.0-dev libvte-dev libvte-2.91-dev dh-make-perl libgtk2.0-dev 
+cpan -i ExtUtils::Depends
+cpan -i ExtUtils::PkgConfig
+dh-make-perl --cpan Gnome2::Vte --build
+sudo dpkg -i libgnome2-vte*.deb
+sudo find /opt/pac/ -name "Vte.so*" -exec rm {} +
+```
