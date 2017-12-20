@@ -627,6 +627,11 @@ Ref:
 * https://vmsplice.net/
 
 
+#### main function
+
+![activity diagram of main](./callgraph_vl.png)
+
+
 这个设计的原则是什么？
 
 ![QOM components](./QOM.png)
