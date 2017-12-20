@@ -609,7 +609,16 @@ Methods of super classes
 
 ### How QOM works
 
-structure:
+#### structure:
+
+VCPU threads:
+
+QEMU thread is used to represent a thread: `struct QemuThread`.
+
+Creation of VCPU threads is performed  in `qemu_init_vcpu`.
+
+Ref:
+
 * https://www.slideshare.net/how2945ard/qemu-structure
 * https://www.slideshare.net/jserv/qemu-jit-code-generator-and-system-emulation
 * http://blog.vmsplice.net/2011/03/qemu-internals-overall-architecture-and.html
