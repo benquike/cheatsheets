@@ -1013,3 +1013,4 @@ https://wiki.qemu.org/Documentation/Networking
 5. https://www.linux-kvm.org/images/1/17/2010-forum-qmp-status-talk.pp.pdf
 6. [QOM Concepts for User Creatable Devices](http://nairobi-embedded.org/030_qom_types_objectclasses_objects.html)
 7. [How to Build A Custom Linux Kernel For Qemu](http://mgalgs.github.io/2015/05/16/how-to-build-a-custom-linux-kernel-for-qemu-2015-edition.html)
+8. [QEMU 筆記](https://arcbbb.hackpad.com/ep/pad/static/KEEvfqYZhXM)
