@@ -715,6 +715,11 @@ void object_property_add_link(Object *obj, const char *name,
 
 ## qdev
 
+https://lists.nongnu.org/archive/html/qemu-devel/2011-07/msg00842.html
+http://www.linux-kvm.org/images/f/fe/2010-forum-armbru-qdev.pdf
+http://www.linux-kvm.org/images/b/bc/2011-forum-armbru-qdev.pdf
+http://www.linux-kvm.org/images/0/0b/Kvm-forum-2013-Modern-QEMU-devices.pdf
+
 ## qapi
 
 ## qmp
