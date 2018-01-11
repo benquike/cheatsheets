@@ -39,3 +39,4 @@ $ make install
 
 ## reference
 1. http://events.linuxfoundation.jp/sites/events/files/slides/petazzoni-autotools-tutorial.pdf
+2. https://developer.gnome.org/anjuta-build-tutorial/stable/create-autotools.html.en
