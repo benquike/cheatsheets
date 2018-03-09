@@ -4,3 +4,8 @@ http://www.robots.ox.ac.uk/~az/lectures/ml/
 
 http://www.cs.cmu.edu/~guestrin/Class/10701-S07/Slides/kernels.pdf
 https://www.cs.cmu.edu/~ggordon/SVMs/new-svms-and-kernels.pdf
+
+
+# Examples
+https://www.svm-tutorial.com/2014/10/support-vector-regression-r/
+http://pyml.sourceforge.net/doc/howto.pdf
