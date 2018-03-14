@@ -13,3 +13,9 @@ A zombie is already dead, so you cannot kill it. To clean up a zombie, it must b
 ```
 kill $(ps -A -ostat,ppid | awk '/[zZ]/{print $2}')
 ```
+
+
+
+# User management
+
+https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart
