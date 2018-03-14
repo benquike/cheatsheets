@@ -16,6 +16,14 @@ kill $(ps -A -ostat,ppid | awk '/[zZ]/{print $2}')
 
 
 
-# User management
+## User management
 
 https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart
+
+
+
+## dns resolving not working
+
+```
+sudo dpkg-reconfigure resolvconf
+```
