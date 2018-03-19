@@ -1,0 +1,1 @@
+https://www.slideshare.net/macpaul/usb-specification-20-chapter-9-device-framework
