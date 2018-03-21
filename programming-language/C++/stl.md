@@ -9,6 +9,10 @@ object or functor because they can be used like a function.[^1]
 [^1]: http://cs.stmarys.ca/~porter/csc/ref/stl/function_objects.html
 
 
+## search
+
+http://wordaligned.org/articles/binary-search.html#tocstdbinarysearch-requirements
+
 ## Learning site
 
 1. C++ Containers Cheat Sheet: http://homepages.e3.net.nz/~djm/cppcontainers.html
