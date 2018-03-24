@@ -1010,6 +1010,10 @@ https://cloud-images.ubuntu.com/releases/16.04/release/
 
 https://wiki.qemu.org/Documentation/Networking
 
+# other related tools
+
+http://copy.sh/
+
 # Reference
 1. http://www.linux-kvm.org/images/9/90/Kvmforum14-qom.pdf
 2. https://fosdem.org/2017/schedule/event/iaas_qemintapi/attachments/slides/1496/export/events/attachments/iaas_qemintapi/slides/1496/ehabkost_fosdem_2017.pdf
