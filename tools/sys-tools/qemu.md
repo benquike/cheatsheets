@@ -722,6 +722,8 @@ http://www.linux-kvm.org/images/0/0b/Kvm-forum-2013-Modern-QEMU-devices.pdf
 
 ## qapi
 
+https://elmarco.fedorapeople.org/qemu-qapi.pdf
+
 ## qmp
 
 
