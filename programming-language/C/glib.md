@@ -22,6 +22,10 @@ sudo apt-get install libglib2.0-dev
 - Relations and tuples (tables of data which can be indexed on any number of fields)
 - Caches
 
+## main loop
+
+
+
 ## Example
 
 
@@ -42,6 +46,9 @@ compilation:
 gcc test.c `pkg-config --cflags --libs glib-2.0` -o test
 ```
 
+
+
+
 # reference
 1. [GLib Reference Manual](https://developer.gnome.org/glib/stable/)
 2. [The GLib/GTK+ Development Platform](https://people.gnome.org/~swilmet/glib-gtk-dev-platform.pdf)
@@ -51,3 +58,4 @@ gcc test.c `pkg-config --cflags --libs glib-2.0` -o test
 6. [Object-Oriented Programming in C](https://www.cs.colorado.edu/~kena/classes/5448/f12/presentation-materials/gatchell.pdf)
 7. [Manage C data using the GLib collections](https://www6.software.ibm.com/developerworks/education/l-glib/l-glib-pdf.pdf)
 8. [Compiling GLib Applications](https://developer.gnome.org/glib/stable/glib-compiling.html)
+9. [The Main Loop: The Engine of a GUI Library](http://www.lanedo.com/the-main-loop-the-engine-of-a-gui-library/)
