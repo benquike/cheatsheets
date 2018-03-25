@@ -573,8 +573,51 @@ type_init(module_init)-> register_module_init
 register_module_init --> type_init(module_init)
 ```
 
-定义和使用对象
--
+### Data structure
+
+```
+struct ObjectClass
+{
+    /*< private >*/
+    Type type;
+    GSList *interfaces;
+
+    const char *object_cast_cache[OBJECT_CLASS_CAST_CACHE];
+    const char *class_cast_cache[OBJECT_CLASS_CAST_CACHE];
+
+    ObjectUnparent *unparent;
+
+    GHashTable *properties;
+};
+
+struct Object
+{
+    /*< private >*/
+    ObjectClass *class;
+    ObjectFree *free;
+    GHashTable *properties;
+    uint32_t ref;
+    Object *parent;
+};
+
+
+typedef struct ObjectProperty
+{
+    gchar *name;
+    gchar *type;
+    gchar *description;
+    ObjectPropertyAccessor *get;
+    ObjectPropertyAccessor *set;
+    ObjectPropertyResolve *resolve;
+    ObjectPropertyRelease *release;
+    void *opaque;
+} ObjectProperty;
+
+```
+
+
+### 定义和使用对象
+
 
 分配新对象
 ```
@@ -593,7 +636,9 @@ Object *object_new_with_propv(const char *typename,
     va_list vargs)
 ```
 
-cast
+
+casting
+
 ```
 object_dynamic_cast()
 ```
