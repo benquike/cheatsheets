@@ -450,6 +450,10 @@ struct {                                                                \
                 (var) = (*(((struct headname *)((var)->field.tqe_prev))->tqh_last)))
 ```
 
+## architecture
+
+![QEMU architecture](./QEMU_io.png)
+
 
 ##  module的概念
 
@@ -1025,3 +1029,7 @@ http://copy.sh/
 6. [QOM Concepts for User Creatable Devices](http://nairobi-embedded.org/030_qom_types_objectclasses_objects.html)
 7. [How to Build A Custom Linux Kernel For Qemu](http://mgalgs.github.io/2015/05/16/how-to-build-a-custom-linux-kernel-for-qemu-2015-edition.html)
 8. [QEMU 筆記](https://arcbbb.hackpad.com/ep/pad/static/KEEvfqYZhXM)
+
+Virtualization
+
+1. http://www.csd.uoc.gr/~hy428/reading/vmio_may8_2014.pdf
