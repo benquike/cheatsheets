@@ -646,6 +646,16 @@ object_dynamic_cast()
 Using properties
 -
 
+`object_property_find`: given an object, and a property name,
+it tries to find the asscociated ` ObjectProperty` object, the algorithm
+for doing so is as follows:
+
+1. it tries to find the property from its `ObjectClass` using `object_class_property_find`
+   method, which will first try to find the property from the ObjectClass object of its
+   parent type(not the embedded one).
+2. it tries to find the property from its own `properties` field.
+
+
 Using methods
 -
 
