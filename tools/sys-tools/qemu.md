@@ -866,9 +866,9 @@ $ qemu-x86_64  -enable-kvm ...
 ```
 
 ## CPU 和内存
-
-`-smp`
-`-m`
+`-cpu`: the type of CPU
+`-smp`: the number of CPUs
+`-m`:  size of memory, in units of Megabyte.
 
 ## 使用GUI
 
@@ -951,6 +951,12 @@ name "486-x86_64-cpu"
 Uncategorized devices:
 name "amd-iommu", bus System
 .....
+```
+
+## specifying CD
+
+```
+-cdrom
 ```
 
 ## char dev backend
@@ -1062,7 +1068,7 @@ OK
 ```
 
 Ref: https://wiki.ubuntu.com/QemuDiskHotplug
-
+https://www.linux-kvm.org/page/USB
 ## 使用Debugger
 
 ## 使用QMP
