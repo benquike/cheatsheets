@@ -1,0 +1,1 @@
+http://www.linuxtopia.org/online_books/linux_kernel/kernel_configuration/ch11s03.html

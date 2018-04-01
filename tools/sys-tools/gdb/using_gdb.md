@@ -54,3 +54,7 @@ http://sysprogs.com/VisualKernel/documentation/kernelsymbols
 Using `Ctrl-x` `Ctrl-a` to enable TUI.
 
 WebGUI: https://github.com/cs01/gdbgui
+
+## Reference
+
+http://www.dirac.org/linux/gdb/
