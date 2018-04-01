@@ -971,7 +971,7 @@ null
 
 the main function of user mode qemu is located in `linux-user/main.c`.
 
-## 使用HIM(Human Monitor Interface)
+## 使用HMI(Human Monitor Interface)
 
 指定HIM的文件: `-monitor　DEV`
 在不指定的情况下，默认是在Virtual Console。我们可以在VM里面用Ctrl-Alt 1-6来启动其中一个
@@ -1048,6 +1048,20 @@ Keyboard control
 
 This can be used to do GUI testing.
 
+
+### Example
+
+Adding a usb stick.
+
+```
+(qemu) drive_add 0 if=none,id=usbdisk1,file=/tmp/test.img
+OK
+(qemu) device_add usb-storage,id=usbdisk1,drive=usbdisk1
+(qemu) info usb
+    Device 0.0, Port 1, Speed 480 Mb/s, Product QEMU USB MSD
+```
+
+Ref: https://wiki.ubuntu.com/QemuDiskHotplug
 
 ## 使用Debugger
 
