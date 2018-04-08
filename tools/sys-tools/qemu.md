@@ -1091,6 +1091,8 @@ https://cloud-images.ubuntu.com/releases/16.04/release/
 
 https://wiki.qemu.org/Documentation/Networking
 
+https://www.linux-kvm.org/page/Networking
+
 # other related tools
 
 http://copy.sh/
