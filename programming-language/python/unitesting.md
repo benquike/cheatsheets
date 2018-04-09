@@ -8,6 +8,14 @@
 
 ## nose
 
+
+### writing test
+
+Testing exceptions.
+
+https://stackoverflow.com/questions/7799593/how-should-we-test-exceptions-with-nose
+
+
 ### nosetests
 
 http://nose.readthedocs.io/en/latest/usage.html
