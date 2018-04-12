@@ -1093,6 +1093,9 @@ https://wiki.qemu.org/Documentation/Networking
 
 https://www.linux-kvm.org/page/Networking
 
+http://nairobi-embedded.org/a_qemu_tap_networking_setup.html
+
+
 # other related tools
 
 http://copy.sh/
