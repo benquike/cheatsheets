@@ -1188,7 +1188,8 @@ $ ./scripts/simpletrace.py trace-events-all trace-<qemu-pid>
 
 `trace-events-all` is the file created when building qemu with tracing in
 the root of the building directory, and `trace-<qemu-pid>` is the file
-created by qemu.
+created by qemu, and is located in `/usr/share/qemu/trace-events-all` in the
+installation directory.
 
 ### Add trace points
 
