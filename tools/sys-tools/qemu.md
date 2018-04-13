@@ -875,6 +875,9 @@ $ qemu-x86_64  -enable-kvm ...
 默认情况下, GUI是被使用的。在这种情况下，VC(virtual console)被用作console.
 `-nographic` 可以关闭GUI.在这种情况下，所有的output会输出到kernel argument的console参数上。并且默认情况下，会输出到host系统的stdio上。
 
+Using sdl: `-display sdl`
+Using gtk: `-display gtk`
+
 ## 指定机器
 
 `-M`用于执行具体的机器(board)的类型。
