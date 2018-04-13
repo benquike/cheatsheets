@@ -1095,6 +1095,60 @@ https://www.linux-kvm.org/page/Networking
 
 http://nairobi-embedded.org/a_qemu_tap_networking_setup.html
 
+## tracing code execution in qemu
+
+Listing all the tracing events:
+
+```
+$ inst/bin/qemu-system-x86_64 -trace \?
+cpu_in
+cpu_out
+balloon_event
+vm_state_notify
+load_file
+runstate_set
+system_wakeup_request
+qemu_system_shutdown_request
+qemu_system_powerdown_request
+monitor_protocol_event_handler
+monitor_protocol_event_emit
+monitor_protocol_event_queue
+handle_hmp_command
+handle_qmp_command
+dma_blk_io
+dma_aio_cancel
+dma_complete
+dma_blk_cb
+dma_map_wait
+memory_region_ops_read
+memory_region_ops_write
+......
+......
+nbd_negotiate_options_check_option
+nbd_negotiate_begin
+nbd_negotiate_old_style
+nbd_negotiate_new_style_size_flags
+nbd_negotiate_success
+nbd_receive_request
+nbd_blk_aio_attached
+nbd_blk_aio_detach
+nbd_co_send_simple_reply
+nbd_co_send_structured_done
+nbd_co_send_structured_read
+nbd_co_send_structured_error
+nbd_co_receive_request_decode_type
+nbd_co_receive_request_payload_received
+nbd_co_receive_request_cmd_write
+nbd_trip
+pr_manager_execute
+pr_manager_run
+```
+
+
+Ref:
+- http://www.gorecursion.com/virtualization/2016/11/26/qemu-tracing1.html
+- https://rwmj.wordpress.com/2016/03/17/tracing-qemu-guest-execution/
+- https://git.qemu.org/?p=qemu.git;a=blob_plain;f=docs/devel/tracing.txt;hb=HEAD
 
 # other related tools
 
