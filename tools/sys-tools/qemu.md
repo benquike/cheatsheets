@@ -1100,7 +1100,13 @@ http://nairobi-embedded.org/a_qemu_tap_networking_setup.html
 
 ## tracing code execution in qemu
 
-Listing all the tracing events:
+### Building qemu with tracing support
+
+```
+$ ./qemu/configure <other-options> --enable-trace-backends=simple
+```
+
+### Listing all the tracing events:
 
 ```
 $ inst/bin/qemu-system-x86_64 -trace \?
@@ -1147,6 +1153,44 @@ pr_manager_execute
 pr_manager_run
 ```
 
+### how to trace the execution of qemu guest
+
+1. Prepare a file containing the events we want to trace, e.g.:
+
+```
+$ echo usb_packet_state_change > trace_events
+$ echo usb_port_claim >> trace_events
+$ ......
+```
+
+Then run the following cmd:
+
+```
+$ qemu-system-x86_64 -trace events=trace-events <other qemu cmd options>
+```
+`trace-events` is the file containing the events to trace.
+After the command, a trace file named `trace-<qemu-pid>` will be created
+in the directory where qemu was run.
+
+Or, we can turn the tracing function on/off in HMP
+```
+# set the file
+(qemu) trace-file set <filename>
+# turning On/Off some trace event
+(qemu) trace-event tcg_gen_code off/on
+```
+
+Showing the captured events:
+
+```
+$ ./scripts/simpletrace.py trace-events-all trace-<qemu-pid>
+```
+
+`trace-events-all` is the file created when building qemu with tracing in
+the root of the building directory, and `trace-<qemu-pid>` is the file
+created by qemu.
+
+### Add trace points
 
 Ref:
 - http://www.gorecursion.com/virtualization/2016/11/26/qemu-tracing1.html
