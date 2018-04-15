@@ -23,3 +23,11 @@ http://thinkingeek.com/gcc-tiny/
 ```
 gcc -fdump-tree-all test4.c
 ```
+
+# disable jump table
+
+```
+gcc -O0 -fno-jump-tables test.c -o test
+```
+http://lazarenko.me/switch/
+http://www.jauu.net/2010/06/15/gcc-generated-switch-jump-tables/
