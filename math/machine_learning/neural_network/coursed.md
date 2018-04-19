@@ -1,0 +1,1 @@
+http://web.stanford.edu/class/cs20si/syllabus.html
