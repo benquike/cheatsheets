@@ -12,3 +12,6 @@ import pdb; pdb.set_trace()
 when you run the program, it will stop there.
 
 then you can use similar cmds to control the program
+
+
+http://frid.github.io/blog/2014/06/05/python-ipdb-cheatsheet/
