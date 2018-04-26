@@ -38,3 +38,10 @@ http://www.jauu.net/2010/06/15/gcc-generated-switch-jump-tables/
 ```
 $ gcc/clang -fno-inline ..... 
 ```
+
+
+# no stack protector
+
+```
+$ gcc -fno-stack-protector ...
+```
