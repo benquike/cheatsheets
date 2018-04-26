@@ -31,3 +31,10 @@ gcc -O0 -fno-jump-tables test.c -o test
 ```
 http://lazarenko.me/switch/
 http://www.jauu.net/2010/06/15/gcc-generated-switch-jump-tables/
+
+
+# disable function inlining
+
+```
+$ gcc/clang -fno-inline ..... 
+```
