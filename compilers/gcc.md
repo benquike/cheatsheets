@@ -45,3 +45,8 @@ $ gcc/clang -fno-inline .....
 ```
 $ gcc -fno-stack-protector ...
 ```
+
+
+# collecting coverage
+
+https://davejingtian.org/2017/06/01/understanding-kcov-play-with-fsanitize-coveragetrace-pc-from-the-user-space/
