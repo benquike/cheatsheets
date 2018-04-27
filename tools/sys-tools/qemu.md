@@ -1082,6 +1082,10 @@ Related concept: HMP(human monitor protocol)
 $ qemu .... -qmp tcp:localhost:4444,server,nowait
 ```
 
+## qemu guest agent
+
+https://wiki.qemu.org/Features/GuestAgent
+
 ## running linux kernel in qemu
 
 
