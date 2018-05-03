@@ -1,0 +1,1 @@
+https://rainbow.chard.org/2013/01/30/how-to-align-partitions-for-best-performance-using-parted/
