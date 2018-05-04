@@ -50,3 +50,11 @@ $ gcc -fno-stack-protector ...
 # collecting coverage
 
 https://davejingtian.org/2017/06/01/understanding-kcov-play-with-fsanitize-coveragetrace-pc-from-the-user-space/
+
+
+# debug header search paths
+
+```
+$ echo | gcc -E -Wp,-v -
+```
+https://stackoverflow.com/questions/17939930/finding-out-what-the-gcc-include-path-is
