@@ -1217,7 +1217,7 @@ http://copy.sh/
 8. [QEMU 筆記](https://arcbbb.hackpad.com/ep/pad/static/KEEvfqYZhXM)
 9. [QEMUのなかみ(QEMU internals) part1](http://rkx1209.hatenablog.com/entry/2015/11/15/214404)
 10. [QEMUのなかみ(QEMU internals) part2](http://rkx1209.hatenablog.com/entry/2015/11/20/203511)
-
+11. [KVMのなかみ(KVM internals)](http://rkx1209.hatenablog.com/entry/2016/01/01/101456)
 
 Virtualization
 
