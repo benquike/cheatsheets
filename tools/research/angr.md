@@ -546,11 +546,19 @@ this class hosts some functions, in which:
 - call\_state:
 - path:
 - path\_group:
-
+- simgr: simulation manager, which is the most important class
+- block: which provides interface for inspecting a code block in various forms, including VEX, etc
 
 
 ![AngrObectFactory](./AngrObjectFactory.png)
 
+
+```
+block = project.factory.block(addr)
+# inspecting VEX
+for stmt in block.vex.statements:
+    do something with stmt....
+```
 
 Create a blank state:
 
