@@ -27,3 +27,7 @@ https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ub
 ```
 sudo dpkg-reconfigure resolvconf
 ```
+
+##  system logging
+
+http://linux-training.be/sysadmin/ch17.html
