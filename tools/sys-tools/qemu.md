@@ -1215,6 +1215,9 @@ http://copy.sh/
 6. [QOM Concepts for User Creatable Devices](http://nairobi-embedded.org/030_qom_types_objectclasses_objects.html)
 7. [How to Build A Custom Linux Kernel For Qemu](http://mgalgs.github.io/2015/05/16/how-to-build-a-custom-linux-kernel-for-qemu-2015-edition.html)
 8. [QEMU 筆記](https://arcbbb.hackpad.com/ep/pad/static/KEEvfqYZhXM)
+9. [QEMUのなかみ(QEMU internals) part1](http://rkx1209.hatenablog.com/entry/2015/11/15/214404)
+10. [QEMUのなかみ(QEMU internals) part2](http://rkx1209.hatenablog.com/entry/2015/11/20/203511)
+11. [KVMのなかみ(KVM internals)](http://rkx1209.hatenablog.com/entry/2016/01/01/101456)
 
 Virtualization
 

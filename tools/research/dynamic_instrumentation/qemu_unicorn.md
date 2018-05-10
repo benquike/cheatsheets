@@ -1,0 +1,2 @@
+[Unicornのソースコードを読む (Python編)](https://ntddk.github.io/tags/dynamic-binary-translation/)
+[QEMUのDynamic Binary Translationがあって良かったねという話](https://speakerdeck.com/ntddk/qemufalsedynamic-binary-translationgaatuteliang-katutanetoiuhua)
