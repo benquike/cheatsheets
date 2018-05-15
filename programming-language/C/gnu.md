@@ -13,3 +13,11 @@ In particular, the things from _GNU_SOURCE that you should never use are #2 and 
 ```
 
 https://stackoverflow.com/questions/5582211/what-does-define-gnu-source-imply
+
+
+
+# ctype related
+
+## __ctype_b_loc related
+
+https://stackoverflow.com/questions/37702434/ctype-b-loc-what-is-its-purpose
