@@ -12,7 +12,7 @@ and each conversion specifier(`%`) asks for the next argument(and increase the s
 can also specify explicitly which argument is taken, at each place where an argument is required, by  writing "%m$" instead of '%' and "*m$" instead of `*` in which
 case the stack counter won't be increased(??), where the _decimal_ integer m denotes the position in the argument list of the desired argument, _indexed starting from 1_.  Thus,
 
-the `*` here is used to fetch the width specifier from the stack.
+the `*` here is used to fetch the width specifier from the stack(ref [here](https://stackoverflow.com/questions/1000556/what-does-the-s-format-specifier-mean)).
 
     printf("%*d", width, num);
 
