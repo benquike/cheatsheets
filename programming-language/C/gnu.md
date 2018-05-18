@@ -21,3 +21,9 @@ https://stackoverflow.com/questions/5582211/what-does-define-gnu-source-imply
 ## __ctype_b_loc related
 
 https://stackoverflow.com/questions/37702434/ctype-b-loc-what-is-its-purpose
+
+
+
+# constructor, destructor, exit handlers
+
+The sequence, constructor -> main -> exit -> exit handlers -> destructors
