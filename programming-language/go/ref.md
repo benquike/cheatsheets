@@ -17,3 +17,12 @@ type User struct {
 
 https://stackoverflow.com/questions/30681054/what-is-the-usage-of-backtick-in-golang-structs-definition
 
+
+# ... operator in go lang
+
+1. Variadic arguments
+2. passing variadic arguments
+3. array literals
+4. wildcard in `go get command`
+
+https://programming.guide/go/three-dots-ellipsis.html
