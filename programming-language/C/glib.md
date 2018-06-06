@@ -59,3 +59,5 @@ gcc test.c `pkg-config --cflags --libs glib-2.0` -o test
 7. [Manage C data using the GLib collections](https://www6.software.ibm.com/developerworks/education/l-glib/l-glib-pdf.pdf)
 8. [Compiling GLib Applications](https://developer.gnome.org/glib/stable/glib-compiling.html)
 9. [The Main Loop: The Engine of a GUI Library](http://www.lanedo.com/the-main-loop-the-engine-of-a-gui-library/)
+10. [C Programming/GObject](https://en.wikibooks.org/wiki/C_Programming/GObject)
+11. [Object-oriented programming with ANSI-C](https://www.cs.rit.edu/~ats/books/ooc.pdf)
