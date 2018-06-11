@@ -1,0 +1,1 @@
+https://superuser.com/questions/480451/what-kind-of-memory-addresses-are-the-ones-shown-by-proc-ioports-and-proc-iomem
