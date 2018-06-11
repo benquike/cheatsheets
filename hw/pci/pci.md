@@ -6,3 +6,8 @@ https://computer.howstuffworks.com/pci.htm
 https://computer.howstuffworks.com/pci-express.htm
 
 
+# programming PCI
+
+https://www.tldp.org/LDP/tlk/dd/pci.html
+http://moi.vonos.net/linux/the-pci-bus/
+http://g2pc1.bu.edu/~qzpeng/manual/pcip.pdf
