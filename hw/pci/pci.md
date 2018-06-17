@@ -14,3 +14,4 @@ https://www.tldp.org/LDP/tlk/dd/pci.html
 http://moi.vonos.net/linux/the-pci-bus/
 http://g2pc1.bu.edu/~qzpeng/manual/pcip.pdf
 https://people.eecs.berkeley.edu/~kubitron/cs194-24/labs/lab4.pdf
+https://www.cs.usfca.edu/~cruse/cs686s08/
