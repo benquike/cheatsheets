@@ -7,3 +7,6 @@
 [submodule "programming-language/go/go-lang-cheat-sheet"]
 	path = programming-language/go/go-lang-cheat-sheet
 	url = https://github.com/a8m/go-lang-cheat-sheet.git
+[submodule "hw/bios/BIOS-Disassembly-Ninjutsu-Uncovered"]
+	path = hw/bios/BIOS-Disassembly-Ninjutsu-Uncovered
+	url = https://github.com/pinczakko/BIOS-Disassembly-Ninjutsu-Uncovered.git
