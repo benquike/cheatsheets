@@ -1,0 +1,1 @@
+http://ymorin.is-a-geek.org/projects/kconfig-frontends
