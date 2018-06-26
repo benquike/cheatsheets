@@ -1,0 +1,1 @@
+https://sites.google.com/site/pinczakko/low-cost-embedded-x86-teaching-tool-2
