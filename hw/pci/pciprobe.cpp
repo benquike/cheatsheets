@@ -31,78 +31,99 @@
 #define	CONFDAT	0x0CFC	// PCI Configuration Space Data 
 #define PMC	0x0CFB	// PCI Mechanism Configuration
 
+/**
+   For details:
+   see: https://wiki.osdev.org/PCI
+ **/
 
 int main( int argc, char **argv )
 {
-	// exit with useful diagnostic if iopl() causes a segfault
-	if ( iopl( 3 ) ) { perror( "iopl" ); return 1; }
+  // exit with useful diagnostic if iopl() causes a segfault
+  if ( iopl( 3 ) ) { perror( "iopl" ); return 1; }
 
-	// obtain this station's hostname (for documentation in output) 
-	char	hostname[ 64 ];
-	gethostname( hostname, 64 );
+  // obtain this station's hostname (for documentation in output) 
+  char	hostname[ 64 ];
+  gethostname( hostname, 64 );
 
-	// enable configuration mechanism number 1
-	outb( inb( PMC ) | 1, PMC );
+  // enable configuration mechanism number 1
+  outb( inb( PMC ) | 1, PMC );
 
-	// perform a complete pci bus scan operation
-	printf( "\nSCANNING FOR PCI DEVICES on station \'%s\'\n\n", hostname );
-	int	ndevs = 0;
-	for (int bus = 0; bus < (1 << 8); bus++)
-		{
-		for (int dev = 0; dev < (1 << 5); dev++)
-			{
-			int	busdev = (bus << 16)|(dev << 11)|(1 << 31);
-			int	pcidat, header, vendor, device, classc;
+  // perform a complete pci bus scan operation
+  printf( "\nSCANNING FOR PCI DEVICES on station \'%s\'\n\n", hostname );
+  int	ndevs = 0;
+  for (int bus = 0; bus < (1 << 8); bus++) {
+    for (int dev = 0; dev < (1 << 5); dev++) {
 
-			outl( busdev, CONFADD );
-			pcidat = inl( CONFDAT );
-			if ( pcidat == ~0 ) continue;
+
+      /*
+       *
+       * The addr value is 4-byte and broken down like this: 
+       *
+       * bit 31=1        (bit is always set for a PCI access)
+       * bits30:24=0 (reserved)
+       * bit 23:16=bus number (0-255)
+       * bits15:11=device # (0-31)
+       * bits10:8=function # (0-7)
+       * bits7:2=register number (0-255)
+       *
+       */
+      int	busdev = (bus << 16)|(dev << 11)|(1 << 31);
+      int	pcidat, header, vendor, device, classc;
+
+      outl( busdev, CONFADD );
+      pcidat = inl( CONFDAT );
+
+      // if no device present,
+      // skip
+      if ( pcidat == ~0 )
+	continue;
 	
-			outl( busdev + (3 << 2), CONFADD );
-			header = ( inl( CONFDAT ) >> 16 )&0xFF;		
+      outl( busdev + (3 << 2), CONFADD );
+      header = ( inl( CONFDAT ) >> 16 )&0xFF;		
 
-			vendor = (pcidat >>  0)&0xFFFF;
-			device = (pcidat >> 16)&0xFFFF;
+      vendor = (pcidat >>  0)&0xFFFF;
+      device = (pcidat >> 16)&0xFFFF;
 			
-			outl( busdev + (2 << 2), CONFADD );
-			classc = inl( CONFDAT ) >> 8;
+      outl( busdev + (2 << 2), CONFADD );
+      classc = inl( CONFDAT ) >> 8;
 	
-			printf( "bus=%-3d dev=%-2d ", bus, dev );
-			if ( header & 0x80 ) 
-				{
-				printf( " (multi-function device) \n" );
-				for (int fun = 0; fun < (1 << 3); fun++)
-					{
-					outl( busdev + (fun << 8), CONFADD );
-					pcidat = inl( CONFDAT );
-					if ( pcidat == ~0 ) continue;
-					++ndevs;
+      printf( "bus=%-3d dev=%-2d ", bus, dev );
+      if ( header & 0x80 ) {
+	printf( " (multi-function device) \n" );
+	for (int fun = 0; fun < (1 << 3); fun++) {
+	  outl( busdev + (fun << 8), CONFADD );
+	  pcidat = inl( CONFDAT );
+	  if ( pcidat == ~0 )
+	    continue;
 
-					vendor = (pcidat >>  0)&0xFFFF;
-					device = (pcidat >> 16)&0xFFFF;
+	  ++ndevs;
 
-					int	busdevfun = busdev + (fun << 8);
-					outl( busdevfun + (2 << 2), CONFADD );
-					classc = inl( CONFDAT ) >> 8;
+	  vendor = (pcidat >>  0)&0xFFFF;
+	  device = (pcidat >> 16)&0xFFFF;
 
-					printf( "\tfunction %d ", fun );
-					
-					printf( " VENDOR=%04X ", vendor );
-					printf( " DEVICE=%04X ", device );
-					printf( " CLASS=%06X", classc );
-					printf( "\n" );
-					}
-				}
-			else 	{
-				++ndevs;
-				printf( " VENDOR=%04X ", vendor );
-				printf( " DEVICE=%04X ", device );
-				printf( " CLASS=%06X", classc );
-				printf( "\n" );
-				}
-			printf( "\n" );
-			}
-		}
-	printf( "Identified %d PCI device-functions ", ndevs ); 
-	printf( "on station \'%s\' \n\n", hostname );
+	  int	busdevfun = busdev + (fun << 8);
+	  outl( busdevfun + (2 << 2), CONFADD );
+	  classc = inl( CONFDAT ) >> 8;
+
+	  printf( "\tfunction %d ", fun );
+
+	  printf( " VENDOR=%04X ", vendor );
+	  printf( " DEVICE=%04X ", device );
+	  printf( " CLASS=%06X", classc );
+	  printf( "\n" );
+	}
+      } else {
+	++ndevs;
+	printf( " VENDOR=%04X ", vendor );
+	printf( " DEVICE=%04X ", device );
+	printf( " CLASS=%06X", classc );
+	printf( "\n" );
+      }
+
+      printf( "\n" );
+    }
+  }
+
+  printf( "Identified %d PCI device-functions ", ndevs ); 
+  printf( "on station \'%s\' \n\n", hostname );
 }	
